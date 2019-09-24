@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
 	}else{
 		wait(NULL);
 		pid_t child_pid2 = fork();
-		char *arr[] = {argv[1],NULL};
+		char *arr[] = {"abgxfghd",argv[1],NULL};
 		if(child_pid2 <0){
 			printf("can't fork, error occured\n");
 			exit(1);
