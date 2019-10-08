@@ -133,26 +133,26 @@ int main(int argc, char *argv[])
 		process_file(argv[1]);
 		//TODO
 		// find numbers dependency
-		// char *** tokens = malloc(sizeof(char***));
-		// int numtokens = makeargv(lines[0],": ", tokens);
-		// if(numtokens==1){
-		// 	//run all recipe
-		// 	// locate the recipe need to run
-		// 	int recipe_start = findLine(tokens[0][0])+1;
-		// 	int recipe_last = recipeCount(tokens[0][0]);
-		// 	for (int i = recipe_start; i < recipe_last; i++) {
-		// 		//create a process per line
-		// 		pid_t pid = fork();
-		// 		if(pid ==0){
-		// 			execv(lines[i]);
-		// 		}else{
-		// 			wait(Null);
-		// 		}
-		// 	}
-		// }else{
-		// 	//run required recipes
-		//
-		// }
+		char *** tokens = malloc(sizeof(char***));
+		int numtokens = makeargv(lines[0],": ", tokens);
+		if(numtokens==1){
+			//run all recipe
+			// locate the recipe need to run
+			int recipe_start = findLine(tokens[0][0])+1;
+			int recipe_last = recipeCount(tokens[0][0]);
+			for (int i = recipe_start; i < recipe_last; i++) {
+				//create a process per line
+				pid_t pid = fork();
+				if(pid ==0){
+					execv(lines[i]);
+				}else{
+					wait(NULL);
+				}
+			}
+		}else{
+			//run required recipes
+
+		}
 	}
 
 	if (argc == 3) {
