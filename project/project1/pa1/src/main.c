@@ -84,6 +84,20 @@ int isEmpty(char line[]){
 	return b;
 }
 
+//check if there exists a comma
+int hasComma(char line[]){
+	if(line==0){return 0;}
+	int l = strlen(line);
+	int b =0;
+//check by each character
+	for(int i = 0;i<l;i++){
+		if(line[i]==','){
+			b = 1;
+		}
+	}
+	return b;
+}
+
 //find the line number for the dep
 //if return -1, then this dep doesn't exist
 int findLine(char dep[]){
