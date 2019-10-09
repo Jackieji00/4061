@@ -102,10 +102,11 @@ int findLine(char dep[]){
 	return result;
 }
 
-// find the line number that end of recipe under that dep
+// find the lase line number of recipes under that dep
 int recipeCount(char dep[]){
 	int depNum = findLine(dep)+1;
 	int result = depNum;
+	//iterate through lines
 	for(int i = depNum;strcmp(lines[i],"");i++){
 		if(strstr(lines[i],":")!=NULL||isEmpty(lines[i])){
 			result = i;
@@ -113,24 +114,27 @@ int recipeCount(char dep[]){
 	}
 	return result;
 }
+//count how many dependencies in the file
 int depCount(){
 	int result = 0;
 	for(int i = 0;strcmp(lines[i],"");i++){
 		if(strcmp(lines[i],":")>0){
-			// printf("%d:%s\n",i,lines[i] );
 			result++;
 		}
 	}
 	return result;
 }
+
 //Validate the input arguments, bullet proof the program
 int main(int argc, char *argv[]){
 	//Error handleing
 	if(argc==2){
+		//takes 1 arguments
 		if(!fopen(argv[1], "r")){
 			fprintf(stderr,"%s doesn't exit\n", argv[1]);
 			return 1;}
 	}else if(argc==3){
+		//takes 2 arguments
 		if(strstr(argv[1],"-p")!=NULL){
 			//with the flag -p
 			if(!fopen(argv[2], "r")){
@@ -144,13 +148,16 @@ int main(int argc, char *argv[]){
 				return 1;
 			}
 		}else if (strstr(argv[2],"-p")!=NULL||strstr(argv[2],"-p")!=NULL){
+			//when 2nd argument is a flag
 			fprintf(stderr,"Incorrect order\n");
 			return 3;
 		}else if(!fopen(argv[1], "r")){
+			//when 1st argument is not vaild
 			fprintf(stderr,"%s doesn't exit\n", argv[2]);
 			return 1;
 		}
 	}else{
+		//when arguments are more than 3.
 		fprintf(stderr,"Too much arguements\n");
 		return 2;
 	}
@@ -163,16 +170,16 @@ int main(int argc, char *argv[]){
 		char *** tokens = malloc(sizeof(char***));
 		int numtokens = makeargv(lines[0],": \n", tokens);
 		if(numtokens==1){
-			//run all recipe
-			// locate the recipe need to run
+			//the case when there is no dependency
+			// locate the recipe needed to run, by finding the start line and end line
 			int recipe_start = findLine(tokens[0][0])+1;
 			int recipe_last = recipeCount(tokens[0][0]);
-			// printf("s:%d\nl:%d",recipe_start,recipe_last );
+			//iterate through each line for the ricepe
 			for (int i = recipe_start; i <= recipe_last; i++) {
-				//create a process per line
+				//create a process per file
 				pid_t pid = fork();
 				if(pid ==0){
-					//make it without tab
+					//remove the newline and tab character
 					char *** args = malloc(sizeof(char***));
 					int numargs = makeargv(lines[i],"\t \n", args);
 					//put it into a char array
@@ -180,31 +187,30 @@ int main(int argc, char *argv[]){
 					for (int i = 0; i < numargs; i++) {
 						arr[i] = args[0][i];
 					}
+					// add NULL to end of array
 					arr[numargs] = NULL;
-					for (int i = 0; i < numargs; i++) {
-						printf(" %s",arr[i] );
-					}
-					printf("\n");
+					//run this ricepe
 					execvp(arr[0],arr);
 				}else{
 					wait(NULL);
 				}
 			}
 		}else{
-			//run required recipes
+			//the case when target has multiple dependencies,
+			//and deps needed to run their recipes
 			for (int i = 1; i < numtokens; i++) {
 				int depNo[MAX_DEP];//record all the dependency
-				int depcount = 0;
+				int depIndex = 0;//keep reocrd array's index
 				char *startToken= tokens[0][i];
 				//if the dep has recipe, find the line
 				while(findLine(startToken)!=0){
 					//record the line number
-					depNo[depcount] = findLine(startToken);
-					//find the dep for this target
+					depNo[depIndex] = findLine(startToken);
+					//find the dep(s) for this target
 					char *** tokensR= malloc(sizeof(char***));
-					int n = makeargv(lines[depNo[depcount]], ": \n", tokensR);
+					int n = makeargv(lines[depNo[depIndex]], ": \n", tokensR);
 					int b = 1;
-					//if there are multiple statements next to it
+					//if there are multiple deps next to it,choose the one valid
 					if(n>2){
 						for (int z = 1; z < n; z++) {
 							if(findLine(tokensR[0][z])!=0){
@@ -214,14 +220,15 @@ int main(int argc, char *argv[]){
 					}
 					//update to the new dep needed to find
 					startToken = tokensR[0][b];
-					depcount++;
-
+					depIndex++;
 				}
-				//run all the ricepe for dep
-				for (int j = depcount-1; j >=0; j--) {
+				//run all the ricepe for dep from the line record, and going back words
+				for (int j = depIndex-1; j >=0; j--) {
+					//iterate through all the ricepe need to run under this dependency
 					for (int k = 1;(strcmp(lines[depNo[j]+k],":")<=0)&&!isEmpty(lines[depNo[j]+k]); k++) {
 						pid_t pid = fork();
 						if(pid ==0){
+							//make the ricepe into a char array with NULL ending
 							char *** args = malloc(sizeof(char***));
 							int numargs = makeargv(lines[depNo[j]+k],"\t \n", args);
 							char *arr[numargs+1];
@@ -229,10 +236,7 @@ int main(int argc, char *argv[]){
 								arr[i] = args[0][i];
 							}
 							arr[numargs] = NULL;
-							for (int i = 0; i < numargs; i++) {
-								printf(" %s",arr[i] );
-							}
-							printf("\n");
+							//run the recipe
 							execvp(arr[0],arr);
 						}else{
 							wait(NULL);
@@ -244,6 +248,7 @@ int main(int argc, char *argv[]){
 			for (int i = 1;(strcmp(lines[i],":")<=0)&&!isEmpty(lines[i]); i++) {
 				pid_t pid = fork();
 				if(pid ==0){
+					//make the ricepe into a char array with NULL ending
 					char *** args = malloc(sizeof(char***));
 					int numargs = makeargv(lines[i],"\t \n", args);
 					char *arr[numargs+1];
@@ -251,10 +256,7 @@ int main(int argc, char *argv[]){
 						arr[i] = args[0][i];
 					}
 					arr[numargs] = NULL;
-					for (int i = 0; i < numargs; i++) {
-						printf(" %s",arr[i] );
-					}
-					printf("\n");
+					//run the recipe
 					execvp(arr[0],arr);
 				}else{
 					wait(NULL);
@@ -271,14 +273,16 @@ int main(int argc, char *argv[]){
 				char *** tokens = malloc(sizeof(char***));
 				int numtokens = makeargv(lines[0],": \n", tokens);
 				if(depCount()==1){
+					//if there is only one target/dependency in entire file
 					//find the last line before next dependency
 					int i,count = 0;
 					for(i = 1;strcmp(lines[i],"");i++){
 						if(!isEmpty(lines[i])){count++;} //count nonempty line
-						if (strcmp(lines[i],":")){break;}
+						if (strcmp(lines[i],":")){break;}//stop when the homework
 					}
 					int linNo[count];//record which is not empty slot
 					int linNoCount =0;//as index for linNo
+					//record all ricepes' line number
 					for (int j = 0; j < i; j++) {
 						if(!isEmpty(lines[i])){
 							linNo[linNoCount++] = i;
@@ -303,19 +307,20 @@ int main(int argc, char *argv[]){
 						printf("%s\n",tokensR[0][j]);
 					}
 				}else{
+					//iterate through dependencies of the target
 					for (int i = 1; i < numtokens; i++) {
-						int depNo[MAX_DEP];//record all the dependency
-						int depcount = 0;
+						int depNo[MAX_DEP];//record all the dependency needed to run
+						int depIndex = 0;//index of depNo
 						char *startToken= tokens[0][i];
-						//if the dep has recipe, find the line
+						//if the dep has recipe, find the line of dep
 						while(findLine(startToken)!=0){
 							//record the line number
-							depNo[depcount] = findLine(startToken);
-							//find the dep for this target
+							depNo[depIndex] = findLine(startToken);
+							//find the dep for this dependency
 							char *** tokensR= malloc(sizeof(char***));
-							int n = makeargv(lines[depNo[depcount]], ": \n", tokensR);
+							int n = makeargv(lines[depNo[depIndex]], ": \n", tokensR);
 							int b = 1;
-							//if there are multiple statements next to it
+							//if there are multiple statements next to it,find the one is valid
 							if(n>2){
 								for (int z = 1; z < n; z++) {
 									if(findLine(tokensR[0][z])!=0){
@@ -325,11 +330,11 @@ int main(int argc, char *argv[]){
 							}
 							//update to the new dep needed to find
 							startToken = tokensR[0][b];
-							depcount++;
+							depIndex++;
 
 						}
 						//print recipes in the array
-						for (int j = depcount-1; j >=0; j--) {
+						for (int j = depIndex-1; j >=0; j--) {
 							for (int k = 1;(strcmp(lines[depNo[j]+k],":")<=0)&&!isEmpty(lines[depNo[j]+k]); k++) {
 								char *** tokensRR= malloc(sizeof(char***));
 								makeargv(lines[depNo[j]+k], "\t \n", tokensRR);
@@ -349,27 +354,26 @@ int main(int argc, char *argv[]){
 			//$./mymake Makefile target
 			//TODO
 			int depNo[MAX_DEP];//record all the dependency
-			int depcount = 0;
-			char *** tokens = malloc(sizeof(char***));
-			makeargv(lines[0],": \n", tokens);
-			char *startToken= argv[2];
+			int depIndex = 0;//index of depNo
 			//error handling if target doesn't exit
+			char *startToken= argv[2];
 			if(findLine(startToken)==-1){
 				fprintf(stderr,"%s doesn't exit\n", argv[2]);
 				return 1;
 			}
-			int boo = 0;//store whether the argv[2] is the target or not
+			//store whether the argv[2] is the target or not
+			int boo = 0;
 			//if the dep has recipe, find the line
 			do{
 				if(findLine(startToken)==0){
 					boo =1;
 				}
 				//record the line number
-				depNo[depcount] = findLine(startToken);
+				depNo[depIndex] = findLine(startToken);
 				//find the next dep for this target
 				char *** tokensR= malloc(sizeof(char***));
-				int n = makeargv(lines[depNo[depcount]], ": \n", tokensR);
-				int b = 1;
+				int n = makeargv(lines[depNo[depIndex]], ": \n", tokensR);
+				int b = 1;//use to record which one of the dep is valid one
 				//if there are multiple deps next to it, find the one valid one
 				if(n>2){
 					for (int z = 1; z < n; z++) {
@@ -380,14 +384,16 @@ int main(int argc, char *argv[]){
 				}
 					//update to the new dep needed to find
 				startToken = tokensR[0][b];
-				depcount++;
+				depIndex++;
 			}while(findLine(startToken)!=0);
 				//run all the ricepe for dep
-			for (int j = depcount-1; j >=0; j--) {
+			for (int j = depIndex-1; j >=0; j--) {
+				//iterate through all the dependencies in the record
 				for (int k = 1;(strcmp(lines[depNo[j]+k],":")<=0)&&!isEmpty(lines[depNo[j]+k]); k++) {
+					//iterate through all the ricepes under this dependency
 					pid_t pid = fork();
-
 					if(pid ==0){
+						//make the string into a char array ending with NULL
 						char *** args = malloc(sizeof(char***));
 						int numargs = makeargv(lines[depNo[j]+k],"\t \n", args);
 						char *arr[numargs+1];
@@ -395,20 +401,19 @@ int main(int argc, char *argv[]){
 							arr[i] = args[0][i];
 						}
 						arr[numargs] = NULL;
-						for (int i = 0; i < numargs; i++) {
-							printf(" %s",arr[i] );
-						}
-						printf("\n");
+						//run the argument
 						execvp(arr[0],arr);
 					}else{
 						wait(NULL);
 					}
 				}
 			}
-			//run recipes for the target if asked
+			//run recipes for the target if the argv[2] is the target
 			for (int i = 1;(strcmp(lines[i],":")<=0)&&!isEmpty(lines[i])&&boo==1; i++) {
+				//iterate through all the ricepes under the target
 				pid_t pid = fork();
 				if(pid ==0){
+					//make the ricepe into a char array ending with NULL
 					char *** args = malloc(sizeof(char***));
 					int numargs = makeargv(lines[i],"\t \n", args);
 					char *arr[numargs+1];
@@ -416,10 +421,7 @@ int main(int argc, char *argv[]){
 						arr[i] = args[0][i];
 					}
 					arr[numargs] = NULL;
-					for (int i = 0; i < numargs; i++) {
-						printf(" %s",arr[i] );
-					}
-					printf("\n");
+					//run the ricepe
 					execvp(arr[0],arr);
 				}else{
 					wait(NULL);
@@ -430,20 +432,16 @@ int main(int argc, char *argv[]){
 		//$./mymake -p Makefile
 			if (!process_file(argv[2])) {
 				//TODO
-
 				// for dependency
 				char * dels = ": \n";
 				char *** tokens = malloc(sizeof(char***));
 		    int numtokens = makeargv(lines[0], dels, tokens);
-
-				//find linenumber for recipe
-				int count;
+				int count;//count how many nonempty lines under the target
 				for(count = 1;strcmp(lines[count],"");count++){
 					if(strcmp(lines[count],":")>0||isEmpty(lines[count])){
 						break;
 					}
 				}
-
 				//print target info
 				printf("target '%s' has %d dependencie(s) and %d recipe(s):\n",tokens[0][0],numtokens-1,count-1);
 				//print out dependencies
@@ -451,11 +449,12 @@ int main(int argc, char *argv[]){
 					printf("Dependency %d is %s\n",i-1,tokens[0][i]);
 				}
 				//concrete recipes to one string
-				int l = 0;
+				int l = 0;//store the string size
 				for(int i = 1;i<count;i++){
 					l += strlen(lines[i]);
 				}
 				char* recipeLine = malloc(l+1);
+				//copy recipes to this new string
 				strcpy(recipeLine,lines[1]);
 				for(int i = 2;i<count;i++){
 					strcat(recipeLine,lines[i]);
