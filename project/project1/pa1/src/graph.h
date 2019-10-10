@@ -11,7 +11,7 @@
 
 typedef struct target_block {
 	char *name;
-	char *depend[MAX_DEP];
+	struct target *depend[MAX_DEP];
 	char *recipe[MAX_RECIPES_PT];
 	unsigned char dep_count;
 	unsigned char recipe_count;
