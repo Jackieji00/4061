@@ -1,0 +1,3 @@
+dep4 :
+    mkdir myproject, pwd
+    cat file1.c

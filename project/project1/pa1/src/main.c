@@ -188,33 +188,60 @@ int main(int argc, char *argv[]){
 			// locate the recipe needed to run, by finding the start line and end line
 			int recipe_start = findLine(tokens[0][0])+1;
 			int recipe_last = recipeCount(tokens[0][0]);
-			//iterate through each line for the ricepe
+			//iterate through each line for the recipe
 			for (int i = recipe_start; i <= recipe_last; i++) {
-				//create a process per file
-				pid_t pid = fork();
-				if(pid ==0){
-					//remove the newline and tab character
-					char *** args = malloc(sizeof(char***));
-					int numargs = makeargv(lines[i],"\t \n", args);
-					//put it into a char array
-					char *arr[numargs+1];
-					for (int i = 0; i < numargs; i++) {
-						arr[i] = args[0][i];
+				//check if this line has multiple recipes
+				if(hasComma(lines[i])){
+					//separate each recipes
+					char *** recipeTokens = malloc(sizeof(char***));
+					int numRecipe = makeargv(lines[i],"\t,\n", recipeTokens);
+					//iterate each recipes in the same line
+					for (int j = 0; j < numRecipe; j++) {
+						pid_t pid = fork();
+						if(pid==0){
+							//remove space
+							char *** args = malloc(sizeof(char***));
+							int numargs = makeargv(recipeTokens[0][j],"\t \n", args);
+							//put it into a char array
+							char *arr[numargs+1];
+							for (int k = 0; k < numargs; k++) {
+								arr[k] = args[0][k];
+							}
+							// add NULL to end of array
+							arr[numargs] = NULL;
+							//run this recipe
+							execvp(arr[0],arr);
+						}else{
+							wait(NULL);
+						}
 					}
-					// add NULL to end of array
-					arr[numargs] = NULL;
-					//run this ricepe
-					execvp(arr[0],arr);
 				}else{
-					wait(NULL);
+					//create a process per file
+					pid_t pid = fork();
+					if(pid ==0){
+						//remove the newline and tab character
+						char *** args = malloc(sizeof(char***));
+						int numargs = makeargv(lines[i],"\t \n", args);
+						//put it into a char array
+						char *arr[numargs+1];
+						for (int j = 0; j < numargs; j++) {
+							arr[j] = args[0][j];
+						}
+						// add NULL to end of array
+						arr[numargs] = NULL;
+						//run this recipe
+						execvp(arr[0],arr);
+					}else{
+						wait(NULL);
+					}
 				}
 			}
 		}else{
 			//the case when target has multiple dependencies,
 			//and deps needed to run their recipes
-			for (int i = 1; i < numtokens; i++) {
-				int depNo[MAX_DEP];//record all the dependency
-				int depIndex = 0;//keep reocrd array's index
+			int depNo[MAX_DEP];//record all the dependency
+			int depIndex = 0;//keep reocrd array's index
+			for (int i = numtokens-1; i >=0; i--) {
 				char *startToken= tokens[0][i];
 				//if the dep has recipe, find the line
 				while(findLine(startToken)!=0){
@@ -236,18 +263,45 @@ int main(int argc, char *argv[]){
 					startToken = tokensR[0][b];
 					depIndex++;
 				}
-				//run all the ricepe for dep from the line record, and going back words
-				for (int j = depIndex-1; j >=0; j--) {
-					//iterate through all the ricepe need to run under this dependency
-					for (int k = 1;(strcmp(lines[depNo[j]+k],":")<=0)&&!isEmpty(lines[depNo[j]+k]); k++) {
+			}
+			//run all the recipe for dep from the line record, and going back words
+			for (int j = depIndex-1; j >=0; j--) {
+				//iterate through all the recipe need to run under this dependency
+				for (int k = 1;(strcmp(lines[depNo[j]+k],":")<=0)&&!isEmpty(lines[depNo[j]+k]); k++) {
+					//check if this line has multiple recipes
+					if(hasComma(lines[depNo[j]+k])){
+						//separate each recipes
+						char *** recipeTokens = malloc(sizeof(char***));
+						int numRecipe = makeargv(lines[depNo[j]+k],"\t,\n", recipeTokens);
+						//iterate each recipes in the same line
+						for (int z = 0; z < numRecipe; z++) {
+							pid_t pid = fork();
+							if(pid==0){
+								//remove space
+								char *** args = malloc(sizeof(char***));
+								int numargs = makeargv(recipeTokens[0][z],"\t \n", args);
+								//put it into a char array
+								char *arr[numargs+1];
+								for (int x = 0; x < numargs; x++) {
+									arr[x] = args[0][x];
+								}
+								// add NULL to end of array
+								arr[numargs] = NULL;
+								//run this recipe
+								execvp(arr[0],arr);
+							}else{
+								wait(NULL);
+							}
+						}
+					}else{
 						pid_t pid = fork();
 						if(pid ==0){
-							//make the ricepe into a char array with NULL ending
+							//make the recipe into a char array with NULL ending
 							char *** args = malloc(sizeof(char***));
 							int numargs = makeargv(lines[depNo[j]+k],"\t \n", args);
 							char *arr[numargs+1];
-							for (int i = 0; i < numargs; i++) {
-								arr[i] = args[0][i];
+							for (int x = 0; x < numargs; x++) {
+								arr[x] = args[0][x];
 							}
 							arr[numargs] = NULL;
 							//run the recipe
@@ -260,20 +314,47 @@ int main(int argc, char *argv[]){
 			}
 			//run recipes for the target
 			for (int i = 1;(strcmp(lines[i],":")<=0)&&!isEmpty(lines[i]); i++) {
-				pid_t pid = fork();
-				if(pid ==0){
-					//make the ricepe into a char array with NULL ending
-					char *** args = malloc(sizeof(char***));
-					int numargs = makeargv(lines[i],"\t \n", args);
-					char *arr[numargs+1];
-					for (int i = 0; i < numargs; i++) {
-						arr[i] = args[0][i];
+				//check if this line has multiple recipes
+				if(hasComma(lines[i])){
+					//separate each recipes
+					char *** recipeTokens = malloc(sizeof(char***));
+					int numRecipe = makeargv(lines[i],"\t,\n", recipeTokens);
+					//iterate each recipes in the same line
+					for (int j = 0; j < numRecipe; j++) {
+						pid_t pid = fork();
+						if(pid==0){
+							//remove space
+							char *** args = malloc(sizeof(char***));
+							int numargs = makeargv(recipeTokens[0][j],"\t \n", args);
+							//put it into a char array
+							char *arr[numargs+1];
+							for (int k = 0; k < numargs; k++) {
+								arr[k] = args[0][k];
+							}
+							// add NULL to end of array
+							arr[numargs] = NULL;
+							//run this recipe
+							execvp(arr[0],arr);
+						}else{
+							wait(NULL);
+						}
 					}
-					arr[numargs] = NULL;
-					//run the recipe
-					execvp(arr[0],arr);
 				}else{
-					wait(NULL);
+					pid_t pid = fork();
+					if(pid ==0){
+						//make the recipe into a char array with NULL ending
+						char *** args = malloc(sizeof(char***));
+						int numargs = makeargv(lines[i],"\t \n", args);
+						char *arr[numargs+1];
+						for (int j = 0; j < numargs; j++) {
+							arr[j] = args[0][j];
+						}
+						arr[numargs] = NULL;
+						//run the recipe
+						execvp(arr[0],arr);
+					}else{
+						wait(NULL);
+					}
 				}
 			}
 		}
@@ -292,32 +373,35 @@ int main(int argc, char *argv[]){
 					int i,count = 0;
 					for(i = 1;strcmp(lines[i],"");i++){
 						if(!isEmpty(lines[i])){count++;} //count nonempty line
-						if (strcmp(lines[i],":")){break;}//stop when the homework
+						if (strstr(lines[i],":")!=NULL){break;}//stop when it is dependency
 					}
 					int linNo[count];//record which is not empty slot
 					int linNoCount =0;//as index for linNo
-					//record all ricepes' line number
-					for (int j = 0; j < i; j++) {
-						if(!isEmpty(lines[i])){
-							linNo[linNoCount++] = i;
+					//record all recipes' line number
+					for (int j = 1; j < i; j++) {
+						if(!isEmpty(lines[j])){
+							linNo[linNoCount++] = j;
 						}
 					}
 					//create an empty string to put all lines need to print
 					int l = 0;
 					for(int i = 0;i<count;i++){
 						l += strlen(lines[linNo[i]]);
+
 					}
 					char* recipeLine = malloc(l+1);
-					//concrete recipes to one string
-					strcpy(recipeLine,lines[linNo[count-1]]);
-					for(int i = count-2;i>=0;i--){
-						strcat(recipeLine,lines[linNo[i]]);
+					char *** tokenRecipe1= malloc(sizeof(char***));
+					makeargv(lines[linNo[0]], "\t", tokenRecipe1);
+					strcpy(recipeLine,lines[linNo[0]]);
+					//add rest line to the string
+					for(int k = 1;k<linNoCount;k++){
+							strcat(recipeLine,lines[linNo[k]]);
 					}
 					//find tokens for recipes
 					char *** tokensR= malloc(sizeof(char***));
-					makeargv(recipeLine, "\t\n", tokensR);
+					int numtokensR = makeargv(recipeLine, "\t\n,", tokensR);
 					//print out recipes
-					for (int j = 0; j < linNoCount; j++) {
+					for (int j = 0; j < numtokensR; j++) {
 						printf("%s\n",tokensR[0][j]);
 					}
 				}else{
@@ -351,16 +435,20 @@ int main(int argc, char *argv[]){
 						for (int j = depIndex-1; j >=0; j--) {
 							for (int k = 1;(strcmp(lines[depNo[j]+k],":")<=0)&&!isEmpty(lines[depNo[j]+k]); k++) {
 								char *** tokensRR= malloc(sizeof(char***));
-								makeargv(lines[depNo[j]+k], "\t \n", tokensRR);
-								printf("%s\n",tokensRR[0][0]);
+								int numToken = makeargv(lines[depNo[j]+k], "\t,\n", tokensRR);
+								for (int x = 0; x < numToken; x++) {
+									printf("%s\n",tokensRR[0][x]);
+								}
 							}
 						}
 					}
 					//print recipes for the target
 					for (int i = 1;(strcmp(lines[i],":")<=0)&&!isEmpty(lines[i]); i++) {
 						char *** tokensRR= malloc(sizeof(char***));
-						makeargv(lines[i], "\t\n", tokensRR);
-						printf("%s\n",tokensRR[0][0]);
+						int numToken = makeargv(lines[i], "\t,\n", tokensRR);
+						for (int x = 0; x < numToken; x++) {
+							printf("%s\n",tokensRR[0][x]);
+						}
 					}
 				}
 			}
@@ -370,6 +458,8 @@ int main(int argc, char *argv[]){
 			int depNo[MAX_DEP];//record all the dependency
 			int depIndex = 0;//index of depNo
 			//error handling if target doesn't exit
+			char *** tokens = malloc(sizeof(char***));
+			int numtokens = makeargv(lines[0],": \n", tokens);
 			char *startToken= argv[2];
 			if(findLine(startToken)==-1){
 				fprintf(stderr,"%s doesn't exit\n", argv[2]);
@@ -377,65 +467,116 @@ int main(int argc, char *argv[]){
 			}
 			//store whether the argv[2] is the target or not
 			int boo = 0;
-			//if the dep has recipe, find the line
-			do{
-				if(findLine(startToken)==0){
-					boo =1;
-				}
-				//record the line number
-				depNo[depIndex] = findLine(startToken);
-				//find the next dep for this target
-				char *** tokensR= malloc(sizeof(char***));
-				int n = makeargv(lines[depNo[depIndex]], ": \n", tokensR);
-				int b = 1;//use to record which one of the dep is valid one
-				//if there are multiple deps next to it, find the one valid one
-				if(n>2){
-					for (int z = 1; z < n; z++) {
-						if(findLine(tokensR[0][z])!=0){
-							b = z;
+			//if this dep is target
+			if(findLine(startToken)==0){
+				boo =1;
+				for (int i = numtokens-1; i>=0 ; i--) {
+					char *startToken= tokens[0][i];
+					//if the dep has recipe, find the line
+					while(findLine(startToken)!=0){
+						//record the line number
+						depNo[depIndex] = findLine(startToken);
+						//find the dep(s) for this target
+						char *** tokensR= malloc(sizeof(char***));
+						int n = makeargv(lines[depNo[depIndex]], ": \n", tokensR);
+						int b = 1;
+						//if there are multiple deps next to it,choose the one valid
+						if(n>2){
+							for (int z = 1; z < n; z++) {
+								if(findLine(tokensR[0][z])!=0){
+									b = z;
+								}
+							}
 						}
+						//update to the new dep needed to find
+						startToken = tokensR[0][b];
+						depIndex++;
 					}
 				}
-					//update to the new dep needed to find
-				startToken = tokensR[0][b];
-				depIndex++;
-			}while(findLine(startToken)!=0);
-				//run all the ricepe for dep
+			}else{
+				//if the dep is not target and has recipe, find the line
+				do{
+					//record the line number
+					depNo[depIndex] = findLine(startToken);
+					//find the next dep for this target
+					char *** tokensR= malloc(sizeof(char***));
+					int n = makeargv(lines[depNo[depIndex]], ": \n", tokensR);
+					int b = 1;//use to record which one of the dep is valid one
+					//if there are multiple deps next to it, find the one valid one
+					if(n>2){
+						for (int z = 1; z < n; z++) {
+							if(findLine(tokensR[0][z])!=0){
+								b = z;
+							}
+						}
+					}
+						//update to the new dep needed to find
+					startToken = tokensR[0][b];
+					depIndex++;
+				}while(findLine(startToken)!=0);
+			}
+				//run all the recipe for dep
 			for (int j = depIndex-1; j >=0; j--) {
 				//iterate through all the dependencies in the record
 				for (int k = 1;(strcmp(lines[depNo[j]+k],":")<=0)&&!isEmpty(lines[depNo[j]+k]); k++) {
-					//iterate through all the ricepes under this dependency
-					pid_t pid = fork();
-					if(pid ==0){
-						//make the string into a char array ending with NULL
-						char *** args = malloc(sizeof(char***));
-						int numargs = makeargv(lines[depNo[j]+k],"\t \n", args);
-						char *arr[numargs+1];
-						for (int i = 0; i < numargs; i++) {
-							arr[i] = args[0][i];
+					//iterate through all the recipes under this dependency
+					if (hasComma(lines[depNo[j]+k])) {
+						//separate each recipes
+						char *** recipeTokens = malloc(sizeof(char***));
+						int numRecipe = makeargv(lines[depNo[j]+k],"\t,\n", recipeTokens);
+						//iterate each recipes in the same line
+						for (int x = 0; x < numRecipe; x++) {
+							pid_t pid = fork();
+							if(pid==0){
+								//remove space
+								char *** args = malloc(sizeof(char***));
+								int numargs = makeargv(recipeTokens[0][x],"\t \n", args);
+								//put it into a char array
+								char *arr[numargs+1];
+								for (int y = 0; y < numargs; y++) {
+									arr[y] = args[0][y];
+								}
+								// add NULL to end of array
+								arr[numargs] = NULL;
+								//run this recipe
+								printf("%s\n",recipeTokens[0][x] );
+								execvp(arr[0],arr);
+							}else{
+								wait(NULL);
+							}
 						}
-						arr[numargs] = NULL;
-						//run the argument
-						execvp(arr[0],arr);
-					}else{
-						wait(NULL);
+					}else{pid_t pid = fork();
+						if(pid ==0){
+							//make the string into a char array ending with NULL
+							char *** args = malloc(sizeof(char***));
+							int numargs = makeargv(lines[depNo[j]+k],"\t \n", args);
+							char *arr[numargs+1];
+							for (int i = 0; i < numargs; i++) {
+								arr[i] = args[0][i];
+							}
+							arr[numargs] = NULL;
+							//run the argument
+							execvp(arr[0],arr);
+						}else{
+							wait(NULL);
+						}
 					}
 				}
 			}
 			//run recipes for the target if the argv[2] is the target
 			for (int i = 1;(strcmp(lines[i],":")<=0)&&!isEmpty(lines[i])&&boo==1; i++) {
-				//iterate through all the ricepes under the target
+				//iterate through all the recipes under the target
 				pid_t pid = fork();
 				if(pid ==0){
-					//make the ricepe into a char array ending with NULL
+					//make the recipe into a char array ending with NULL
 					char *** args = malloc(sizeof(char***));
 					int numargs = makeargv(lines[i],"\t \n", args);
 					char *arr[numargs+1];
-					for (int i = 0; i < numargs; i++) {
-						arr[i] = args[0][i];
+					for (int j = 0; j < numargs; j++) {
+						arr[j] = args[0][j];
 					}
 					arr[numargs] = NULL;
-					//run the ricepe
+					//run the recipe;
 					execvp(arr[0],arr);
 				}else{
 					wait(NULL);
@@ -450,35 +591,42 @@ int main(int argc, char *argv[]){
 				char * dels = ": \n";
 				char *** tokens = malloc(sizeof(char***));
 		    int numtokens = makeargv(lines[0], dels, tokens);
-				int count;//count how many nonempty lines under the target
-				for(count = 1;strcmp(lines[count],"");count++){
-					if(strcmp(lines[count],":")>0||isEmpty(lines[count])){
+				int count=0;//count how many recipes under the target
+				int linNo =1;
+				for(int i = 1;strcmp(lines[i],"");i++){
+					linNo++;
+					if(strstr(lines[i],":")!=NULL||isEmpty(lines[i])){
 						break;
 					}
+					if(hasComma(lines[i])){
+						char *** recipesToken = malloc(sizeof(char***));
+				    int numRecipe = makeargv(lines[0],",", recipesToken);
+						count+= numRecipe;
+					}else{count++;}
 				}
 				//print target info
-				printf("target '%s' has %d dependencie(s) and %d recipe(s):\n",tokens[0][0],numtokens-1,count-1);
+				printf("target '%s' has %d dependencie(s) and %d recipe(s):\n",tokens[0][0],numtokens-1,count);
 				//print out dependencies
 				for (int i = 1; i < numtokens; i++) {
 					printf("Dependency %d is %s\n",i-1,tokens[0][i]);
 				}
 				//concrete recipes to one string
 				int l = 0;//store the string size
-				for(int i = 1;i<count;i++){
+				for(int i = 1;i<linNo;i++){
 					l += strlen(lines[i]);
 				}
 				char* recipeLine = malloc(l+1);
 				//copy recipes to this new string
 				strcpy(recipeLine,lines[1]);
-				for(int i = 2;i<count;i++){
+				for(int i = 2;i<linNo;i++){
 					strcat(recipeLine,lines[i]);
 				}
 				//find tokens for recipes
 				char *** tokensR= malloc(sizeof(char***));
-				makeargv(recipeLine, "\t\n", tokensR);
+				makeargv(recipeLine, "\t,\n", tokensR);
 				//print out recipes
-				for (int j = 1; j < count; j++) {
-					printf("Recipe %d is %s\n",j-1, tokensR[0][j-1]);
+				for (int j = 0; j < count; j++) {
+					printf("Recipe %d is %s\n",j, tokensR[0][j]);
 				}
 			}
 		}
