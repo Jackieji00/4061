@@ -1,8 +1,7 @@
-test machine: CSELAB_vole_05
-date: 10/09/2019
-name: Jackie Ji, Dian Zhang
-x500: ji000011, zhan5999
-
+test machine: CSELAB_vole_05<br />
+date: 10/09/2019<br />
+name: Jackie Ji, Dian Zhang<br />
+x500: ji000011, zhan5999<br />
 
 ## Purpose of our program
 Our task is to generate an executable ’mymake’ from the main c program. 'mymake' should parse the makefile , build a dependency graph for the provided target and execute the recipes for these targets.
