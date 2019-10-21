@@ -20,25 +20,24 @@ int count = 0;
 int readFiles(char * folderName){
   DIR *dr = opendir(folderName);
   struct dirent * de;
-
+  char subdir[1000];
   if (dr == NULL){
 		printf("Could not open directory %s\n",folderName);
 		return -1;
 	}
 for (int i = 0;(de = readdir(dr)) != NULL; i++){
-
+    printf("%dfolderNamed:%s\nd_name:%s\n",strstr(de->d_name,".")==NULL,folderName,de->d_name);
     if (de->d_type==DT_DIR&&strstr(de->d_name,".")==NULL) {
-      //printf("folderNamed:%s\n",folderName );
-      char subdir[1000];
 			subdir[0] ='\0';
+      //sprintf(subdir,"%s/%s",folderName,de->d_name);
 			strcpy(subdir,folderName);
 			strcat(subdir,"/");
 			strcat(subdir,de->d_name);
-      //printf("%s\n",subdir);
+      printf("subdir%s\n",subdir);
 		  readFiles(subdir);
-    }else if(de->d_type==DT_REG){
-      // printf("folderNamede:%s\n",folderName );
-      strncpy(lines[count], folderName, strlen(folderName));
+    }else if(de->d_type!=DT_DIR){
+      printf("fileNamede:%s\n",folderName );
+      strcpy(lines[count], folderName);
       strcat(lines[count],"/");
       strcat(lines[count],de->d_name);
       strcat(lines[count],"\n");
@@ -83,7 +82,7 @@ int partitionPharse(char * folderName,int numMapper){
       }else{
         printf("fail to make file %s\n",txtName);
       }
-
+      free(txtName);
     }
   }
 
@@ -91,7 +90,8 @@ int partitionPharse(char * folderName,int numMapper){
 }
 int main(void) {
   /* code */
-  partitionPharse("obj",3);
+
+  partitionPharse("../Testcases/TestCase2",3);
 
   return 0;
 }
