@@ -25,17 +25,17 @@ int readFiles(char * folderName){
 		return -1;
 	}
 for (int i = 0;(de = readdir(dr)) != NULL; i++){
-    printf("%dfolderNamed:%s\nd_name:%s\n",strstr(de->d_name,".")==NULL,folderName,de->d_name);
+    //printf("%dfolderNamed:%s\nd_name:%s\n",strstr(de->d_name,".")==NULL,folderName,de->d_name);
     if (de->d_type==DT_DIR&&strstr(de->d_name,".")==NULL) {
 			subdir[0] ='\0';
       //sprintf(subdir,"%s/%s",folderName,de->d_name);
 			strcpy(subdir,folderName);
 			strcat(subdir,"/");
 			strcat(subdir,de->d_name);
-      printf("subdir%s\n",subdir);
+      //printf("subdir%s\n",subdir);
 		  readFiles(subdir);
     }else if(de->d_type!=DT_DIR&&strstr(de->d_name,"txt")!=NULL){
-      printf("fileNamede:%s\n",folderName );
+      //printf("fileNamede:%s\n",folderName );
       strcpy(lines[count], folderName);
       strcat(lines[count],"/");
       strcat(lines[count],de->d_name);
