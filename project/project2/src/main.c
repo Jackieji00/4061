@@ -20,7 +20,15 @@ int main(int argc, char *argv[]){
 
 	//just make a function call to code in phase4.c
 	//master process reports the final output
+	if(argc<3){
+		fprintf(stderr," Need more argument\n");
+		return 1;
+	}else if(argc==3){
 
+	}else{
+		fprintf(stderr,"Too much arguements\n");
+		return 2;
+	}
 	return 0;
 
 }
