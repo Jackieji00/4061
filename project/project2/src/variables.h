@@ -6,4 +6,5 @@
 #define SIZE_TXTPATH 26
 
 char lines[MAX_LINES][LINE_SIZE];
+int count;
 #endif

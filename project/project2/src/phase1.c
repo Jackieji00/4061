@@ -16,7 +16,6 @@
 
 */
 
-int count = 0;
 int readFiles(char * folderName){
   DIR *dr = opendir(folderName);
   struct dirent * de;
@@ -35,7 +34,7 @@ for (int i = 0;(de = readdir(dr)) != NULL; i++){
 			strcat(subdir,de->d_name);
       printf("subdir%s\n",subdir);
 		  readFiles(subdir);
-    }else if(de->d_type!=DT_DIR&&strstr(de->d_name,"txt")==NULL){
+    }else if(de->d_type!=DT_DIR&&strstr(de->d_name,"txt")!=NULL){
       printf("fileNamede:%s\n",folderName );
       strcpy(lines[count], folderName);
       strcat(lines[count],"/");
