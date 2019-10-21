@@ -49,25 +49,30 @@ for (int i = 0;(de = readdir(dr)) != NULL; i++){
 
 int partitionPharse(char * folderName,int numMapper){
   int fileFail = readFiles(folderName);
-  int check = mkdir("MapperInput",0777);
+  //printf("%s\n","h" );
+  char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));;
+  //printf("%s\n",dicName );
+  sprintf(dicName,"%s/MapperInput",folderName);
+  //printf("%s\n",dicName );
+  int check = mkdir(dicName,0777);
   char * txtName;
   FILE * fp;
   int numFileInM = count/numMapper;
   int remainderFile = count%numMapper;
   int countRemainder = remainderFile;
-  printf("remainderFile:%d\n",remainderFile );
+  //printf("remainderFile:%d\n",remainderFile );
   if (check){
     printf("fail to make MapperInput directory\n");
 		return -1;
   }else{
     for(int i = 0;i<numMapper;i++){
       txtName = malloc(SIZE_TXTPATH*sizeof(char));
-      sprintf(txtName,"MapperInput/Mapper_%d.txt",i);
+      sprintf(txtName,"%s/Mapper_%d.txt",dicName,i);
       if((fp = fopen(txtName,"a"))!= NULL){
-        printf("i:%d\n", i);
+      //  printf("i:%d\n", i);
         if(countRemainder!=0) {
           for(int j = (numFileInM+1)*i;j<(numFileInM+1)*(i+1);j++){
-            printf("%s\n",lines[j]);
+          //  printf("%s\n",lines[j]);
             fputs(lines[j],fp);
           }
           countRemainder--;
@@ -83,6 +88,7 @@ int partitionPharse(char * folderName,int numMapper){
       }
       free(txtName);
     }
+    free(dicName);
   }
 
   return 0;
