@@ -7,4 +7,5 @@
 
 char lines[MAX_LINES][LINE_SIZE];
 int count ;
+int fd[]
 #endif
