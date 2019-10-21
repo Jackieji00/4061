@@ -539,7 +539,6 @@ int main(int argc, char *argv[]){
 								// add NULL to end of array
 								arr[numargs] = NULL;
 								//run this recipe
-								printf("%s\n",recipeTokens[0][x] );
 								execvp(arr[0],arr);
 							}else{
 								wait(NULL);
@@ -587,47 +586,60 @@ int main(int argc, char *argv[]){
 		//$./mymake -p Makefile
 			if (!process_file(argv[2])) {
 				//TODO
+				int linRecord = 0;
+				int totalline;
+				for(totalline = 0;strcmp(lines[totalline],"");totalline++){
+				}
 				// for dependency
-				char * dels = ": \n";
-				char *** tokens = malloc(sizeof(char***));
-		    int numtokens = makeargv(lines[0], dels, tokens);
-				int count=0;//count how many recipes under the target
-				int linNo =1;
-				for(int i = 1;strcmp(lines[i],"");i++){
-					linNo++;
-					if(strstr(lines[i],":")!=NULL||isEmpty(lines[i])){
-						break;
+				do{
+					char * dels = ": \n";
+					char *** tokens = malloc(sizeof(char***));
+			    int numtokens = makeargv(lines[linRecord], dels, tokens);
+					int count=0;//count how many recipes under the target
+					int linNo =1;
+					for(int i = 1;strcmp(lines[linRecord+i],"");i++){
+						linNo++;
+						if(strstr(lines[linRecord+i],":")!=NULL||isEmpty(lines[i])){
+							break;
+						}
+						if(hasComma(lines[linRecord+i])){
+							char *** recipesToken = malloc(sizeof(char***));
+					    int numRecipe = makeargv(lines[linRecord],",", recipesToken);
+							count+= numRecipe;
+						}else{count++;}
 					}
-					if(hasComma(lines[i])){
-						char *** recipesToken = malloc(sizeof(char***));
-				    int numRecipe = makeargv(lines[0],",", recipesToken);
-						count+= numRecipe;
-					}else{count++;}
-				}
-				//print target info
-				printf("target '%s' has %d dependencie(s) and %d recipe(s):\n",tokens[0][0],numtokens-1,count);
-				//print out dependencies
-				for (int i = 1; i < numtokens; i++) {
-					printf("Dependency %d is %s\n",i-1,tokens[0][i]);
-				}
-				//concrete recipes to one string
-				int l = 0;//store the string size
-				for(int i = 1;i<linNo;i++){
-					l += strlen(lines[i]);
-				}
-				char* recipeLine = malloc(l+1);
-				//copy recipes to this new string
-				strcpy(recipeLine,lines[1]);
-				for(int i = 2;i<linNo;i++){
-					strcat(recipeLine,lines[i]);
-				}
-				//find tokens for recipes
-				char *** tokensR= malloc(sizeof(char***));
-				makeargv(recipeLine, "\t,\n", tokensR);
-				//print out recipes
-				for (int j = 0; j < count; j++) {
-					printf("Recipe %d is %s\n",j, tokensR[0][j]);
-				}
+					//print target info
+					printf("target '%s' has %d dependencie(s) and %d recipe(s):\n",tokens[0][0],numtokens-1,count);
+					//print out dependencies
+					for (int i = 1; i < numtokens; i++) {
+						printf("Dependency %d is %s\n",i-1,tokens[0][i]);
+					}
+					//concrete recipes to one string
+					int l = 0;//store the string size
+					for(int i = 1;i<linNo;i++){
+						l += strlen(lines[i]);
+					}
+					char* recipeLine = malloc(l+1);
+					//copy recipes to this new string
+					strcpy(recipeLine,lines[linRecord+1]);
+					for(int i = 2;i<linNo;i++){
+						strcat(recipeLine,lines[linRecord+i]);
+					}
+					//find tokens for recipes
+					char *** tokensR= malloc(sizeof(char***));
+					makeargv(recipeLine, "\t,\n", tokensR);
+					//print out recipes
+					for (int j = 0; j < count; j++) {
+						printf("Recipe %d is %s\n",j, tokensR[0][j]);
+					}
+					int k;
+					for(k =linRecord+1;k<totalline;k++){
+						if(strstr(lines[k],":")!=NULL){
+							break;
+						}
+					}
+					linRecord=k;
+				}while(linRecord!=totalline);
 			}
 		}
 	}
