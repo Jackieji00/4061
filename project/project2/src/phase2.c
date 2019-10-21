@@ -19,9 +19,9 @@
 void wordcount(char * txtName,int * alphaCount){
   FILE * fpTxt;
   int c;
-  if(fpTxt = fopen(txtName,"r")!=NULL){
-    while(!feof(fp)){
-      c=fgetc(fp);
+  if((fpTxt = fopen(txtName,"r"))!=NULL){
+    while(!feof(fpTxt)){
+      c=fgetc(fpTxt);
       if(isalpha(c)!=0){
         if(c<97){
           alphaCount[c-65]++;
@@ -40,24 +40,29 @@ int mapperPhase(char * folderName,int * fd,int numOfMapper){
   char c;
   int * alphaCount;
   alphaCount = malloc(ALPHA_NUM_SIZE*sizeof(int));
-  if(fp = fopen(folderName,"r")!=NULL){
+  if((fp = fopen(folderName,"r"))!=NULL){
     while(!feof(fp)){
       txtName = malloc(SIZE_TXTPATH*sizeof(char));
       c=fgetc(fp);
-      strcpy(txtName,c);
+      strncpy(txtName,&c,1);
       c=fgetc(fp);
       while(c!='\n'){
-        strcat(txtName,c);
+        strncat(txtName,&c,1);
         c=fgetc(fp);
       }
-      wordcount(txtName,&alphaCount);
+      wordcount(txtName,alphaCount);
       free(txtName);
-    }
+   }
   }else{
     printf("fail to read file %s\n",folderName);
   }
   fclose(fp);
   close(fd[0+2*numOfMapper]);
   write(fd[1+2*numOfMapper],alphaCount, sizeof(alphaCount)+1);
+  return 0;
+}
+int main(int argc, char const *argv[]) {
+  /* code */
+  
   return 0;
 }
