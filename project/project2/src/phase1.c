@@ -1,12 +1,5 @@
-// #include "phase1.h"
-#include <dirent.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <string.h>
-#include "variables.h"
+#include "phase1.h"
+
 // You are free to use your own logic. The following points are just for getting started
 /* 	Data Partitioning Phase - Only Master process involved
 	1) 	Create 'MapperInput' folder

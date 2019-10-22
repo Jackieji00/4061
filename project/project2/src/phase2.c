@@ -1,19 +1,10 @@
-//#include "phase2.h"
+#include "phase2.h"
 // You are free to use your own logic. The following points are just for getting started
 /* 	Map Function
 	1)	Each mapper selects a Mapper_i.txt to work with
 	2)	Creates a list of letter, wordcount from the text files found in the Mapper_i.txt
 	3)	Send the list to Reducer via pipes with proper closing of ends
 */
-#include <dirent.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <string.h>
-#include <ctype.h>
-#include "variables.h"
 
 
 void wordcount(char * txtName,int * alphaCount){
@@ -34,7 +25,7 @@ void wordcount(char * txtName,int * alphaCount){
     printf("fail to read file %s\n",txtName);
   }
 }
-int mapperPhase(char * folderName,int * fd,int numOfMapper){
+int mapperPhase(char * folderName,int ** fd,int numOfMapper){
   FILE * fp;
   char * txtName;
   char c;
@@ -57,12 +48,11 @@ int mapperPhase(char * folderName,int * fd,int numOfMapper){
     printf("fail to read file %s\n",folderName);
   }
   fclose(fp);
-  close(fd[0+2*numOfMapper]);
-  write(fd[1+2*numOfMapper],alphaCount, sizeof(alphaCount)+1);
+  close(fd[numOfMapper][0]);
+  write(fd[numOfMapper][1],alphaCount, sizeof(alphaCount)+1);
   return 0;
 }
 int main(int argc, char const *argv[]) {
   /* code */
-  
   return 0;
 }
