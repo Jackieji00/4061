@@ -5,3 +5,6 @@
 	2) 	Print the contents to standard output which is redirected to "FinalResult.txt"
 			i.e., on using printf, the statement should be written to "FinalResult.txt"
 */
+
+fd=open("ReducerResult.txt", "w+");
+newfd=dup2(fd, STDIN_FILENO);
