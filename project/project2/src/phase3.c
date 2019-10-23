@@ -1,12 +1,6 @@
-//#include "phase3.h"
-#include <dirent.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <string.h>
-#include "variables.h"
+#include "phase3.h"
+
+
 // You are free to use your own logic. The following points are just for getting started
 /* Reduce Function
 	1)	The reducer receives the list from 'm' mappers via pipes
@@ -20,12 +14,15 @@ typedef struct value{
 }val;
 
 
-int * store;
-val * fia;
-int * buff = malloc(ALPHA_NUM_SIZE*sizeof(int));
-store = malloc(ALPHA_NUM_SIZE*sizeof(int));
-fia = malloc(ALPHA_NUM_SIZE*sizeof(val));
-int *reduceResult(int *fd, int numOfMapper) {
+
+int reduceResult(int *fd, int numOfMapper) {
+    int * buff;
+    int * store;
+    val * fia;
+    buff = malloc(ALPHA_NUM_SIZE*sizeof(int));
+    store = malloc(ALPHA_NUM_SIZE*sizeof(int));
+    fia = malloc(ALPHA_NUM_SIZE*sizeof(val));
+    
     for(int i=0; i< numOfMapper;i++){
         read(fd[0+2*i],buff,sizeof(buff));
         //read(fd[0+2*(i+1)],store,sizeof(store));
@@ -33,7 +30,7 @@ int *reduceResult(int *fd, int numOfMapper) {
         store[j]=buff[j]+store[j];
     }
         close(fd[0+2*i]);}
-}
+
 
 for(int j =0;j < 26; j++){
     fia[j].c= 65 + j;
@@ -48,6 +45,7 @@ if(fp == NULL){
     exit(EXIT_FAILURE);
     }
 else{
-    fwrite(&fia,sizeof(val*),sizeof(fia),fp)//write the results
+    fwrite(&fia,sizeof(val*),sizeof(fia),fp);//write the results
 }
-
+    return 0;
+}
