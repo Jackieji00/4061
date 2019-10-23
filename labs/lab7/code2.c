@@ -11,7 +11,7 @@ struct node{
 struct node* create_node(int i){
   struct node temp;
   *(temp.x)=i;
-  return &temp;
+  return temp;
 
 }
 
@@ -22,7 +22,7 @@ int main() {
     struct node* temp;
 
     first=create_node(i);
-    
+
 
     prev=first;
     while(i<10){
@@ -31,7 +31,8 @@ int main() {
       prev->next=temp;
       prev=temp;
     }
-
+    free(first);
+    free(temp);
 
     return 0;
 }
