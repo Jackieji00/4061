@@ -14,38 +14,38 @@ typedef struct value{
 }val;
 
 
+int reduceResult(int **fd, int numOfMapper) {
+  int * buff;
+  int * store;
+  val * fia;
+  buff = malloc(ALPHA_NUM_SIZE*sizeof(int));
+  store = malloc(ALPHA_NUM_SIZE*sizeof(int));
+  fia = malloc(ALPHA_NUM_SIZE*sizeof(val));
 
-int reduceResult(int *fd, int numOfMapper) {
-    int * buff;
-    int * store;
-    val * fia;
-    buff = malloc(ALPHA_NUM_SIZE*sizeof(int));
-    store = malloc(ALPHA_NUM_SIZE*sizeof(int));
-    fia = malloc(ALPHA_NUM_SIZE*sizeof(val));
-    
-    for(int i=0; i< numOfMapper;i++){
-        read(fd[0+2*i],buff,sizeof(buff));
-        //read(fd[0+2*(i+1)],store,sizeof(store));
+  for(int i=0; i< numOfMapper;i++){
+    close(fd[i][1]);
+    read(fd[i][0],buff,sizeof(buff));
+    //read(fd[0+2*(i+1)],store,sizeof(store));
     for(int j =0;j < 26; j++){
         store[j]=buff[j]+store[j];
     }
-        close(fd[0+2*i]);}
+    close(fd[i][0]);
+  }
 
 
-for(int j =0;j < 26; j++){
+  for(int j =0;j < 26; j++){
     fia[j].c= 65 + j;
     fia[j].num = store[j];
-}
+  }
 
-FILE * fp = fopen("ReducerResult.txt", "w+");
-//filename = malloc(SIZE_TXTPATH*sizeof(char));
+  FILE * fp = fopen("ReducerResult.txt", "w+");
+  //filename = malloc(SIZE_TXTPATH*sizeof(char));
 
-if(fp == NULL){
+  if(fp == NULL){
     printf("Unable to create file.\n");
     exit(EXIT_FAILURE);
-    }
-else{
-    fwrite(&fia,sizeof(val*),sizeof(fia),fp);//write the results
-}
-    return 0;
+  }else{
+  fwrite(&fia,sizeof(val*),sizeof(fia),fp);//write the results
+  }
+  return 0;
 }
