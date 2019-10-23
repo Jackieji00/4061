@@ -14,6 +14,7 @@ int main() {
     for(i=0; i<26; i++){
       destination[i]=alphabet[i];
     }
-
+    free(alphabet);
+    free(destination);
     return 0;
 }
