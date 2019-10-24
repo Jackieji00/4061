@@ -47,6 +47,7 @@ int main(int argc, char *argv[]){
 	//phase2 - Map Function
 	//char * callMapper = "phase2";
 	char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));;
+	int * buff = malloc(ALPHA_NUM_SIZE*sizeof(int));
 	for (int i = 0; i < numMapper; i++) {
 		if(pipe(fd[i])==-1){
 			fprintf(stderr,"Fail to pipe\n");
@@ -59,14 +60,21 @@ int main(int argc, char *argv[]){
 			//printf("%s\n","here" );
 			sprintf(dicName,"%s/MapperInput/Mapper_%d.txt",argv[1],i);
 			mapperPhase(dicName,fd,numMapper);
+
 			free(dicName);
-			break;
 		}else{
+			//reduceResult(fd, numMapper);
+			close(fd[i][1]);
+			read(fd[i][0],buff,sizeof(buff));
+	    for (int i = 0; i < 26; i++) {
+	      printf("p%d:%d\n",i,buff[i] );
+	    }
+			close(fd[i][0]);
 		}
 	}
 	//just make a function call to code in phase3.c
 	//phase3 - Reduce Function
-	reduceResult(fd, numMapper);
+	//
 	//phase4
 	//wait for all processes to reach this point
 

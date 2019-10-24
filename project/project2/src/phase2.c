@@ -55,13 +55,12 @@ void mapperPhase(char * folderName,int (*fd)[2],int numOfMapper){
   }else{
     printf("fail to read file %s\n",folderName);
   }
-  // for (int i = 0; i < 26; i++) {
-  //   printf("%d:%d\n",i,alphaCount[i] );
-  // }
-
   fclose(fp);
   close(fd[numOfMapper][0]);
   write(fd[numOfMapper][1],alphaCount, sizeof(alphaCount)+1);
+  for (int i = 0; i < 26; i++) {
+    printf("%d:%d\n",i,alphaCount[i] );
+  }
   close(fd[numOfMapper][1]);
   printf("%s\n","here" );
 }
