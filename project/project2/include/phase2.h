@@ -13,6 +13,6 @@
 #include <ctype.h>
 #include "variables.h"
 
-void mapperPhase(char * folderName,int ** fd,int numOfMapper);
+void mapperPhase(char * folderName,int (*fd)[2],int numOfMapper);
 
 #endif

@@ -9,7 +9,7 @@
 	4) 	Write the list to "ReducerResult.txt" in the current folder
 */
 
-void reduceResult(int **fd, int numOfMapper) {
+void reduceResult(int (*fd)[2], int numOfMapper) {
   int * buff;
   int * store;
   val * fia;

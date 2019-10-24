@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
 		}
 		if((dr=opendir(argv[1]))==NULL){
 			fprintf(stderr, "%s is invalid\n",argv[1] );
-			return 2
+			return 2;
 		}
 	}else{
 		fprintf(stderr,"Too much arguements\n");
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
 	pid_t pids[numMapper];
 	//just make a function call to code in phase2.c
 	//phase2 - Map Function
-	char * callMapper = "phase2"
+	//char * callMapper = "phase2";
 	for (int i = 0; i < numMapper; i++) {
 		if(pipe(fd[i])==-1){
 			fprintf(stderr,"Fail to pipe\n");
