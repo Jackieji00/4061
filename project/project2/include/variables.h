@@ -13,4 +13,9 @@ typedef struct mapper {
     char * val;
     struct node * next;
 } mapper_t;
+
+typedef struct value{
+    char c;
+    int num;
+}val;
 #endif
