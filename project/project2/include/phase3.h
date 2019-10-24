@@ -1,5 +1,5 @@
 // Add Guard to header file
-// Function prototype for 
+// Function prototype for
 //			reduce function that will receive list from all the Mappers to create a single list
 //			the single list is then written to ReducerResult.txt
 #ifndef PHASE3_H
@@ -13,5 +13,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "variables.h"
+
+int reduceResult(int ** fd, int numOfMapper);
 
 #endif

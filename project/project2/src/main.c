@@ -57,7 +57,7 @@ int main(int argc, char *argv[]){
 	}
 	//just make a function call to code in phase3.c
 	//phase3 - Reduce Function
-
+	reduceResult(fd, numMapper);
 	//phase4
 	//wait for all processes to reach this point
 
