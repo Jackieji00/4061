@@ -13,8 +13,7 @@ typedef struct value{
     int num;
 }val;
 
-
-int reduceResult(int **fd, int numOfMapper) {
+void reduceResult(int **fd, int numOfMapper) {
   int * buff;
   int * store;
   val * fia;
@@ -47,5 +46,4 @@ int reduceResult(int **fd, int numOfMapper) {
   }else{
   fwrite(&fia,sizeof(val*),sizeof(fia),fp);//write the results
   }
-  return 0;
 }

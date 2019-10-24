@@ -17,7 +17,7 @@ int readFiles(char * folderName){
 		printf("Could not open directory %s\n",folderName);
 		return -1;
 	}
-for (int i = 0;(de = readdir(dr)) != NULL; i++){
+  for (int i = 0;(de = readdir(dr)) != NULL; i++){
     //printf("%dfolderNamed:%s\nd_name:%s\n",strstr(de->d_name,".")==NULL,folderName,de->d_name);
     if (de->d_type==DT_DIR&&strstr(de->d_name,".")==NULL) {
 			subdir[0] ='\0';
@@ -33,6 +33,7 @@ for (int i = 0;(de = readdir(dr)) != NULL; i++){
       strcat(lines[count],"/");
       strcat(lines[count],de->d_name);
       strcat(lines[count],"\n");
+      fileCount++;
       count++;
     }
   }
@@ -40,7 +41,7 @@ for (int i = 0;(de = readdir(dr)) != NULL; i++){
   return 0;
 }
 
-int partitionPharse(char * folderName,int numMapper){
+void partitionPharse(char * folderName,int numMapper){
   int fileFail = readFiles(folderName);
   //printf("%s\n","h" );
   char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));;
@@ -56,7 +57,6 @@ int partitionPharse(char * folderName,int numMapper){
   //printf("remainderFile:%d\n",remainderFile );
   if (check){
     printf("fail to make MapperInput directory\n");
-		return -1;
   }else{
     for(int i = 0;i<numMapper;i++){
       txtName = malloc(SIZE_TXTPATH*sizeof(char));
@@ -71,7 +71,7 @@ int partitionPharse(char * folderName,int numMapper){
           countRemainder--;
         }else{
           for(int j = remainderFile+numFileInM*i;j<(numFileInM*(i+1)+remainderFile);j++){
-            printf("%s\n",lines[j]);
+            //printf("%s\n",lines[j]);
             fputs(lines[j],fp);
           }
         }
@@ -83,13 +83,12 @@ int partitionPharse(char * folderName,int numMapper){
     }
     free(dicName);
   }
-
-  return 0;
+;
 }
-int main(void) {
-  /* code */
-
-  partitionPharse("../Testcases/TestCase2",3);
-
-  return 0;
-}
+// int main(void) {
+//   /* code */
+//
+//   partitionPharse("../Testcases/TestCase2",3);
+//
+//   return 0;
+// }

@@ -14,6 +14,6 @@
 #include <string.h>
 #include "variables.h"
 
-int reduceResult(int ** fd, int numOfMapper);
+void reduceResult(int ** fd, int numOfMapper);
 
 #endif

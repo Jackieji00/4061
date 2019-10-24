@@ -25,7 +25,7 @@ void wordcount(char * txtName,int * alphaCount){
     printf("fail to read file %s\n",txtName);
   }
 }
-int mapperPhase(char * folderName,int ** fd,int numOfMapper){
+void mapperPhase(char * folderName,int ** fd,int numOfMapper){
   FILE * fp;
   char * txtName;
   char c;
@@ -50,9 +50,5 @@ int mapperPhase(char * folderName,int ** fd,int numOfMapper){
   fclose(fp);
   close(fd[numOfMapper][0]);
   write(fd[numOfMapper][1],alphaCount, sizeof(alphaCount)+1);
-  return 0;
-}
-int main(int argc, char const *argv[]) {
-  /* code */
-  return 0;
+  close(fd[numOfMapper][1]);
 }

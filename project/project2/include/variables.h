@@ -8,6 +8,7 @@
 
 char lines[MAX_LINES][LINE_SIZE];
 int count ;
+int fileCount;
 
 typedef struct mapper {
     char * val;

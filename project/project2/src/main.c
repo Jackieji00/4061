@@ -20,7 +20,7 @@ int main(int argc, char *argv[]){
 		return 1;
 	}else if(argc==3){
 		if(!isNum(argv[2])){
-			fprintf(stderr," %s is not a numbert\n",argv[2]);
+			fprintf(stderr," %s is not a number\n",argv[2]);
 			return 2;
 		}
 		if((dr=opendir(argv[1]))==NULL){
@@ -35,6 +35,10 @@ int main(int argc, char *argv[]){
 	//phase1 - Data Partition Phase
 	int numMapper = atoi(argv[2]);
 	partitionPharse(argv[1],numMapper);
+	if(fileCount==0){
+		fprintf(stderr,"The directory is empty\n");
+		return 4;
+	}
 	//create pipes
 	int fd[numMapper][2];
 	pid_t pids[numMapper];

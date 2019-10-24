@@ -14,6 +14,6 @@
 #include <string.h>
 #include "variables.h"
 
-int partitionPharse(char * folderName,int numMapper);
+void partitionPharse(char * folderName,int numMapper);
 
 #endif

@@ -7,6 +7,7 @@
 #include "phase2.h"
 #include "phase3.h"
 #include "phase4.h"
+#include "variables.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
