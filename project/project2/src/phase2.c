@@ -30,25 +30,38 @@ void mapperPhase(char * folderName,int (*fd)[2],int numOfMapper){
   char * txtName;
   char c;
   int * alphaCount;
+  int co = 0;
   alphaCount = malloc(ALPHA_NUM_SIZE*sizeof(int));
   if((fp = fopen(folderName,"r"))!=NULL){
-    while(!feof(fp)){
-      txtName = malloc(SIZE_TXTPATH*sizeof(char));
+    txtName = malloc(SIZE_TXTPATH*sizeof(char));
+    while(c != EOF){
+    //  printf("%d:%s\n",co,txtName);
       c=fgetc(fp);
-      strncpy(txtName,&c,1);
-      c=fgetc(fp);
-      while(c!='\n'){
+      // printf("%c\n",c );
+      strncat(txtName,&c,1);
+      //printf("strncpy: %s\n",txtName);
+      while((c=fgetc(fp))!='\n'&&c!=EOF){
         strncat(txtName,&c,1);
-        c=fgetc(fp);
       }
+      if(c == EOF){
+        break;
+      }
+    //  printf("txtName:%s\n",txtName );
       wordcount(txtName,alphaCount);
-      free(txtName);
+      //memset(txtName,0,strlen(txtName));
+      txtName[0] = '\0';
    }
+   free(txtName);
   }else{
     printf("fail to read file %s\n",folderName);
   }
+  // for (int i = 0; i < 26; i++) {
+  //   printf("%d:%d\n",i,alphaCount[i] );
+  // }
+
   fclose(fp);
   close(fd[numOfMapper][0]);
   write(fd[numOfMapper][1],alphaCount, sizeof(alphaCount)+1);
   close(fd[numOfMapper][1]);
+  printf("%s\n","here" );
 }

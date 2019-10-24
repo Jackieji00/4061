@@ -41,9 +41,12 @@ int readFiles(char * folderName){
   return 0;
 }
 
-void partitionPharse(char * folderName,int numMapper){
+int partitionPharse(char * folderName,int numMapper){
   int fileFail = readFiles(folderName);
   //printf("%s\n","h" );
+  if(fileCount == 0){
+    return 0;
+  }
   char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));;
   //printf("%s\n",dicName );
   sprintf(dicName,"%s/MapperInput",folderName);
@@ -57,6 +60,7 @@ void partitionPharse(char * folderName,int numMapper){
   //printf("remainderFile:%d\n",remainderFile );
   if (check){
     printf("fail to make MapperInput directory\n");
+    return 1;
   }else{
     for(int i = 0;i<numMapper;i++){
       txtName = malloc(SIZE_TXTPATH*sizeof(char));
@@ -83,7 +87,7 @@ void partitionPharse(char * folderName,int numMapper){
     }
     free(dicName);
   }
-;
+  return 0;
 }
 // int main(void) {
 //   /* code */

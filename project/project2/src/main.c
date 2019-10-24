@@ -35,6 +35,7 @@ int main(int argc, char *argv[]){
 	//phase1 - Data Partition Phase
 	int numMapper = atoi(argv[2]);
 	partitionPharse(argv[1],numMapper);
+
 	if(fileCount==0){
 		fprintf(stderr,"The directory is empty\n");
 		return 4;
@@ -45,6 +46,7 @@ int main(int argc, char *argv[]){
 	//just make a function call to code in phase2.c
 	//phase2 - Map Function
 	//char * callMapper = "phase2";
+	char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));;
 	for (int i = 0; i < numMapper; i++) {
 		if(pipe(fd[i])==-1){
 			fprintf(stderr,"Fail to pipe\n");
@@ -54,9 +56,12 @@ int main(int argc, char *argv[]){
 			fprintf(stderr,"Fail to folk\n");
 			return 4;
 		}else if(pids[i]==0){
-			mapperPhase(argv[1],fd,numMapper);
+			//printf("%s\n","here" );
+			sprintf(dicName,"%s/MapperInput/Mapper_%d.txt",argv[1],i);
+			mapperPhase(dicName,fd,numMapper);
+			free(dicName);
+			break;
 		}else{
-			wait(NULL);
 		}
 	}
 	//just make a function call to code in phase3.c
