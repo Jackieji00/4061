@@ -8,10 +8,6 @@
 	3) 	Combine the lists to create a single list
 	4) 	Write the list to "ReducerResult.txt" in the current folder
 */
-typedef struct value{
-    char c;
-    int num;
-}val;
 
 void reduceResult(int **fd, int numOfMapper) {
   int * buff;
