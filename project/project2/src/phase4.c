@@ -1,4 +1,4 @@
-#include "phase4.h"
+ #include "phase4.h"
 // You are free to use your own logic. The following points are just for getting started
 /* Final Result
 	1)	The master process reads the "ReducerResult.txt"

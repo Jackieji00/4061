@@ -23,9 +23,9 @@ $(ODIR)/phase3.o: phase3.c $(IDIR)/phase3.h
 TST_DIR = ../Testcases
 test-mapreduce:
 	@printf "===Testing mapreduce===\n"
-	@printf "\nTestCase1: Empty directory\n"
-	./mapreduce ${TST_DIR}/TestCase1 5
-	@printf "\n"
+	# @printf "\nTestCase1: Empty directory\n"
+	# ./mapreduce ${TST_DIR}/TestCase1 5
+	# @printf "\n"
 	@printf "\nTestCase2_1: Normal Case - One mapper\n"
 	./mapreduce ${TST_DIR}/TestCase2 1
 	@printf "\n"
@@ -52,10 +52,6 @@ test-mapreduce:
 clean:
 	rm mapreduce
 	rm -f $(ODIR)/*.o *~ core $(IDIR)/*~
-	rm -rf ${TST_DIR}/TestCase2/MapperInput
-	rm -rf ${TST_DIR}/TestCase1/MapperInput
-	rm -rf ${TST_DIR}/TestCase3/MapperInput
-	rm -rf ${TST_DIR}/TestCase4/MapperInput
-	rm -rf ${TST_DIR}/TestCase5/MapperInput
+	rm -rf MapperInput
 	rm ReducerResult.txt
 	rm FinalResult.txt

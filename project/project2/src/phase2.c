@@ -13,11 +13,14 @@ void wordcount(char * txtName,int * alphaCount){
   if((fpTxt = fopen(txtName,"r"))!=NULL){
     while(!feof(fpTxt)){
       c=fgetc(fpTxt);
-      if(isalpha(c)!=0){
-        if(c<97){
-          alphaCount[c-65]++;
-        }else{
-          alphaCount[c-97]++;
+      if(c == '\n'||c=='\t'||c=='\b'){
+        c=fgetc(fpTxt);
+        if(isalpha(c)!=0){
+          if(c<97){
+            alphaCount[c-65]++;
+          }else{
+            alphaCount[c-97]++;
+          }
         }
       }
     }
@@ -57,9 +60,9 @@ void mapperPhase(char * folderName,int (*fd)[2],int numOfMapper){
   }
   fclose(fp);
   close(fd[numOfMapper][0]);
-  write(fd[numOfMapper][1],alphaCount, ALPHA_NUM_SIZE*sizeof(int));
-  // for (int i = 0; i < 1; i++) {
-  //   printf("%d:\n",i );
-  // }
+  write(fd[numOfMapper][1],alphaCount, ALPHA_NUM_SIZE*sizeof(int)+1);
+  for (int i = 0; i < 26; i++) {
+    printf("%d:%d\n",i,alphaCount[i] );
+  }
   close(fd[numOfMapper][1]);
 }

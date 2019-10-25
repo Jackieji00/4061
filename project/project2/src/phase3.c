@@ -13,7 +13,7 @@ void reduceResult(int (*fd)[2], int numOfMapper) {
   int * buff;
   int * store;
   val * fia;
-  buff = malloc(ALPHA_NUM_SIZE*sizeof(int));
+  buff = malloc(ALPHA_NUM_SIZE*sizeof(int)+1);
   store = malloc(ALPHA_NUM_SIZE*sizeof(int));
   fia = malloc(ALPHA_NUM_SIZE*sizeof(val));
 

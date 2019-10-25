@@ -47,9 +47,7 @@ int partitionPharse(char * folderName,int numMapper){
   if(fileCount == 0){
     return 0;
   }
-  char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));;
-  //printf("%s\n",dicName );
-  sprintf(dicName,"%s/MapperInput",folderName);
+  char * dicName =  "MapperInput";
   //printf("%s\n",dicName );
   int check = mkdir(dicName,0777);
   char * txtName;
@@ -85,7 +83,6 @@ int partitionPharse(char * folderName,int numMapper){
       }
       free(txtName);
     }
-    free(dicName);
   }
   return 0;
 }
