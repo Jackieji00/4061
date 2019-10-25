@@ -62,16 +62,13 @@ int partitionPharse(char * folderName,int numMapper){
       txtName = malloc(SIZE_TXTPATH*sizeof(char));
       sprintf(txtName,"%s/Mapper_%d.txt",dicName,i);
       if((fp = fopen(txtName,"a"))!= NULL){
-      //  printf("i:%d\n", i);
         if(countRemainder!=0) {
           for(int j = (numFileInM+1)*i;j<(numFileInM+1)*(i+1);j++){
-          //  printf("%s\n",lines[j]);
             fputs(lines[j],fp);
           }
           countRemainder--;
         }else{
           for(int j = remainderFile+numFileInM*i;j<(numFileInM*(i+1)+remainderFile);j++){
-            //printf("%s\n",lines[j]);
             fputs(lines[j],fp);
           }
         }

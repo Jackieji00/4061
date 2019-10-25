@@ -60,7 +60,6 @@ int main(int argc, char *argv[]){
 	}
 
 	for (int i = 0; i < numMapper; i++) {
-
 			pids[i]=fork();
 			if (pids[i]<0) {
 				printf("%s\n","here" );

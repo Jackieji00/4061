@@ -63,10 +63,11 @@ void mapperPhase(char * folderName,int fd[2]){
   }
   fclose(fp);
   close(fd[0]);
-  write(fd[1],alphaCount, ALPHA_NUM_SIZE*sizeof(int)+1);
+  write(fd[1],alphaCount, 27*sizeof(int));
 
   for (int i = 0; i < 26; i++) {
     printf("%d:%d\n",i,alphaCount[i] );
   }
   close(fd[1]);
+  _exit(1);
 }
