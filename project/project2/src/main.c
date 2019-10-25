@@ -42,6 +42,9 @@ int main(int argc, char *argv[]){
 	}
 	//create pipes
 	int fd[numMapper][2];
+	// int **fd = (int **)malloc(numMapper * sizeof(int *));
+	//  for (int i=0; i<numMapper; i++)
+	// 			fd[i] = (int *)malloc(2 * sizeof(int));
 	pid_t pids[numMapper];
 	//just make a function call to code in phase2.c
 	//phase2 - Map Function
@@ -49,34 +52,35 @@ int main(int argc, char *argv[]){
 	char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));;
 	int * buff = malloc(ALPHA_NUM_SIZE*sizeof(int)+1);
 	int parentID = getpid();
-
 	for (int i = 0; i < numMapper; i++) {
 		if(pipe(fd[i])==-1){
 			fprintf(stderr,"Fail to pipe\n");
 			return 4;
 		}
-		if(getpid()==parentID){
+	}
+
+	for (int i = 0; i < numMapper; i++) {
+
 			pids[i]=fork();
 			if (pids[i]<0) {
 				printf("%s\n","here" );
 				fprintf(stderr,"Fail to folk\n");
 				return 4;
 			}else if(pids[i]==0){
-				//printf("%s\n","here" );
 				sprintf(dicName,"MapperInput/Mapper_%d.txt",i);
-				mapperPhase(dicName,fd,numMapper);
+				mapperPhase(dicName,fd[i]);
+				// close(fd[i][0]);
+				// write(fd[i][1],alphaCount, ALPHA_NUM_SIZE*sizeof(int)+1);
+				// for (int i = 0; i < 26; i++) {
+				// 	printf("%d:%d\n",i,alphaCount[i] );
+				// }
+				// close(fd[i][1]);
 				free(dicName);
 			}else{
-				//reduceResult(fd, numMapper);
-				close(fd[i][1]);
-				read(fd[i][0],buff,ALPHA_NUM_SIZE*sizeof(int));
-		    for (int i = 0; i < 26; i++) {
-		      printf("p%d:%d\n",i,buff[i] );
-		    }
-				close(fd[i][0]);
+				wait(NULL);
+				reduceResult(fd, numMapper);
 				break;
 			}
-		}
 
 	}
 	//just make a function call to code in phase3.c

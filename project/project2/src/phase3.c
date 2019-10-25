@@ -22,7 +22,7 @@ void reduceResult(int (*fd)[2], int numOfMapper) {
     read(fd[i][0],buff,sizeof(buff));
     //read(fd[0+2*(i+1)],store,sizeof(store));
     for (int i = 0; i < 26; i++) {
-      printf("%d:%d\n",i,buff[i] );
+      printf("p3:%d:%d\n",i,buff[i] );
     }
     for(int j =0;j < 26; j++){
         store[j]=buff[j]+store[j];

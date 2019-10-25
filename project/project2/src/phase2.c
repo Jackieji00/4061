@@ -11,9 +11,17 @@ void wordcount(char * txtName,int * alphaCount){
   FILE * fpTxt;
   int c;
   if((fpTxt = fopen(txtName,"r"))!=NULL){
+    c=fgetc(fpTxt);
+    if(isalpha(c)!=0){
+      if(c<97){
+        alphaCount[c-65]++;
+      }else{
+        alphaCount[c-97]++;
+      }
+    }
     while(!feof(fpTxt)){
       c=fgetc(fpTxt);
-      if(c == '\n'||c=='\t'||c=='\b'){
+      if(c == '\n'||c=='\t'||c==' '||c=='\v'||c=='\r'||c=='\f'){
         c=fgetc(fpTxt);
         if(isalpha(c)!=0){
           if(c<97){
@@ -28,30 +36,25 @@ void wordcount(char * txtName,int * alphaCount){
     printf("fail to read file %s\n",txtName);
   }
 }
-void mapperPhase(char * folderName,int (*fd)[2],int numOfMapper){
+void mapperPhase(char * folderName,int fd[2]){
   FILE * fp;
   char * txtName;
   char c;
-  int * alphaCount;
   int co = 0;
+  int* alphaCount;
   alphaCount = malloc(ALPHA_NUM_SIZE*sizeof(int));
   if((fp = fopen(folderName,"r"))!=NULL){
     txtName = malloc(SIZE_TXTPATH*sizeof(char));
     while(c != EOF){
-    //  printf("%d:%s\n",co,txtName);
       c=fgetc(fp);
-      // printf("%c\n",c );
       strncat(txtName,&c,1);
-      //printf("strncpy: %s\n",txtName);
       while((c=fgetc(fp))!='\n'&&c!=EOF){
         strncat(txtName,&c,1);
       }
       if(c == EOF){
         break;
       }
-    //  printf("txtName:%s\n",txtName );
       wordcount(txtName,alphaCount);
-      //memset(txtName,0,strlen(txtName));
       txtName[0] = '\0';
    }
    free(txtName);
@@ -59,10 +62,11 @@ void mapperPhase(char * folderName,int (*fd)[2],int numOfMapper){
     printf("fail to read file %s\n",folderName);
   }
   fclose(fp);
-  close(fd[numOfMapper][0]);
-  write(fd[numOfMapper][1],alphaCount, ALPHA_NUM_SIZE*sizeof(int)+1);
+  close(fd[0]);
+  write(fd[1],alphaCount, ALPHA_NUM_SIZE*sizeof(int)+1);
+
   for (int i = 0; i < 26; i++) {
     printf("%d:%d\n",i,alphaCount[i] );
   }
-  close(fd[numOfMapper][1]);
+  close(fd[1]);
 }
