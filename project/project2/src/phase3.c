@@ -12,18 +12,21 @@
 void reduceResult(int (*fd)[2], int numOfMapper) {
   pid_t pids[numOfMapper];
   //int n = getpid();
+  printf("%d\n",getpid());
   int * buff= malloc(ALPHA_NUM_SIZE*sizeof(int)+1);
   val * fia= malloc(ALPHA_NUM_SIZE*sizeof(val));
   int * store = malloc(ALPHA_NUM_SIZE*sizeof(int));
+  for (int i = 0; i < 26; i++) {
+    store[i]=0;
+    buff[i]=0;
+  }
   for (int i = 0; i < numOfMapper; i++) {
     if ((pids[i]=fork())<0) {
+      printf("%s\n","here" );
+      fprintf(stderr,"Fail to folk\n");
     }else if(pids[i]==0){
       close(fd[i][1]);
       read(fd[i][0],buff,27*sizeof(int));
-      // //read(fd[0+2*(i+1)],store,sizeof(store));
-      // for (int i = 0; i < 26; i++) {
-      //
-      // }
       for(int j =0;j < 26; j++){
           printf("p3:%d:%d\n",j,buff[j]);
           store[j]=buff[j]+store[j];
@@ -31,8 +34,10 @@ void reduceResult(int (*fd)[2], int numOfMapper) {
       close(fd[i][0]);
     }else{
       wait(NULL);
+      _exit(0);
+      }
     }
-  }
+
   // int status;
   // pid_t pid;
   // while(n>0){
@@ -41,13 +46,13 @@ void reduceResult(int (*fd)[2], int numOfMapper) {
   // }
   FILE * fp = fopen("ReducerResult.txt", "w");
   //filename = malloc(SIZE_TXTPATH*sizeof(char));
-
   if(fp == NULL){
     printf("Unable to create file.\n");
     exit(EXIT_FAILURE);
   }else{
       char * result = malloc(SIZE_TXTPATH*sizeof(char));
       int c = 0;
+      printf("%d\n",getpid() );
       for(int i = 0;i<26;i++){
         result[0] ='\0';
         c=i+65;
@@ -56,6 +61,5 @@ void reduceResult(int (*fd)[2], int numOfMapper) {
         sprintf(result,"%c: %d\n",alphabet,store[i]);
         fputs(result,fp);
       }
-
-  }
+    }
 }

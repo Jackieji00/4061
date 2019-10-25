@@ -27,7 +27,7 @@ test-mapreduce:
 	# ./mapreduce ${TST_DIR}/TestCase1 5
 	# @printf "\n"
 	@printf "\nTestCase2_1: Normal Case - One mapper\n"
-	./mapreduce ${TST_DIR}/TestCase2 1
+	./mapreduce ${TST_DIR}/TestCase2 2
 	@printf "\n"
 # 	@printf "\nTestCase2_2: Normal Case - 32 max mapper\n"
 # 	./mapreduce ${TST_DIR}/TestCase2 32
