@@ -43,12 +43,10 @@ int readFiles(char * folderName){
 
 int partitionPharse(char * folderName,int numMapper){
   int fileFail = readFiles(folderName);
-  //printf("%s\n","h" );
   if(fileCount == 0){
     return 0;
   }
   char * dicName =  "MapperInput";
-  //printf("%s\n",dicName );
   int check = mkdir(dicName,0777);
   char * txtName;
   FILE * fp;

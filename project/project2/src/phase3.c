@@ -16,7 +16,6 @@ void reduceResult(int (*fd)[2], int numOfMapper) {
   buff = malloc(ALPHA_NUM_SIZE*sizeof(int)+1);
   store = malloc(ALPHA_NUM_SIZE*sizeof(int));
   fia = malloc(ALPHA_NUM_SIZE*sizeof(val));
-
   for(int i=0; i< numOfMapper;i++){
     close(fd[i][1]);
     read(fd[i][0],buff,sizeof(buff));

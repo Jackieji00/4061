@@ -67,22 +67,14 @@ int main(int argc, char *argv[]){
 				fprintf(stderr,"Fail to folk\n");
 				return 4;
 			}else if(pids[i]==0){
+				//dicName[0]='\0';
 				sprintf(dicName,"MapperInput/Mapper_%d.txt",i);
 				mapperPhase(dicName,fd[i]);
-				// close(fd[i][0]);
-				// write(fd[i][1],alphaCount, ALPHA_NUM_SIZE*sizeof(int)+1);
-				// for (int i = 0; i < 26; i++) {
-				// 	printf("%d:%d\n",i,alphaCount[i] );
-				// }
-				// close(fd[i][1]);
 				free(dicName);
-			}else{
-				wait(NULL);
-				reduceResult(fd, numMapper);
-				break;
+				_exit(1);
 			}
-
 	}
+	reduceResult(fd, numMapper);
 	//just make a function call to code in phase3.c
 	//phase3 - Reduce Function
 	//
