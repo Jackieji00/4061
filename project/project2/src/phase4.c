@@ -7,7 +7,7 @@
 */
 void finalResult(void){
   int fin,fout;
-  if(fin = open("FinalResult.txt",O_WRONLY|O_CREAT|O_TRUNC,0600)){
+  if(fin = open("FinalResult.txt",O_WRONLY|O_CREAT|O_TRUNC,0600)!=-1){
     perror("fail to open FinalResult.txt");
     exit(2);
   }
