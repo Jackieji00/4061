@@ -83,6 +83,6 @@ int main(int argc, char *argv[]){
 	//just make a function call to code in phase4.c
 	//master process reports the final output
 
+	finalResult();
 	return 0;
-
 }

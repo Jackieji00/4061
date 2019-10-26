@@ -13,5 +13,7 @@
 #include <unistd.h>
 #include <string.h>
 #include "variables.h"
+#include <fcntl.h>
 
+void finalResult(void);
 #endif

@@ -43,6 +43,9 @@ void mapperPhase(char * folderName,int fd[2]){
   int co = 0;
   int* alphaCount;
   alphaCount = malloc(ALPHA_NUM_SIZE*sizeof(int));
+  for (int i = 0; i < 26; i++) {
+    alphaCount[i]=0;
+  }
   if((fp = fopen(folderName,"r"))!=NULL){
     txtName = malloc(SIZE_TXTPATH*sizeof(char));
     while(c != EOF){
