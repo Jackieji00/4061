@@ -21,6 +21,7 @@ int main(int argc, char *argv[]){
 			fprintf(stderr," %s is not a number\n",argv[2]);
 			return 2;
 		}
+		DIR *dr;
 		if((dr=opendir(argv[1]))==NULL){
 			fprintf(stderr, "%s is invalid\n",argv[1] );
 			return 2;
@@ -54,7 +55,6 @@ int main(int argc, char *argv[]){
 	for (int i = 0; i < numMapper; i++) {
 			pids[i]=fork();
 			if (pids[i]<0) {
-				printf("%s\n","here" );
 				fprintf(stderr,"Fail to folk\n");
 				return 4;
 			}else if(pids[i]==0){

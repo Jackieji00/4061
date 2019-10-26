@@ -44,7 +44,6 @@ void reduceResult(int (*fd)[2], int numOfMapper) {
   }else{
       char * result = malloc(SIZE_TXTPATH*sizeof(char));
       int c = 0;
-      printf("%d\n",getpid() );
       for(int i = 0;i<26;i++){
         result[0] ='\0';
         c=i+65;
