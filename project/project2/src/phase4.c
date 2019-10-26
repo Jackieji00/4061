@@ -14,6 +14,5 @@ void finalResult(void){
   dup2(fin,1);
   close(fin);
   execlp("cat","cat","ReducerResult.txt",NULL);
-
   return;
 }
