@@ -18,7 +18,7 @@ int readFiles(char * folderName){
 		return -1;
 	}
   for (int i = 0;(de = readdir(dr)) != NULL; i++){
-    // printf("%d:%s/%s\n",i,folderName,de->d_name);
+  //  printf("%d:%s/%s\n",i,folderName,de->d_name);
     if (de->d_type==DT_DIR&&strstr(de->d_name,".")==NULL) {
 			subdir[0] ='\0';
       //sprintf(subdir,"%s/%s",folderName,de->d_name);

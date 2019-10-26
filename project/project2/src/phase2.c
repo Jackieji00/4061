@@ -49,6 +49,7 @@ void mapperPhase(char * folderName,int fd[2]){
   if((fp = fopen(folderName,"r"))!=NULL){
     txtName = malloc(SIZE_TXTPATH*sizeof(char));
     while(c != EOF){
+      txtName[0] = '\0';
       c=fgetc(fp);
       strncat(txtName,&c,1);
       while((c=fgetc(fp))!='\n'&&c!=EOF){
@@ -58,7 +59,7 @@ void mapperPhase(char * folderName,int fd[2]){
         break;
       }
       wordcount(txtName,alphaCount);
-      txtName[0] = '\0';
+
    }
    free(txtName);
   }else{

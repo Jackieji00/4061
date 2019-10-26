@@ -62,5 +62,6 @@ void reduceResult(int (*fd)[2], int numOfMapper) {
         fputs(result,fp);
       }
     }
+    fclose(fp);
     return;
 }
