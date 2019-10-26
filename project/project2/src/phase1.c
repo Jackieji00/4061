@@ -10,6 +10,9 @@
 */
 
 int readFiles(char * folderName){
+//open the big directory and check if the next file is a folder or not;
+//if it is, continue open the folder until meet the  1st text file
+//if it is not , then copy the file link to the global variable lines
   DIR *dr = opendir(folderName);
   struct dirent * de;
   char subdir[1000];
@@ -18,17 +21,13 @@ int readFiles(char * folderName){
 		return -1;
 	}
   for (int i = 0;(de = readdir(dr)) != NULL; i++){
-  //  printf("%d:%s/%s\n",i,folderName,de->d_name);
     if (de->d_type==DT_DIR&&strstr(de->d_name,".")==NULL) {
 			subdir[0] ='\0';
-      //sprintf(subdir,"%s/%s",folderName,de->d_name);
 			strcpy(subdir,folderName);
 			strcat(subdir,"/");
 			strcat(subdir,de->d_name);
-      //printf("subdir%s\n",subdir);
 		  readFiles(subdir);
     }else if(de->d_type!=DT_DIR&&strstr(de->d_name,"txt")!=NULL){
-      //printf("fileNamede:%s\n",folderName );
       strcpy(lines[count], folderName);
       strcat(lines[count],"/");
       strcat(lines[count],de->d_name);
@@ -43,6 +42,7 @@ int readFiles(char * folderName){
 
 int partitionPharse(char * folderName,int numMapper){
   int fileFail = readFiles(folderName);
+  //stop if it is empty folder
   if(fileCount == 0){
     return 0;
   }
@@ -53,11 +53,13 @@ int partitionPharse(char * folderName,int numMapper){
   int numFileInM = count/numMapper;
   int remainderFile = count%numMapper;
   int countRemainder = remainderFile;
-  //printf("remainderFile:%d\n",remainderFile );
   if (check){
     printf("fail to make MapperInput directory\n");
     return 1;
   }else{
+//make the number of text for mapper ,and even divide the addresses to
+//the text file, if there is a remainder, then evenly divide add 1 more address to
+//each text file until no remainder file left
     for(int i = 0;i<numMapper;i++){
       txtName = malloc(SIZE_TXTPATH*sizeof(char));
       sprintf(txtName,"%s/Mapper_%d.txt",dicName,i);

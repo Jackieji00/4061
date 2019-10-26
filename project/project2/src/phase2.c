@@ -10,6 +10,8 @@
 void wordcount(char * txtName,int * alphaCount){
   FILE * fpTxt;
   int c;
+//read the text file manually add the 1st word, then add every alphabet after the whitespace,
+//newline, tab, etc. store the result in the variable alphaCount
   if((fpTxt = fopen(txtName,"r"))!=NULL){
     c=fgetc(fpTxt);
     if(isalpha(c)!=0){
@@ -37,6 +39,7 @@ void wordcount(char * txtName,int * alphaCount){
   }
 }
 void mapperPhase(char * folderName,int fd[2]){
+//initialize everything
   FILE * fp;
   char * txtName;
   char c;
@@ -46,6 +49,7 @@ void mapperPhase(char * folderName,int fd[2]){
   for (int i = 0; i < 26; i++) {
     alphaCount[i]=0;
   }
+//read mapper text file and get the address call the function wordcount() to count
   if((fp = fopen(folderName,"r"))!=NULL){
     txtName = malloc(SIZE_TXTPATH*sizeof(char));
     while(c != EOF){
@@ -66,12 +70,9 @@ void mapperPhase(char * folderName,int fd[2]){
     printf("fail to read file %s\n",folderName);
   }
   fclose(fp);
+  //write the int array to the pipe 
   close(fd[0]);
   write(fd[1],alphaCount, 27*sizeof(int));
-
-  for (int i = 0; i < 26; i++) {
-    printf("%d:%d\n",i,alphaCount[i] );
-  }
   close(fd[1]);
   _exit(1);
 }

@@ -13,6 +13,8 @@
 #include <unistd.h>
 #include <string.h>
 #include "variables.h"
+#include <sys/types.h>
+#include <sys/wait.h>
 
 void reduceResult(int (*fd)[2], int numOfMapper);
 

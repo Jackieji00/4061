@@ -6,8 +6,9 @@
 			i.e., on using printf, the statement should be written to "FinalResult.txt"
 */
 void finalResult(void){
-  int fin,fout;
-  if(fin = open("FinalResult.txt",O_WRONLY|O_CREAT|O_TRUNC,0600)!=-1){
+  //use dup2 to redirected the system call cat to text file "FinalResult.txt"
+  int fin;
+  if((fin = open("FinalResult.txt",O_WRONLY|O_CREAT|O_TRUNC,0600))==-1){
     perror("fail to open FinalResult.txt");
     exit(2);
   }

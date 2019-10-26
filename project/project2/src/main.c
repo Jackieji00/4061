@@ -1,10 +1,9 @@
 #include "main.h"
 
-
+//check if it number
 int isNum(char * argv2){
 	int result = 1;
 	for (int i = 0; i < strlen(argv2); i++) {
-		/* code */
 		if(!isdigit(argv2[i])){
 		result = 0;
 		}
@@ -13,8 +12,7 @@ int isNum(char * argv2){
 }
 
 int main(int argc, char *argv[]){
-	DIR *dr;
-	// argument count check
+	// check if arguements are right
 	if(argc<3){
 		fprintf(stderr," Need more argument\n");
 		return 1;
@@ -40,25 +38,19 @@ int main(int argc, char *argv[]){
 		fprintf(stderr,"The directory is empty\n");
 		return 4;
 	}
-	//create pipes
+	//create pipes and initialize the pipe
 	int fd[numMapper][2];
-	// int **fd = (int **)malloc(numMapper * sizeof(int *));
-	//  for (int i=0; i<numMapper; i++)
-	// 			fd[i] = (int *)malloc(2 * sizeof(int));
 	pid_t pids[numMapper];
-	//just make a function call to code in phase2.c
-	//phase2 - Map Function
-	//char * callMapper = "phase2";
-	char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));;
-	int * buff = malloc(ALPHA_NUM_SIZE*sizeof(int)+1);
-	int parentID = getpid();
 	for (int i = 0; i < numMapper; i++) {
 		if(pipe(fd[i])==-1){
 			fprintf(stderr,"Fail to pipe\n");
 			return 4;
 		}
 	}
-
+	//just make a function call to code in phase2.c
+	//phase2 - Map Function
+	//let the child processes do the mapper phase.
+	char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));;
 	for (int i = 0; i < numMapper; i++) {
 			pids[i]=fork();
 			if (pids[i]<0) {
@@ -66,23 +58,20 @@ int main(int argc, char *argv[]){
 				fprintf(stderr,"Fail to folk\n");
 				return 4;
 			}else if(pids[i]==0){
-				//dicName[0]='\0';
 				sprintf(dicName,"MapperInput/Mapper_%d.txt",i);
 				mapperPhase(dicName,fd[i]);
 				free(dicName);
 				_exit(1);
 			}
 	}
-	reduceResult(fd, numMapper);
+
 	//just make a function call to code in phase3.c
 	//phase3 - Reduce Function
-	//
+	reduceResult(fd, numMapper);
 	//phase4
 	//wait for all processes to reach this point
-
 	//just make a function call to code in phase4.c
 	//master process reports the final output
-
 	finalResult();
 	return 0;
 }
