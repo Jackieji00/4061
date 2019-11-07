@@ -1,4 +1,4 @@
-#define _BSD_SOURCE
+//#define _BSD_SOURCE
 #define NUM_ARGS 0
 
 #include <stdio.h>
@@ -26,7 +26,7 @@ struct buffer {
 struct condBuffer {
 
 	struct buffer* q;
-	pthread_cond_t* cond;
+    pthread_cond_t* cond;
 	pthread_mutex_t* mutex;
 };
 
@@ -45,32 +45,45 @@ int delete(struct buffer* q) {
 }
 
 // TODO: Insert code to use a condition variable.
-void condProducer(void* arg) {
+void * condProducer(void* arg) {
 
 	// Random delay. DO NOT REMOVE!
 	usleep(rand() % 1000);
 
 	struct condBuffer* cq = (struct condBuffer*) arg;
 
-	// Counter.
+    pthread_mutex_lock(cq->mutex);
+    
+    
+    // Counter.
 	static int in = 0;
 	++in;
 
 	// Add an element to the buffer.
 	insert(cq->q, in);
-
+    
+    pthread_cond_signal(cq->cond);
+    
+    pthread_mutex_unlock(cq->mutex);
 }
 
 // TODO: Insert code to use a condition variable.
-void condConsumer(void* arg) {
+void * condConsumer(void* arg) {
 
 	// Random delay. DO NOT REMOVE!
 	usleep(rand() % 1000);
 
 	struct condBuffer* cq = (struct condBuffer*) arg;
 
+    pthread_mutex_lock(cq->mutex);
+    while(cq->q->index==0){
+        pthread_cond_wait(cq->cond, cq->mutex);
+    }
+    
 	// Remove an element from the buffer.
 	condTotal += delete(cq->q);
+    
+    pthread_mutex_unlock(cq->mutex);
 }
 
 int main(int argc, char** argv) {
@@ -94,7 +107,7 @@ int main(int argc, char** argv) {
 	struct condBuffer* cq = (struct condBuffer*) malloc(sizeof(struct condBuffer));
 	cq->q = (struct buffer*) malloc(sizeof(struct buffer));
 	cq->q->index=0;
-	cq->cond = (pthread_cond_t*) malloc(sizeof(pthread_cond_t));
+    cq->cond = (pthread_cond_t*) malloc(sizeof(pthread_cond_t));
 	cq->mutex = (pthread_mutex_t*) malloc(sizeof(pthread_mutex_t));
 	pthread_cond_init(cq->cond, NULL);
 	pthread_mutex_init(cq->mutex, NULL);
