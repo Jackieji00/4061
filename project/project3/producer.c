@@ -9,4 +9,18 @@
 // pthread.h included in header.h
 
 
-
+void *producer(void *arg){
+    FILE *fp;
+    if((fp = fopen(argv[1],"r")) != NULL){
+    int lines = 0;
+    int c =fgect(fp);
+    while (c != EOF) {
+        if (c == '\n') {
+            lines++;
+        }
+        lines = lines +1;
+      }
+    }else{
+        printf("fail to read file %s\n",argv[1]);
+    }
+}
