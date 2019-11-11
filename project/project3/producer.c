@@ -21,7 +21,7 @@ void * producer(void *arg){
   if(strcmp(option,"-p")==0){
     fputs("producer\n",logfile);
   }
-  if((fp = fopen(filename,"r")) != NULL){
+  if((fp = fopen(cq->filename,"r")) != NULL){
     q = cq->q;
     while(fgets(line,1024,fp)!=NULL){
       strcpy(q->vals,line);
@@ -37,7 +37,7 @@ void * producer(void *arg){
     end=TRUE;
     fclose(fp);
   }else{
-      printf("fail to read file %s\n",filename);
+      printf("fail to read file %s\n",cq->filename);
   }
 
   pthread_cond_signal(cq->cond);

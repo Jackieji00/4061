@@ -6,8 +6,9 @@
 #include <string.h>
 #include "header.h"
 // pthread.h included in header.h
-
-
+int end = FALSE;
+int alphaCount[25];
+char * option ="--";
 int main(int argc, char *argv[]){
   if(argc<4){// 4 for no extra credits
     fprintf(stderr," Need more argument\n");
@@ -20,10 +21,6 @@ int main(int argc, char *argv[]){
       fprintf(stderr, "%s is invalid\n",argv[2] );
       return 2;
     }else{
-      char * filename=argv[2];
-      int end = FALSE;
-      int * alphaCount=malloc(25*sizeof(int));
-      char * option = malloc(2*sizeof(char));
       if(argc==4&&strcmp(argv[3],"-p")==0){
          strcpy(option,"-p");
       }else if(argc==4&&(strcmp(argv[3],"-b")==0||strcmp(argv[3],"-bp")==0)){
@@ -41,6 +38,8 @@ int main(int argc, char *argv[]){
     	cq->q = (struct buffer*) malloc(sizeof(struct buffer));
     	cq->q->next=(struct buffer*) malloc(sizeof(struct buffer));
       cq->q->check=0;
+      cq->filename = malloc(100*sizeof(char));
+      strcpy(cq->filename,argv[2]);
       cq->cond = (pthread_cond_t*) malloc(sizeof(pthread_cond_t));
     	cq->mutex = (pthread_mutex_t*) malloc(sizeof(pthread_mutex_t));
     	pthread_cond_init(cq->cond, NULL);

@@ -41,6 +41,7 @@ struct condBuffer {
 
 	struct buffer* q;
   int consumerId;
+  char * filename;
   pthread_cond_t* cond;
 	pthread_mutex_t* mutex;
 };
@@ -49,10 +50,9 @@ struct condBuffer {
  void *consumer(void* arg);
  void *producer(void *arg);
 // static const struct buffer EmptyStruct={0};
-extern char * filename;
 extern char * option;
 extern int end;
-extern int * alphaCount;
+extern int alphaCount[25];
 // struct queue {
 //      struct thread_s *head;
 //      pthread_cond_t* cond;

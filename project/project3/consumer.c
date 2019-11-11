@@ -65,4 +65,5 @@ void * consumer(void* arg){
     fclose(logfile);
   }
   pthread_mutex_unlock(cq->mutex);
+  _exit(1);
 }
