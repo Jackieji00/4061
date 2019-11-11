@@ -49,18 +49,17 @@ int main(int argc, char *argv[]){
 
       pthread_create(&condPool[0], NULL, producer, (void*) cq);
 
-    	for (int i=0; i < numCosumer; i++) {
+    	for (int i=0; i < numCosumer; ++i) {
         cq->consumerId=i;
-    		pthread_create(&condPool[1 + i], NULL, consumer, (void*) cq); //start 50 consumer threads
+    		pthread_create(&condPool[1 + i], NULL, consumer, (void*) cq); //start consumer threads
     	}
-    	for (int i=0; i < numCosumer+1; i++){
-        printf("%s\n","here" );
+    	for (int i=0; i < numCosumer+1; ++i){
         pthread_join(condPool[i], NULL); //wait for all the threads to be finished
       }
+      printf("%s\n","here");
+      finilize();
     }
-    finilize();
-  }
-  else{
+  }else{
     fprintf(stderr,"Too much arguements\n");
     return 3;
   }

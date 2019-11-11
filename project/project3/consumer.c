@@ -51,7 +51,7 @@ void * consumer(void* arg){
       pthread_cond_wait(cq->cond, cq->mutex);
   }
   q=cq->q;
-  while(q->check!=1&&end!=TRUE){
+  while(end!=TRUE){
     if(q->check==0){
         pthread_cond_wait(cq->cond, cq->mutex);
     }else if(q->check==2){
