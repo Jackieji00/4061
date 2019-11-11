@@ -4,7 +4,7 @@
 
 /*
 header.h, header for all source files
-it will: 
+it will:
 - structure definition
 - global variable, lock declaration (extern)
 - function declarations
@@ -29,6 +29,28 @@ it will:
 
 // header here..
 
+struct buffer {
+   char vals[1024];
+   struct buffer *next;
+}*Buffer;
 
+struct condBuffer {
 
+	struct buffer* q;
+  pthread_cond_t* cond;
+	pthread_mutex_t* mutex;
+};
+
+extern char * filename;
+extern FILE * logfile;
+// struct queue {
+//      struct thread_s *head;
+//      pthread_cond_t* cond;
+//      pthread_mutex_t* mutex;
+// };
+
+// struct thread_s{
+//     char c;
+//     struct thread_s *next;
+// };
 #endif
