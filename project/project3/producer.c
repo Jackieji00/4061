@@ -12,6 +12,7 @@
 void *producer(void *arg){
 
   struct condBuffer* cq = (struct condBuffer*) arg;
+  struct buffer* q = (struct buffer*) malloc(sizeof(struct buffer));;
   pthread_mutex_lock(cq->mutex);
   FILE *fp,logfile;
   char line[1024];
@@ -24,6 +25,8 @@ void *producer(void *arg){
     q = cq->q;
     if(fgets(line,1024,fp)!=NULL){
       q->vals=line;
+      q->check=1;
+      q->lineNum=lineNum;
       q=q->next;
       if(strcmp(option,"-p")==0){
         fprintf(logfile, "producer: %d\n",lineNum);

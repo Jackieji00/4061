@@ -31,8 +31,10 @@ it will:
 
 struct buffer {
    char vals[1024];
+   int check;//0 for initialize, 1 for produced,2 for consumed
+   int lineNum;
    struct buffer *next;
-}*Buffer;
+};
 
 struct condBuffer {
 
@@ -41,9 +43,11 @@ struct condBuffer {
 	pthread_mutex_t* mutex;
 };
 
+// static const struct buffer EmptyStruct={0};
 extern char * filename;
 extern char * option;
 extern int end;
+extern int alphaCount[25];
 // struct queue {
 //      struct thread_s *head;
 //      pthread_cond_t* cond;

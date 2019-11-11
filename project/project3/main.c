@@ -24,6 +24,9 @@ int main(int argc, char *argv[]){
       end = FALSE;
       if(strcmp(argv[3],"-p")==0){
         optin = argv[3];
+      }else if(strcmp(argv[3],"-b")==0||strcmp(argv[3],"-bp")==0){
+        fprintf(stderr, "extra credit is not supported\n");
+        return 3;
       }else{
         fprintf(stderr, "%s is invalid\n",argv[3]);
         return 3;
@@ -34,6 +37,7 @@ int main(int argc, char *argv[]){
       struct condBuffer* cq = (struct condBuffer*) malloc(sizeof(struct condBuffer));
     	cq->q = (struct buffer*) malloc(sizeof(struct buffer));
     	cq->q->next=(struct buffer*) malloc(sizeof(struct buffer));
+      cq->q->check=0;
       cq->cond = (pthread_cond_t*) malloc(sizeof(pthread_cond_t));
     	cq->mutex = (pthread_mutex_t*) malloc(sizeof(pthread_mutex_t));
     	pthread_cond_init(cq->cond, NULL);
