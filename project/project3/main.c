@@ -17,11 +17,33 @@ int main(int argc, char *argv[]){
     FILE *fp;
 
     if((fp = fopen(argv[2],"r"))== NULL){
-        fprintf(stderr, "%s is invalid\n",argv[2] );
-        return 2;
+      fprintf(stderr, "%s is invalid\n",argv[2] );
+      return 2;
     }else{
-        filename=argv[2];
-        
+      filename=argv[2];
+      end = FALSE;
+      if(strcmp(argv[3],"-p")==0){
+        optin = argv[3];
+      }else{
+        fprintf(stderr, "%s is invalid\n",argv[3]);
+        return 3;
+      }
+      int numCosumer = atoi(argv[1]);
+      // Create threads.
+      pthread_t condPool[numCosumer+1];
+      struct condBuffer* cq = (struct condBuffer*) malloc(sizeof(struct condBuffer));
+    	cq->q = (struct buffer*) malloc(sizeof(struct buffer));
+    	cq->q->next=(struct buffer*) malloc(sizeof(struct buffer));
+      cq->cond = (pthread_cond_t*) malloc(sizeof(pthread_cond_t));
+    	cq->mutex = (pthread_mutex_t*) malloc(sizeof(pthread_mutex_t));
+    	pthread_cond_init(cq->cond, NULL);
+    	pthread_mutex_init(cq->mutex, NULL);
+    	// Launch them.
+      pthread_create(&condPool[0], NULL, producer, (void*) cq);
+    	for (int i=0; i < numCosumer; ++i) {
+    		pthread_create(&condPool[1 + i], NULL, consumer, (void*) cq); //start 50 consumer threads
+    	}
+    	for (int i=0; i < 100; ++i) pthread_join(condPool[i], NULL); //wait for all the threads to be finished
     }
   }
   else{

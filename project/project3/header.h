@@ -42,7 +42,8 @@ struct condBuffer {
 };
 
 extern char * filename;
-extern FILE * logfile;
+extern char * option;
+extern int end;
 // struct queue {
 //      struct thread_s *head;
 //      pthread_cond_t* cond;

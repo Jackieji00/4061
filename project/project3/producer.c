@@ -10,16 +10,27 @@
 
 
 void *producer(void *arg){
+
   struct condBuffer* cq = (struct condBuffer*) arg;
   pthread_mutex_lock(cq->mutex);
-  FILE *fp;
+  FILE *fp,logfile;
   char line[1024];
+  int lineNum =0;
+  if(strcmp(option,"-p")==0){
+    logfile=fopen("log.txt","a");
+    fputs("producer\n",logfile);
+  }
   if((fp = fopen(filename,"r")) != NULL){
     q = cq->q;
     if(fgets(line,1024,fp)!=NULL){
       q->vals=line;
       q=q->next;
+      if(strcmp(option,"-p")==0){
+        fprintf(logfile, "producer: %d\n",lineNum);
+      }
+      lineNum++;
     }
+    end=TRUE;
     fclose(fp);
   }else{
       printf("fail to read file %s\n",argv[1]);
