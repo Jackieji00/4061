@@ -9,22 +9,22 @@
 // pthread.h included in header.h
 
 
-void *producer(void *arg){
+void * producer(void *arg){
 
   struct condBuffer* cq = (struct condBuffer*) arg;
   struct buffer* q = (struct buffer*) malloc(sizeof(struct buffer));;
   pthread_mutex_lock(cq->mutex);
-  FILE *fp,logfile;
+  FILE *fp;
+  FILE *logfile=fopen("log.txt","a");
   char line[1024];
   int lineNum =0;
   if(strcmp(option,"-p")==0){
-    logfile=fopen("log.txt","a");
     fputs("producer\n",logfile);
   }
   if((fp = fopen(filename,"r")) != NULL){
     q = cq->q;
-    if(fgets(line,1024,fp)!=NULL){
-      q->vals=line;
+    while(fgets(line,1024,fp)!=NULL){
+      strcpy(q->vals,line);
       q->check=1;
       q->lineNum=lineNum;
       q=q->next;
@@ -32,14 +32,16 @@ void *producer(void *arg){
         fprintf(logfile, "producer: %d\n",lineNum);
       }
       lineNum++;
+      line[0]='\0';
     }
     end=TRUE;
     fclose(fp);
   }else{
-      printf("fail to read file %s\n",argv[1]);
+      printf("fail to read file %s\n",filename);
   }
 
   pthread_cond_signal(cq->cond);
 
   pthread_mutex_unlock(cq->mutex);
+  _exit(1);
 }

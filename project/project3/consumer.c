@@ -22,7 +22,7 @@ void wordcount(char * line){
       alphaCount[c-97]++;
     }
   }
-  while(line[i]!='/0'){
+  while(line[i]!='\0'){
     c=line[i++];
     if(!isalpha(c)){
       c=line[i++];
@@ -37,15 +37,32 @@ void wordcount(char * line){
   }
 }
 
-void consumer(void* arg){
-
-	// struct Buffer* cq = (struct condBuffer*) arg;
-  // pthread_mutex_lock(cq->mutex);
-  // while(cq->q->index==0){
-  //     pthread_cond_wait(cq->cond, cq->mutex);
-  // }
-  //
-  // wordcount(cq)
-  //
-  //   pthread_mutex_unlock(cq->mutex);
+void * consumer(void* arg){
+  FILE * logfile;
+	struct condBuffer* cq = (struct condBuffer*) arg;
+  struct buffer* q = (struct buffer*) malloc(sizeof(struct buffer));
+  int lineNum=0;
+  if(strcmp(option,"-p")==0){
+    logfile=fopen("log.txt","a");
+    fprintf(logfile, "consumer %d\n",cq->consumerId);
+  }
+  pthread_mutex_lock(cq->mutex);
+  while(cq->q->check==0){
+      pthread_cond_wait(cq->cond, cq->mutex);
+  }
+  q=cq->q;
+  while(q->check!=1&&end!=TRUE){
+    if(q->check==0){
+        pthread_cond_wait(cq->cond, cq->mutex);
+    }else if(q->check==2){
+      q=q->next;
+      lineNum++;
+    }
+  }
+  if(q->check==1){
+    wordcount(q->vals);
+    fprintf(logfile, "consumer %d: %d\n",cq->consumerId,lineNum);
+    fclose(logfile);
+  }
+  pthread_mutex_unlock(cq->mutex);
 }

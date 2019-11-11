@@ -26,6 +26,7 @@ it will:
 #include <pthread.h>
 #include <semaphore.h>
 #include <sys/time.h>
+#include <ctype.h>
 
 // header here..
 
@@ -39,15 +40,19 @@ struct buffer {
 struct condBuffer {
 
 	struct buffer* q;
+  int consumerId;
   pthread_cond_t* cond;
 	pthread_mutex_t* mutex;
 };
 
+ void finilize();
+ void *consumer(void* arg);
+ void *producer(void *arg);
 // static const struct buffer EmptyStruct={0};
 extern char * filename;
 extern char * option;
 extern int end;
-extern int alphaCount[25];
+extern int * alphaCount;
 // struct queue {
 //      struct thread_s *head;
 //      pthread_cond_t* cond;
@@ -58,4 +63,7 @@ extern int alphaCount[25];
 //     char c;
 //     struct thread_s *next;
 // };
+
+#define FALSE 0
+#define TRUE 1
 #endif
