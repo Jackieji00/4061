@@ -36,11 +36,7 @@ void * consumer(void* arg){
     fprintf(logfile, "consumer %d\n",cq->consumerId);
   }
   pthread_mutex_lock(cq->mutex);
-  while(cq->q->check==0){
-      pthread_cond_wait(cq->cond, cq->mutex);
-  }//why we need wait, if the prodcuer is working it will lock the queue
   q=cq->q;
-  printf("end: %d\nlineNum:%d\n",end,lineNum);
   while(end>lineNum){
     if(q->check==0){
         pthread_cond_wait(cq->cond, cq->mutex);

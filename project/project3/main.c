@@ -8,9 +8,9 @@
 // pthread.h included in header.h
 int end = -1;
 int alphaCount[26];
-char * option ="--";
 FILE * logfile = NULL;
 int main(int argc, char *argv[]){
+  option = malloc(2*sizeof(char));
   for(int i =0;i<26;i++){
     alphaCount[i]=0;
   }
@@ -26,6 +26,7 @@ int main(int argc, char *argv[]){
     }else{
       if(argc==4&&strcmp(argv[3],"-p")==0){
          strcpy(option,"-p");
+         printf("%s\n","h" );
       }else if(argc==4&&(strcmp(argv[3],"-b")==0||strcmp(argv[3],"-bp")==0)){
         fprintf(stderr, "extra credit is not supported\n");
         return 3;
@@ -36,13 +37,13 @@ int main(int argc, char *argv[]){
 
       int numCosumer = atoi(argv[1]);
       // Create threads.
-
       pthread_t condPool[numCosumer+1];
       struct condBuffer* cq = (struct condBuffer*) malloc(sizeof(struct condBuffer));
     	cq->q = (struct buffer*) malloc(sizeof(struct buffer));
     	cq->q->next=(struct buffer*) malloc(sizeof(struct buffer));
       cq->q->check=0;//0 for initialize
       cq->filename = malloc(100*sizeof(char));//assume the max filename is 100
+
       strcpy(cq->filename,argv[2]);
       cq->cond = (pthread_cond_t*) malloc(sizeof(pthread_cond_t));
     	cq->mutex = (pthread_mutex_t*) malloc(sizeof(pthread_mutex_t));
