@@ -46,13 +46,15 @@ void * consumer(void* arg){
     }else if(q->check==2){
       q=q->next;
       lineNum++;
+    }else if(q->check==1){
+      wordcount(q->vals);
+      if(strcmp(option,"-p")==0){
+      fprintf(logfile, "consumer %d: %d\n",cq->consumerId,lineNum);
+      }  
+      q=q->next;
     }
   }
-  if(q->check==1){//already produced
-    wordcount(q->vals);
-    fprintf(logfile, "consumer %d: %d\n",cq->consumerId,lineNum);
-    fclose(logfile);
-  }
+  fclose(logfile);
   pthread_mutex_unlock(cq->mutex);
   fclose(logfile);
   _exit(1);
