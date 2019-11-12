@@ -31,15 +31,15 @@ int main(int argc, char *argv[]){
       }
 
       int numCosumer = atoi(argv[1]);
-      FILE logfile;
+      FILE * logfile;
       // Create threads.
 
       pthread_t condPool[numCosumer+1];
       struct condBuffer* cq = (struct condBuffer*) malloc(sizeof(struct condBuffer));
     	cq->q = (struct buffer*) malloc(sizeof(struct buffer));
     	cq->q->next=(struct buffer*) malloc(sizeof(struct buffer));
-      cq->q->check=0;
-      cq->filename = malloc(100*sizeof(char));
+      cq->q->check=0;//0 for initialize
+      cq->filename = malloc(100*sizeof(char));//assume the max filename is 100
       strcpy(cq->filename,argv[2]);
       cq->cond = (pthread_cond_t*) malloc(sizeof(pthread_cond_t));
     	cq->mutex = (pthread_mutex_t*) malloc(sizeof(pthread_mutex_t));
@@ -53,7 +53,8 @@ int main(int argc, char *argv[]){
         cq->consumerId=i;
     		pthread_create(&condPool[1 + i], NULL, consumer, (void*) cq); //start consumer threads
     	}
-    	for (int i=0; i < numCosumer+1; ++i){
+
+    	for (int i=0; i < numCosumer; ++i){
         pthread_join(condPool[i], NULL); //wait for all the threads to be finished
       }
       printf("%s\n","here");

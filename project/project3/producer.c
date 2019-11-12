@@ -12,7 +12,8 @@
 void * producer(void *arg){
 
   struct condBuffer* cq = (struct condBuffer*) arg;
-  struct buffer* q = (struct buffer*) malloc(sizeof(struct buffer));;
+  struct buffer* bq = (struct buffer*) malloc(sizeof(struct buffer));
+  //struct buffer* q = cq->q;
   pthread_mutex_lock(cq->mutex);
   FILE *fp;
   FILE *logfile=fopen("log.txt","a");
@@ -22,12 +23,13 @@ void * producer(void *arg){
     fputs("producer\n",logfile);
   }
   if((fp = fopen(cq->filename,"r")) != NULL){
-    q = cq->q;
+    bq = cq->q;
     while(fgets(line,1024,fp)!=NULL){
-      strcpy(q->vals,line);
-      q->check=1;
-      q->lineNum=lineNum;
-      q=q->next;
+      bq -> next = (struct buffer*) malloc(sizeof(struct buffer));
+      strcpy(bq->vals,line);
+      bq->check=1;//produced
+      bq->lineNum=lineNum;
+      bq=bq->next;//move to the next
       if(strcmp(option,"-p")==0){
         fprintf(logfile, "producer: %d\n",lineNum);
       }
@@ -36,6 +38,7 @@ void * producer(void *arg){
     }
     end=TRUE;
     fclose(fp);
+    fclose(logfile);
   }else{
       printf("fail to read file %s\n",cq->filename);
   }
