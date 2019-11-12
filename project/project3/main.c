@@ -55,7 +55,6 @@ int main(int argc, char *argv[]){
 
     	for (int i=1; i < numCosumer+1; i++) {
         cq->consumerId=i;
-        printf("i:%d\n",i );
     		pthread_create(&condPool[i], NULL, consumer, (void*) cq); //start consumer threads
     	}
     	for (int i=0; i < numCosumer+1; i++){

@@ -45,7 +45,6 @@ void * consumer(void* arg){
       q=q->next;
       lineNum++;
     }else if(q->check==1){
-      printf("%s\n", q->vals);
       q->check=2;
       wordcount(q->vals);
       if(strcmp(option,"-p")==0){
@@ -56,8 +55,5 @@ void * consumer(void* arg){
     }
   }
   pthread_mutex_unlock(cq->mutex);
-  // for (int i = 0; i < 26; i++) {
-  //   printf("%d\n",alphaCount[i] );
-  // }
   pthread_exit(NULL);
 }
