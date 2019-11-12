@@ -31,7 +31,7 @@ it will:
 // header here..
 
 struct buffer {
-   char vals[1024];
+   char vals[1025];
    int check;//0 for initialize, 1 for produced,2 for consumed,4 for the end
    int lineNum;
    struct buffer *next;
@@ -52,7 +52,8 @@ struct condBuffer {
 // static const struct buffer EmptyStruct={0};
 extern char * option;
 extern int end;
-extern int alphaCount[25];
+extern int alphaCount[26];
+extern FILE * logfile;
 // struct queue {
 //      struct thread_s *head;
 //      pthread_cond_t* cond;
@@ -63,7 +64,4 @@ extern int alphaCount[25];
 //     char c;
 //     struct thread_s *next;
 // };
-
-#define FALSE 0
-#define TRUE 1
 #endif

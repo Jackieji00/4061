@@ -19,13 +19,13 @@ utils.o: utils.c header.h
 
 TST_DIR = testing
 test:
-	@printf "===Testing mapreduce===\n"
-	@printf "\nTestCase1: One line with no option\n"
-	./wcs 1 ${TST_DIR}/test1.txt
-	@printf "\n"
-	# @printf "\nTestCase2_1: Normal Case - One mapper\n"
-	# ./mapreduce ${TST_DIR}/TestCase2 2
+	# @printf "===Testing mapreduce===\n"
+	# @printf "\nTestCase1: One line with no option\n"
+	# ./wcs 1 ${TST_DIR}/test1.txt
 	# @printf "\n"
+	@printf "\nTestCase2_1: Normal Case with option\n"
+	./wcs 1 ${TST_DIR}/test1.txt -p
+	@printf "\n"
 	# @printf "\nTestCase2_2: Normal Case - 32 max mapper\n"
 	# ./mapreduce ${TST_DIR}/TestCase2 32
 	# @printf "\n"

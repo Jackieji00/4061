@@ -14,12 +14,14 @@ void wordcount(char * line){
 //read the text file manually add the 1st word, then add every alphabet after the whitespace,
 //newline, tab, etc. store the result in the variable alphaCount
   while(line[0]!='\0'){
+    printf("%c\n",c);
     c=line[0];
-    if(isalpha(c)!=0 && isalpha(line[1])==0){
-      if(c<97){
-        alphaCount[c-65]++;
+    if(isalpha(c)==0 && isalpha(line[1])!=0){
+      printf("is:%c%c\n",c,line[1]);
+      if(line[1]<97){
+        alphaCount[line[1]-65]++;
       }else{
-        alphaCount[c-97]++;
+        alphaCount[line[1]-97]++;
       }
     }
     line++;
@@ -27,12 +29,10 @@ void wordcount(char * line){
 }
 
 void * consumer(void* arg){
-  FILE * logfile;
   struct condBuffer* cq = (struct condBuffer*) arg;
   struct buffer* q = (struct buffer*) malloc(sizeof(struct buffer));
   int lineNum=0;
   if(strcmp(option,"-p")==0){
-    logfile=fopen("log.txt","a");
     fprintf(logfile, "consumer %d\n",cq->consumerId);
   }
   pthread_mutex_lock(cq->mutex);
@@ -40,22 +40,28 @@ void * consumer(void* arg){
       pthread_cond_wait(cq->cond, cq->mutex);
   }//why we need wait, if the prodcuer is working it will lock the queue
   q=cq->q;
-  while(end!=TRUE){
+  printf("end: %d\nlineNum:%d\n",end,lineNum);
+  while(end>lineNum){
     if(q->check==0){
         pthread_cond_wait(cq->cond, cq->mutex);
-    }else if(q->check==2){
+    }
+    if(q->check==2){
       q=q->next;
       lineNum++;
     }else if(q->check==1){
+      printf("%s\n", q->vals);
+      q->check=2;
       wordcount(q->vals);
       if(strcmp(option,"-p")==0){
-      fprintf(logfile, "consumer %d: %d\n",cq->consumerId,lineNum);
-      }  
+        fprintf(logfile, "consumer %d: %d\n",cq->consumerId,lineNum);
+      }
       q=q->next;
+      lineNum++;
     }
   }
-  fclose(logfile);
   pthread_mutex_unlock(cq->mutex);
-  fclose(logfile);
-  _exit(1);
+  // for (int i = 0; i < 26; i++) {
+  //   printf("%d\n",alphaCount[i] );
+  // }
+  pthread_exit(NULL);
 }

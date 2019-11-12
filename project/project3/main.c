@@ -6,16 +6,20 @@
 #include <string.h>
 #include "header.h"
 // pthread.h included in header.h
-int end = FALSE;
-int alphaCount[25];
+int end = -1;
+int alphaCount[26];
 char * option ="--";
+FILE * logfile = NULL;
 int main(int argc, char *argv[]){
-
+  for(int i =0;i<26;i++){
+    alphaCount[i]=0;
+  }
   if(argc<3){// 4 for no extra credits
     fprintf(stderr," Need more argument\n");
     return 1;
   }else if(argc==3||argc == 4){
     FILE *fp;
+    logfile =fopen("log.txt","a");
     if((fp = fopen(argv[2],"r"))== NULL){
       fprintf(stderr, "%s is invalid\n",argv[2] );
       return 2;
@@ -31,7 +35,6 @@ int main(int argc, char *argv[]){
       }
 
       int numCosumer = atoi(argv[1]);
-      FILE * logfile;
       // Create threads.
 
       pthread_t condPool[numCosumer+1];
@@ -49,20 +52,23 @@ int main(int argc, char *argv[]){
 
       pthread_create(&condPool[0], NULL, producer, (void*) cq);
 
-    	for (int i=0; i < numCosumer; ++i) {
+    	for (int i=1; i < numCosumer+1; i++) {
         cq->consumerId=i;
-    		pthread_create(&condPool[1 + i], NULL, consumer, (void*) cq); //start consumer threads
+        printf("i:%d\n",i );
+    		pthread_create(&condPool[i], NULL, consumer, (void*) cq); //start consumer threads
     	}
-
-    	for (int i=0; i < numCosumer; ++i){
+    	for (int i=0; i < numCosumer+1; i++){
         pthread_join(condPool[i], NULL); //wait for all the threads to be finished
       }
-      printf("%s\n","here");
+      // for(int i =0;i<26;i++){
+      //   printf("%d\n",alphaCount[i]);
+      // }
       finilize();
     }
   }else{
     fprintf(stderr,"Too much arguements\n");
     return 3;
   }
+      fclose(logfile);
   	return 0;
 }
