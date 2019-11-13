@@ -54,7 +54,7 @@ int main(int argc, char *argv[]){
     	for (int i=1; i < numCosumer+1; i++) {
         cq->consumerId=i;
     		pthread_create(&condPool[i], NULL, consumer, (void*) cq); //start consumer threads
-        usleep(100);
+        usleep(200);
     	}
     	for (int i=0; i < numCosumer+1; i++){
         pthread_join(condPool[i], NULL); //wait for all the threads to be finished

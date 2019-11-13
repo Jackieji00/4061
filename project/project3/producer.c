@@ -10,6 +10,7 @@
 
 
 void * producer(void *arg){
+  usleep(rand() % 1000);
   struct condBuffer* cq = (struct condBuffer*) arg;
   struct buffer* bq = (struct buffer*) malloc(sizeof(struct buffer));
   //struct buffer* q = cq->q;

@@ -39,11 +39,11 @@ struct buffer {
 
 struct condBuffer {
 
-	struct buffer* q;
+  struct buffer* q;
   int consumerId;//do we need it?
   char * filename;
   pthread_cond_t* cond;
-	pthread_mutex_t* mutex;
+  pthread_mutex_t* mutex;
 };
 
  void finilize();

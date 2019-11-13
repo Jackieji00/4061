@@ -29,6 +29,7 @@ void wordcount(char * line){
 }
 
 void * consumer(void* arg){
+
   struct condBuffer* cq = (struct condBuffer*) arg;
   struct buffer* q = (struct buffer*) malloc(sizeof(struct buffer));
   int lineNum=0;
@@ -39,12 +40,13 @@ void * consumer(void* arg){
   q=cq->q;
   while(end>lineNum||end==0){
     pthread_mutex_lock(cq->mutex);
-    if(q->check==0){
+    //pthread_cond_signal(cq->cond);
+    while(q->check==0){
         pthread_cond_wait(cq->cond, cq->mutex);
     }
     if(q->check==2){
       q=q->next;
-      lineNum++;
+      //lineNum++;
     }else if(q->check==1){
       q->check=2;
       wordcount(q->vals);
@@ -52,9 +54,13 @@ void * consumer(void* arg){
         fprintf(logfile, "consumer %d: %d\n",customerID,lineNum);
       }
       q=q->next;
-      lineNum++;
+      //lineNum++;
+
     }
+    lineNum++;
+    pthread_cond_signal(cq->cond);
     pthread_mutex_unlock(cq->mutex);
+    //usleep(rand() % 1000);
   }
 
   pthread_exit(NULL);
