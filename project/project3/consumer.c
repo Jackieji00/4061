@@ -14,10 +14,10 @@ void wordcount(char * line){
 //read the text file manually add the 1st word, then add every alphabet after the whitespace,
 //newline, tab, etc. store the result in the variable alphaCount
   while(line[0]!='\0'){
-    printf("%c\n",c);
+    // printf("%c\n",c);
     c=line[0];
     if(isalpha(c)==0 && isalpha(line[1])!=0){
-      printf("is:%c%c\n",c,line[1]);
+      // printf("is:%c%c\n",c,line[1]);
       if(line[1]<97){
         alphaCount[line[1]-65]++;
       }else{
@@ -32,12 +32,14 @@ void * consumer(void* arg){
   struct condBuffer* cq = (struct condBuffer*) arg;
   struct buffer* q = (struct buffer*) malloc(sizeof(struct buffer));
   int lineNum=0;
+  int customerID= cq->consumerId;
   if(strcmp(option,"-p")==0){
     fprintf(logfile, "consumer %d\n",cq->consumerId);
   }
-  pthread_mutex_lock(cq->mutex);
   q=cq->q;
-  while(end>lineNum){
+  while(end>lineNum||end==0){
+    printf("cosumer %s\n",q->vals );
+    pthread_mutex_lock(cq->mutex);
     if(q->check==0){
         pthread_cond_wait(cq->cond, cq->mutex);
     }
@@ -48,12 +50,13 @@ void * consumer(void* arg){
       q->check=2;
       wordcount(q->vals);
       if(strcmp(option,"-p")==0){
-        fprintf(logfile, "consumer %d: %d\n",cq->consumerId,lineNum);
+        fprintf(logfile, "consumer %d: %d\n",customerID,lineNum);
       }
       q=q->next;
       lineNum++;
     }
+    pthread_mutex_unlock(cq->mutex);
   }
-  pthread_mutex_unlock(cq->mutex);
+
   pthread_exit(NULL);
 }

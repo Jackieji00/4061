@@ -24,7 +24,7 @@ test:
 	# ./wcs 1 ${TST_DIR}/test1.txt
 	# @printf "\n"
 	@printf "\nTestCase2_1: Normal Case with option\n"
-	./wcs 2 ${TST_DIR}/test3.txt -p
+	./wcs 2 ${TST_DIR}/test2.txt -p
 	@printf "\n"
 	# @printf "\nTestCase2_2: Normal Case - 32 max mapper\n"
 	# ./mapreduce ${TST_DIR}/TestCase2 32
@@ -47,4 +47,4 @@ test:
 .PHONY: clean
 
 clean:
-	rm wcs main.o producer.o consumer.o utils.o
+	rm wcs main.o producer.o consumer.o utils.o log.txt

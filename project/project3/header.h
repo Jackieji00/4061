@@ -51,6 +51,7 @@ struct condBuffer {
  void *producer(void *arg);
 // static const struct buffer EmptyStruct={0};
 char * option;
+int endp;
 extern int end;
 extern int alphaCount[26];
 extern FILE * logfile;

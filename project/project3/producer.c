@@ -14,17 +14,20 @@ void * producer(void *arg){
   struct buffer* bq = (struct buffer*) malloc(sizeof(struct buffer));
   //struct buffer* q = cq->q;
   char newline[1025];
-  pthread_mutex_lock(cq->mutex);
+
   FILE *fp;
   char line[1024];
   int lineNum =0;
+  //endp =FALSE;
   if(strcmp(option,"-p")==0){
     fputs("producer\n",logfile);
   }
   if((fp = fopen(cq->filename,"r")) != NULL){
     bq = cq->q;
     while(fgets(line,1024,fp)!=NULL){
+      pthread_mutex_lock(cq->mutex);
       bq -> next = (struct buffer*) malloc(sizeof(struct buffer));
+      bq->next->check=0;
       sprintf(newline,"-%s",line);
       strcpy(bq->vals,newline);
       bq->check=1;//produced
@@ -35,15 +38,14 @@ void * producer(void *arg){
       }
       lineNum++;
       line[0]='\0';
+      pthread_cond_signal(cq->cond);
+      pthread_mutex_unlock(cq->mutex);
     }
     end=lineNum;
+    //endp=TRUE;
     fclose(fp);
   }else{
       printf("fail to read file %s\n",cq->filename);
   }
-
-  pthread_cond_signal(cq->cond);
-
-  pthread_mutex_unlock(cq->mutex);
   pthread_exit(NULL);
 }
