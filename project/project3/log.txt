@@ -1,5 +1,6 @@
 producer
 consumer 1
+consumer 2
 producer: 0
 producer: 1
 producer: 2
@@ -27,7 +28,6 @@ producer: 23
 producer: 24
 producer: 25
 producer: 26
-consumer 1: 0
 producer: 27
 producer: 28
 producer: 29
@@ -45,59 +45,60 @@ producer: 40
 producer: 41
 producer: 42
 producer: 43
+consumer 2: 0
+consumer 2: 1
+consumer 2: 2
+consumer 2: 3
+consumer 2: 4
+consumer 2: 5
+consumer 2: 6
+consumer 2: 7
+consumer 1: 8
+consumer 1: 9
+consumer 1: 10
+consumer 1: 11
+consumer 3
+consumer 1: 12
+consumer 1: 13
+consumer 1: 14
+consumer 1: 15
 producer: 44
 producer: 45
 producer: 46
 producer: 47
 producer: 48
 producer: 49
+consumer 3: 16
 producer: 50
 producer: 51
 producer: 52
 producer: 53
 producer: 54
 producer: 55
-consumer 1: 1
-consumer 2
-consumer 1: 2
-consumer 1: 3
-consumer 1: 4
-consumer 1: 5
-consumer 1: 6
-consumer 1: 7
-consumer 1: 8
-consumer 1: 9
-consumer 1: 10
-consumer 1: 11
-consumer 1: 12
-consumer 1: 13
-consumer 1: 14
-consumer 1: 15
-consumer 1: 16
-consumer 1: 17
-consumer 1: 18
-consumer 1: 19
-consumer 1: 20
-consumer 1: 21
-consumer 1: 22
-consumer 1: 23
-consumer 1: 24
-consumer 1: 25
-consumer 1: 26
-consumer 1: 27
-consumer 1: 28
-consumer 1: 29
-consumer 1: 30
-consumer 1: 31
-consumer 1: 32
-consumer 1: 33
-consumer 1: 34
-consumer 1: 35
-consumer 1: 36
-consumer 1: 37
-consumer 1: 38
-consumer 1: 39
-consumer 1: 40
+consumer 3: 17
+consumer 3: 18
+consumer 3: 19
+consumer 3: 20
+consumer 3: 21
+consumer 3: 22
+consumer 3: 23
+consumer 3: 24
+consumer 3: 25
+consumer 3: 26
+consumer 3: 27
+consumer 3: 28
+consumer 3: 29
+consumer 3: 30
+consumer 3: 31
+consumer 3: 32
+consumer 3: 33
+consumer 3: 34
+consumer 3: 35
+consumer 2: 36
+consumer 2: 37
+consumer 2: 38
+consumer 2: 39
+consumer 2: 40
 consumer 1: 41
 consumer 1: 42
 consumer 1: 43
@@ -110,6 +111,6 @@ consumer 1: 49
 consumer 1: 50
 consumer 1: 51
 consumer 1: 52
-consumer 2: 53
-consumer 2: 54
-consumer 2: 55
+consumer 1: 53
+consumer 1: 54
+consumer 1: 55

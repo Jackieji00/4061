@@ -38,7 +38,6 @@ void * consumer(void* arg){
   }
   q=cq->q;
   while(end>lineNum||end==0){
-    printf("cosumer %s\n",q->vals );
     pthread_mutex_lock(cq->mutex);
     if(q->check==0){
         pthread_cond_wait(cq->cond, cq->mutex);

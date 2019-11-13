@@ -26,7 +26,6 @@ int main(int argc, char *argv[]){
     }else{
       if(argc==4&&strcmp(argv[3],"-p")==0){
          strcpy(option,"-p");
-         printf("%s\n","h" );
       }else if(argc==4&&(strcmp(argv[3],"-b")==0||strcmp(argv[3],"-bp")==0)){
         fprintf(stderr, "extra credit is not supported\n");
         return 3;
@@ -53,7 +52,6 @@ int main(int argc, char *argv[]){
       end =0;
       pthread_create(&condPool[0], NULL, producer, (void*) cq);
     	for (int i=1; i < numCosumer+1; i++) {
-        printf("%s\n","hh" );
         cq->consumerId=i;
     		pthread_create(&condPool[i], NULL, consumer, (void*) cq); //start consumer threads
         usleep(100);
