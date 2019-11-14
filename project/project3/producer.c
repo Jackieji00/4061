@@ -15,7 +15,6 @@ void * producer(void *arg){
   struct buffer* bq = (struct buffer*) malloc(sizeof(struct buffer));
   //struct buffer* q = cq->q;
   char newline[1025];
-
   FILE *fp;
   char line[1024];
   int lineNum =0;
@@ -48,5 +47,6 @@ void * producer(void *arg){
   }else{
       printf("fail to read file %s\n",cq->filename);
   }
-  pthread_exit(NULL);
+    pthread_cond_broadcast(cq->cond);
+    pthread_exit(NULL);
 }

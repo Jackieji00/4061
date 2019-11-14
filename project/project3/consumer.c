@@ -41,7 +41,7 @@ void * consumer(void* arg){
   while(end>lineNum||end==0){
     pthread_mutex_lock(cq->mutex);
     //pthread_cond_signal(cq->cond);
-    while(q->check==0){
+    if(q->check==0){
         pthread_cond_wait(cq->cond, cq->mutex);
     }
     if(q->check==2){
@@ -58,7 +58,7 @@ void * consumer(void* arg){
 
     }
     lineNum++;
-    pthread_cond_signal(cq->cond);
+    //pthread_cond_signal(cq->cond);
     pthread_mutex_unlock(cq->mutex);
     //usleep(rand() % 1000);
   }
