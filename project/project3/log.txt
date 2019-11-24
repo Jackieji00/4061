@@ -1,0 +1,118 @@
+consumer 1
+consumer 2
+consumer 3
+consumer 4
+producer
+consumer 5
+producer: 0
+producer: 1
+consumer 2: 0
+consumer 2: 1
+producer: 2
+consumer 4: 2
+producer: 3
+producer: 4
+producer: 5
+consumer 4: 3
+consumer 4: 4
+consumer 4: 5
+producer: 6
+producer: 7
+consumer 4: 6
+consumer 4: 7
+producer: 8
+producer: 9
+producer: 10
+consumer 4: 8
+consumer 4: 9
+consumer 4: 10
+producer: 11
+producer: 12
+consumer 2: 11
+consumer 2: 12
+producer: 13
+producer: 14
+producer: 15
+consumer 5: 13
+consumer 5: 14
+consumer 5: 15
+producer: 16
+consumer 4: 16
+producer: 17
+producer: 18
+producer: 19
+producer: 20
+producer: 21
+consumer 5: 17
+consumer 5: 18
+consumer 5: 19
+consumer 5: 20
+producer: 22
+producer: 23
+producer: 24
+producer: 25
+producer: 26
+producer: 27
+producer: 28
+producer: 29
+consumer 2: 21
+consumer 2: 22
+consumer 2: 23
+consumer 2: 24
+consumer 2: 25
+consumer 2: 26
+consumer 2: 27
+consumer 2: 28
+consumer 2: 29
+producer: 30
+producer: 31
+producer: 32
+consumer 2: 30
+consumer 2: 31
+consumer 2: 32
+producer: 33
+producer: 34
+producer: 35
+producer: 36
+producer: 37
+producer: 38
+producer: 39
+producer: 40
+producer: 41
+producer: 42
+producer: 43
+producer: 44
+producer: 45
+producer: 46
+producer: 47
+producer: 48
+consumer 2: 33
+consumer 2: 34
+consumer 1: 35
+consumer 2: 36
+consumer 2: 37
+consumer 5: 38
+consumer 5: 39
+consumer 5: 40
+consumer 5: 41
+consumer 5: 42
+consumer 5: 43
+consumer 5: 44
+consumer 5: 45
+consumer 5: 46
+consumer 4: 47
+producer: 49
+producer: 50
+producer: 51
+producer: 52
+producer: 53
+producer: 54
+producer: 55
+consumer 5: 48
+consumer 5: 49
+consumer 5: 50
+consumer 5: 51
+consumer 5: 52
+consumer 5: 53
+consumer 5: 54
+consumer 5: 55

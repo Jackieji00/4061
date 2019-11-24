@@ -46,7 +46,6 @@ void * consumer(void* arg){
     }
     if(q->check==2){
       q=q->next;
-      //lineNum++;
     }else if(q->check==1){
       q->check=2;
       wordcount(q->vals);
@@ -54,14 +53,11 @@ void * consumer(void* arg){
         fprintf(logfile, "consumer %d: %d\n",customerID,lineNum);
       }
       q=q->next;
-      //lineNum++;
 
     }
     lineNum++;
     pthread_cond_signal(cq->cond);
     pthread_mutex_unlock(cq->mutex);
-    //usleep(rand() % 1000);
   }
-
   pthread_exit(NULL);
 }
