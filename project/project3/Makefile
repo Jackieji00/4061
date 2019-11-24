@@ -21,23 +21,18 @@ TST_DIR = testing
 test:
 	# @printf "===Testing mapreduce===\n"
 	# @printf "\nTestCase1: One line with no option\n"
-	# ./wcs 1 ${TST_DIR}/test1.txt
+	# ./wcs 2 ${TST_DIR}/test1.txt
 	# @printf "\n"
-	@printf "\nTestCase2_1: Normal Case with option\n"
-	./wcs 5 ${TST_DIR}/test2.txt -p
+	# @printf "\nTestCase2: Normal Case with option\n"
+	# ./wcs 4 ${TST_DIR}/test2.txt -p
+	# @printf "\n"
+	# @printf "\nTestCase3: Normal Case with option\n"
+	# ./wcs 2 ${TST_DIR}/test3.txt -p
+	# @printf "\n"
+	@printf "\nTestCase4: Normal Case with option\n"
+	./wcs 5 ${TST_DIR}/test4.txt -p
 	@printf "\n"
-	# @printf "\nTestCase2_2: Normal Case - 32 max mapper\n"
-	# ./mapreduce ${TST_DIR}/TestCase2 32
-	# @printf "\n"
-	# @printf "\nTestCase2_3: Normal Case - Single level folder hierarchy with same number of files in each folder\n"
-	# ./mapreduce ${TST_DIR}/TestCase2 5
-	# @printf "\n"
-	# @printf "\nTestCase3: Normal Case - Single level folder hierarchy with carying number of files in each folder\n"
-	# ./mapreduce ${TST_DIR}/TestCase3 5
-	# @printf "\n"
-	# @printf "\nTestCase4: Normal case - Multi level folder hierarchy\n"
-	# ./mapreduce ${TST_DIR}/TestCase4 5
-	# @printf "\n"
+
 #
 # test-extracredits:
 # 	@printf "===Testing extra credits===\n"

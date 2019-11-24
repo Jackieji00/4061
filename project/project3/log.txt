@@ -6,6 +6,7 @@ producer
 consumer 5
 producer: 0
 producer: 1
+<<<<<<< HEAD
 consumer 2: 0
 consumer 2: 1
 producer: 2
@@ -70,12 +71,88 @@ producer: 32
 consumer 2: 30
 consumer 2: 31
 consumer 2: 32
+=======
+consumer 1: 0
+consumer 1: 1
+producer: 2
+producer: 3
+producer: 4
+producer: 5
+producer: 6
+consumer 1: 2
+consumer 1: 3
+consumer 5: 4
+consumer 4: 5
+consumer 4: 6
+producer: 7
+producer: 8
+producer: 9
+consumer 5: 7
+producer: 10
+consumer 2: 8
+consumer 1: 9
+consumer 1: 10
+producer: 11
+producer: 12
+consumer 1: 11
+consumer 1: 12
+producer: 13
+consumer 2: 13
+producer: 14
+producer: 15
+producer: 16
+producer: 17
+consumer 2: 14
+consumer 2: 15
+consumer 2: 16
+producer: 18
+producer: 19
+producer: 20
+consumer 2: 17
+consumer 2: 18
+consumer 2: 19
+consumer 3: 20
+producer: 21
+producer: 22
+producer: 23
+consumer 1: 21
+consumer 1: 22
+consumer 1: 23
+producer: 24
+consumer 3: 24
+producer: 25
+producer: 26
+consumer 5: 25
+consumer 5: 26
+producer: 27
+producer: 28
+producer: 29
+producer: 30
+producer: 31
+consumer 2: 27
+consumer 2: 28
+producer: 32
+>>>>>>> 5881a2b42df0d73745b1b46121d890c7aaae4ad1
 producer: 33
 producer: 34
 producer: 35
 producer: 36
 producer: 37
+<<<<<<< HEAD
 producer: 38
+=======
+consumer 2: 29
+consumer 2: 30
+consumer 2: 31
+consumer 2: 32
+consumer 2: 33
+producer: 38
+consumer 2: 34
+consumer 2: 35
+consumer 5: 36
+consumer 2: 37
+consumer 4: 38
+>>>>>>> 5881a2b42df0d73745b1b46121d890c7aaae4ad1
 producer: 39
 producer: 40
 producer: 41
@@ -86,6 +163,7 @@ producer: 45
 producer: 46
 producer: 47
 producer: 48
+<<<<<<< HEAD
 consumer 2: 33
 consumer 2: 34
 consumer 1: 35
@@ -116,3 +194,8063 @@ consumer 5: 52
 consumer 5: 53
 consumer 5: 54
 consumer 5: 55
+=======
+producer: 49
+producer: 50
+producer: 51
+consumer 5: 39
+producer: 52
+producer: 53
+consumer 1: 40
+consumer 1: 41
+consumer 1: 42
+producer: 54
+consumer 1: 43
+consumer 1: 44
+consumer 1: 45
+consumer 2: 46
+consumer 4: 47
+consumer 1: 48
+consumer 1: 49
+consumer 2: 50
+consumer 1: 51
+consumer 1: 52
+consumer 1: 53
+consumer 1: 54
+producer: 55
+producer: 56
+producer: 57
+consumer 3: 55
+producer: 58
+producer: 59
+producer: 60
+producer: 61
+consumer 2: 56
+consumer 2: 57
+consumer 2: 58
+consumer 2: 59
+consumer 2: 60
+consumer 2: 61
+producer: 62
+producer: 63
+producer: 64
+producer: 65
+consumer 2: 62
+consumer 2: 63
+consumer 5: 64
+consumer 5: 65
+producer: 66
+producer: 67
+producer: 68
+consumer 2: 66
+consumer 2: 67
+producer: 69
+consumer 2: 68
+consumer 5: 69
+producer: 70
+producer: 71
+producer: 72
+consumer 3: 70
+producer: 73
+producer: 74
+producer: 75
+consumer 3: 71
+consumer 3: 72
+consumer 3: 73
+consumer 3: 74
+consumer 3: 75
+producer: 76
+consumer 3: 76
+producer: 77
+consumer 3: 77
+producer: 78
+producer: 79
+producer: 80
+producer: 81
+producer: 82
+producer: 83
+producer: 84
+producer: 85
+producer: 86
+producer: 87
+producer: 88
+consumer 4: 78
+consumer 4: 79
+consumer 4: 80
+producer: 89
+producer: 90
+producer: 91
+producer: 92
+producer: 93
+producer: 94
+consumer 4: 81
+consumer 3: 82
+producer: 95
+consumer 4: 83
+consumer 2: 84
+consumer 2: 85
+consumer 2: 86
+consumer 4: 87
+producer: 96
+consumer 4: 88
+producer: 97
+producer: 98
+producer: 99
+producer: 100
+producer: 101
+producer: 102
+producer: 103
+producer: 104
+producer: 105
+producer: 106
+producer: 107
+producer: 108
+producer: 109
+consumer 3: 89
+producer: 110
+producer: 111
+producer: 112
+producer: 113
+consumer 4: 90
+producer: 114
+consumer 4: 91
+producer: 115
+consumer 5: 92
+consumer 5: 93
+producer: 116
+producer: 117
+consumer 5: 94
+consumer 1: 95
+consumer 5: 96
+consumer 5: 97
+consumer 1: 98
+consumer 1: 99
+producer: 118
+producer: 119
+producer: 120
+producer: 121
+producer: 122
+producer: 123
+producer: 124
+producer: 125
+producer: 126
+consumer 1: 100
+consumer 2: 101
+consumer 3: 102
+producer: 127
+consumer 3: 103
+consumer 3: 104
+consumer 3: 105
+consumer 3: 106
+consumer 3: 107
+consumer 2: 108
+consumer 2: 109
+producer: 128
+producer: 129
+producer: 130
+producer: 131
+producer: 132
+consumer 2: 110
+consumer 2: 111
+consumer 2: 112
+consumer 2: 113
+consumer 2: 114
+consumer 2: 115
+consumer 2: 116
+consumer 2: 117
+consumer 2: 118
+consumer 4: 119
+consumer 4: 120
+consumer 4: 121
+producer: 133
+producer: 134
+producer: 135
+producer: 136
+producer: 137
+producer: 138
+producer: 139
+producer: 140
+producer: 141
+producer: 142
+producer: 143
+producer: 144
+producer: 145
+producer: 146
+producer: 147
+producer: 148
+consumer 4: 122
+consumer 4: 123
+consumer 4: 124
+consumer 4: 125
+consumer 4: 126
+consumer 4: 127
+consumer 1: 128
+consumer 4: 129
+consumer 4: 130
+consumer 4: 131
+consumer 4: 132
+consumer 4: 133
+consumer 4: 134
+consumer 4: 135
+consumer 4: 136
+consumer 4: 137
+consumer 4: 138
+consumer 4: 139
+consumer 4: 140
+consumer 4: 141
+consumer 4: 142
+consumer 4: 143
+consumer 4: 144
+consumer 4: 145
+consumer 4: 146
+consumer 1: 147
+producer: 149
+consumer 1: 148
+consumer 3: 149
+producer: 150
+consumer 4: 150
+producer: 151
+producer: 152
+consumer 4: 151
+consumer 3: 152
+producer: 153
+consumer 2: 153
+producer: 154
+consumer 4: 154
+producer: 155
+producer: 156
+producer: 157
+consumer 5: 155
+producer: 158
+producer: 159
+producer: 160
+producer: 161
+consumer 5: 156
+consumer 5: 157
+consumer 5: 158
+consumer 5: 159
+consumer 5: 160
+consumer 5: 161
+producer: 162
+consumer 5: 162
+producer: 163
+producer: 164
+producer: 165
+consumer 1: 163
+consumer 5: 164
+consumer 1: 165
+producer: 166
+producer: 167
+producer: 168
+producer: 169
+consumer 1: 166
+consumer 1: 167
+consumer 1: 168
+consumer 1: 169
+producer: 170
+producer: 171
+producer: 172
+producer: 173
+consumer 2: 170
+consumer 2: 171
+consumer 2: 172
+consumer 2: 173
+producer: 174
+consumer 4: 174
+producer: 175
+consumer 2: 175
+producer: 176
+producer: 177
+producer: 178
+producer: 179
+producer: 180
+producer: 181
+consumer 4: 176
+consumer 4: 177
+consumer 4: 178
+consumer 4: 179
+consumer 4: 180
+producer: 182
+producer: 183
+producer: 184
+consumer 2: 181
+consumer 2: 182
+consumer 2: 183
+consumer 2: 184
+producer: 185
+producer: 186
+consumer 4: 185
+consumer 4: 186
+producer: 187
+consumer 1: 187
+producer: 188
+producer: 189
+consumer 1: 188
+consumer 1: 189
+producer: 190
+consumer 2: 190
+producer: 191
+producer: 192
+producer: 193
+consumer 1: 191
+consumer 1: 192
+consumer 1: 193
+producer: 194
+producer: 195
+producer: 196
+consumer 1: 194
+consumer 1: 195
+consumer 3: 196
+producer: 197
+producer: 198
+producer: 199
+producer: 200
+consumer 3: 197
+consumer 3: 198
+consumer 3: 199
+consumer 3: 200
+producer: 201
+producer: 202
+producer: 203
+consumer 2: 201
+consumer 2: 202
+consumer 3: 203
+producer: 204
+consumer 2: 204
+producer: 205
+producer: 206
+consumer 1: 205
+consumer 4: 206
+producer: 207
+producer: 208
+producer: 209
+consumer 2: 207
+consumer 5: 208
+consumer 5: 209
+producer: 210
+consumer 4: 210
+producer: 211
+producer: 212
+producer: 213
+consumer 5: 211
+producer: 214
+producer: 215
+consumer 5: 212
+consumer 1: 213
+producer: 216
+consumer 1: 214
+producer: 217
+producer: 218
+producer: 219
+consumer 1: 215
+consumer 1: 216
+consumer 1: 217
+consumer 1: 218
+consumer 1: 219
+producer: 220
+producer: 221
+producer: 222
+producer: 223
+producer: 224
+producer: 225
+producer: 226
+producer: 227
+producer: 228
+consumer 4: 220
+consumer 4: 221
+consumer 4: 222
+consumer 3: 223
+consumer 3: 224
+consumer 4: 225
+consumer 4: 226
+consumer 4: 227
+consumer 4: 228
+producer: 229
+consumer 4: 229
+producer: 230
+producer: 231
+producer: 232
+producer: 233
+producer: 234
+consumer 1: 230
+consumer 4: 231
+consumer 1: 232
+consumer 2: 233
+consumer 2: 234
+producer: 235
+producer: 236
+producer: 237
+consumer 1: 235
+producer: 238
+consumer 1: 236
+producer: 239
+producer: 240
+producer: 241
+producer: 242
+producer: 243
+producer: 244
+producer: 245
+producer: 246
+producer: 247
+producer: 248
+producer: 249
+producer: 250
+producer: 251
+producer: 252
+producer: 253
+consumer 1: 237
+consumer 1: 238
+consumer 1: 239
+consumer 1: 240
+producer: 254
+producer: 255
+consumer 5: 241
+producer: 256
+producer: 257
+producer: 258
+producer: 259
+producer: 260
+consumer 1: 242
+consumer 1: 243
+consumer 1: 244
+consumer 1: 245
+consumer 4: 246
+producer: 261
+producer: 262
+producer: 263
+producer: 264
+consumer 1: 247
+producer: 265
+consumer 1: 248
+consumer 1: 249
+consumer 1: 250
+producer: 266
+consumer 1: 251
+producer: 267
+consumer 1: 252
+producer: 268
+consumer 1: 253
+producer: 269
+consumer 5: 254
+consumer 5: 255
+consumer 5: 256
+producer: 270
+consumer 5: 257
+producer: 271
+producer: 272
+producer: 273
+producer: 274
+producer: 275
+producer: 276
+producer: 277
+producer: 278
+producer: 279
+producer: 280
+producer: 281
+producer: 282
+producer: 283
+producer: 284
+consumer 2: 258
+consumer 2: 259
+consumer 2: 260
+consumer 2: 261
+consumer 2: 262
+consumer 2: 263
+consumer 2: 264
+consumer 2: 265
+consumer 2: 266
+consumer 2: 267
+consumer 2: 268
+consumer 2: 269
+consumer 2: 270
+consumer 2: 271
+consumer 2: 272
+consumer 2: 273
+consumer 2: 274
+consumer 2: 275
+consumer 2: 276
+consumer 1: 277
+producer: 285
+producer: 286
+producer: 287
+producer: 288
+producer: 289
+producer: 290
+producer: 291
+producer: 292
+producer: 293
+producer: 294
+producer: 295
+producer: 296
+producer: 297
+producer: 298
+consumer 1: 278
+consumer 1: 279
+consumer 1: 280
+consumer 1: 281
+consumer 1: 282
+producer: 299
+consumer 2: 283
+consumer 2: 284
+consumer 2: 285
+consumer 5: 286
+producer: 300
+producer: 301
+producer: 302
+consumer 2: 287
+consumer 2: 288
+consumer 2: 289
+consumer 1: 290
+producer: 303
+consumer 3: 291
+producer: 304
+producer: 305
+producer: 306
+producer: 307
+consumer 2: 292
+consumer 2: 293
+consumer 2: 294
+consumer 2: 295
+consumer 5: 296
+consumer 5: 297
+consumer 5: 298
+producer: 308
+consumer 1: 299
+consumer 1: 300
+consumer 3: 301
+consumer 3: 302
+consumer 4: 303
+consumer 4: 304
+consumer 2: 305
+producer: 309
+consumer 2: 306
+consumer 2: 307
+consumer 2: 308
+consumer 2: 309
+producer: 310
+producer: 311
+producer: 312
+producer: 313
+producer: 314
+producer: 315
+producer: 316
+producer: 317
+producer: 318
+producer: 319
+producer: 320
+producer: 321
+producer: 322
+consumer 2: 310
+producer: 323
+producer: 324
+producer: 325
+producer: 326
+producer: 327
+producer: 328
+producer: 329
+producer: 330
+producer: 331
+producer: 332
+producer: 333
+producer: 334
+producer: 335
+producer: 336
+producer: 337
+producer: 338
+consumer 2: 311
+consumer 2: 312
+consumer 1: 313
+consumer 1: 314
+producer: 339
+producer: 340
+producer: 341
+producer: 342
+producer: 343
+producer: 344
+producer: 345
+producer: 346
+producer: 347
+producer: 348
+producer: 349
+producer: 350
+producer: 351
+producer: 352
+producer: 353
+producer: 354
+producer: 355
+producer: 356
+producer: 357
+producer: 358
+producer: 359
+producer: 360
+consumer 1: 315
+consumer 1: 316
+producer: 361
+producer: 362
+consumer 4: 317
+consumer 4: 318
+consumer 4: 319
+consumer 4: 320
+consumer 4: 321
+consumer 3: 322
+consumer 2: 323
+consumer 2: 324
+consumer 2: 325
+consumer 2: 326
+consumer 2: 327
+consumer 2: 328
+producer: 363
+producer: 364
+producer: 365
+producer: 366
+producer: 367
+consumer 2: 329
+consumer 2: 330
+consumer 2: 331
+consumer 2: 332
+consumer 2: 333
+consumer 2: 334
+consumer 2: 335
+consumer 2: 336
+consumer 2: 337
+consumer 5: 338
+consumer 3: 339
+consumer 3: 340
+consumer 2: 341
+consumer 2: 342
+consumer 2: 343
+consumer 2: 344
+consumer 2: 345
+consumer 2: 346
+consumer 2: 347
+consumer 2: 348
+consumer 2: 349
+consumer 2: 350
+consumer 2: 351
+consumer 2: 352
+consumer 2: 353
+producer: 368
+consumer 2: 354
+consumer 2: 355
+consumer 3: 356
+consumer 3: 357
+consumer 3: 358
+consumer 2: 359
+consumer 2: 360
+consumer 1: 361
+producer: 369
+consumer 1: 362
+consumer 1: 363
+consumer 1: 364
+consumer 1: 365
+consumer 1: 366
+consumer 1: 367
+consumer 1: 368
+consumer 1: 369
+producer: 370
+consumer 1: 370
+producer: 371
+producer: 372
+producer: 373
+producer: 374
+producer: 375
+producer: 376
+consumer 3: 371
+producer: 377
+consumer 3: 372
+consumer 1: 373
+consumer 1: 374
+consumer 5: 375
+consumer 5: 376
+consumer 5: 377
+producer: 378
+producer: 379
+consumer 1: 378
+consumer 1: 379
+producer: 380
+consumer 1: 380
+producer: 381
+producer: 382
+producer: 383
+consumer 1: 381
+consumer 4: 382
+consumer 4: 383
+producer: 384
+producer: 385
+consumer 5: 384
+consumer 5: 385
+producer: 386
+producer: 387
+producer: 388
+producer: 389
+producer: 390
+consumer 3: 386
+consumer 3: 387
+consumer 3: 388
+consumer 3: 389
+producer: 391
+consumer 3: 390
+consumer 3: 391
+producer: 392
+consumer 3: 392
+producer: 393
+producer: 394
+producer: 395
+producer: 396
+consumer 3: 393
+consumer 3: 394
+consumer 3: 395
+consumer 3: 396
+producer: 397
+consumer 1: 397
+producer: 398
+producer: 399
+consumer 5: 398
+consumer 5: 399
+producer: 400
+producer: 401
+producer: 402
+producer: 403
+consumer 5: 400
+consumer 5: 401
+consumer 4: 402
+consumer 4: 403
+producer: 404
+producer: 405
+producer: 406
+producer: 407
+producer: 408
+consumer 5: 404
+consumer 5: 405
+consumer 5: 406
+consumer 5: 407
+consumer 2: 408
+producer: 409
+producer: 410
+producer: 411
+consumer 2: 409
+producer: 412
+consumer 2: 410
+consumer 3: 411
+consumer 2: 412
+producer: 413
+producer: 414
+producer: 415
+consumer 5: 413
+consumer 5: 414
+consumer 5: 415
+producer: 416
+consumer 5: 416
+producer: 417
+producer: 418
+consumer 2: 417
+consumer 2: 418
+producer: 419
+producer: 420
+consumer 1: 419
+consumer 1: 420
+producer: 421
+producer: 422
+consumer 4: 421
+producer: 423
+producer: 424
+consumer 4: 422
+consumer 4: 423
+consumer 4: 424
+producer: 425
+producer: 426
+producer: 427
+producer: 428
+consumer 1: 425
+consumer 1: 426
+consumer 1: 427
+consumer 2: 428
+producer: 429
+consumer 5: 429
+producer: 430
+producer: 431
+producer: 432
+producer: 433
+producer: 434
+consumer 5: 430
+consumer 5: 431
+consumer 3: 432
+consumer 4: 433
+consumer 5: 434
+producer: 435
+producer: 436
+producer: 437
+producer: 438
+producer: 439
+producer: 440
+producer: 441
+producer: 442
+producer: 443
+producer: 444
+producer: 445
+producer: 446
+producer: 447
+producer: 448
+producer: 449
+producer: 450
+producer: 451
+producer: 452
+producer: 453
+consumer 5: 435
+consumer 5: 436
+consumer 4: 437
+consumer 4: 438
+producer: 454
+producer: 455
+producer: 456
+producer: 457
+producer: 458
+producer: 459
+producer: 460
+producer: 461
+producer: 462
+producer: 463
+consumer 4: 439
+producer: 464
+producer: 465
+producer: 466
+producer: 467
+producer: 468
+consumer 3: 440
+consumer 5: 441
+producer: 469
+producer: 470
+consumer 3: 442
+producer: 471
+consumer 3: 443
+producer: 472
+producer: 473
+producer: 474
+producer: 475
+producer: 476
+producer: 477
+producer: 478
+consumer 3: 444
+producer: 479
+consumer 5: 445
+consumer 3: 446
+consumer 3: 447
+consumer 3: 448
+consumer 3: 449
+consumer 3: 450
+consumer 3: 451
+consumer 3: 452
+consumer 3: 453
+consumer 3: 454
+consumer 3: 455
+consumer 3: 456
+consumer 2: 457
+consumer 2: 458
+consumer 3: 459
+consumer 2: 460
+producer: 480
+producer: 481
+producer: 482
+producer: 483
+producer: 484
+producer: 485
+consumer 2: 461
+consumer 2: 462
+consumer 2: 463
+consumer 5: 464
+consumer 5: 465
+consumer 5: 466
+consumer 5: 467
+consumer 5: 468
+consumer 5: 469
+consumer 5: 470
+consumer 5: 471
+consumer 5: 472
+consumer 5: 473
+consumer 2: 474
+consumer 2: 475
+producer: 486
+producer: 487
+producer: 488
+producer: 489
+producer: 490
+producer: 491
+producer: 492
+producer: 493
+consumer 1: 476
+consumer 1: 477
+consumer 1: 478
+producer: 494
+consumer 3: 479
+producer: 495
+producer: 496
+producer: 497
+producer: 498
+producer: 499
+producer: 500
+consumer 5: 480
+producer: 501
+producer: 502
+consumer 3: 481
+producer: 503
+consumer 3: 482
+consumer 3: 483
+producer: 504
+consumer 1: 484
+consumer 1: 485
+consumer 5: 486
+consumer 5: 487
+producer: 505
+producer: 506
+consumer 5: 488
+producer: 507
+consumer 5: 489
+producer: 508
+consumer 5: 490
+consumer 5: 491
+consumer 2: 492
+consumer 2: 493
+consumer 2: 494
+consumer 2: 495
+consumer 2: 496
+consumer 2: 497
+consumer 2: 498
+consumer 4: 499
+consumer 4: 500
+producer: 509
+producer: 510
+producer: 511
+producer: 512
+producer: 513
+producer: 514
+consumer 2: 501
+consumer 2: 502
+consumer 4: 503
+producer: 515
+producer: 516
+consumer 2: 504
+consumer 2: 505
+consumer 2: 506
+consumer 2: 507
+consumer 2: 508
+consumer 2: 509
+producer: 517
+producer: 518
+producer: 519
+producer: 520
+producer: 521
+producer: 522
+producer: 523
+producer: 524
+producer: 525
+consumer 2: 510
+consumer 2: 511
+consumer 2: 512
+consumer 2: 513
+consumer 2: 514
+consumer 2: 515
+producer: 526
+producer: 527
+producer: 528
+producer: 529
+producer: 530
+producer: 531
+producer: 532
+producer: 533
+producer: 534
+consumer 2: 516
+consumer 2: 517
+consumer 2: 518
+producer: 535
+producer: 536
+producer: 537
+producer: 538
+producer: 539
+producer: 540
+producer: 541
+producer: 542
+producer: 543
+consumer 3: 519
+consumer 3: 520
+consumer 3: 521
+consumer 2: 522
+consumer 2: 523
+consumer 2: 524
+consumer 2: 525
+consumer 2: 526
+consumer 3: 527
+consumer 3: 528
+producer: 544
+producer: 545
+producer: 546
+consumer 2: 529
+consumer 1: 530
+consumer 2: 531
+consumer 2: 532
+consumer 2: 533
+consumer 2: 534
+consumer 2: 535
+consumer 1: 536
+producer: 547
+producer: 548
+producer: 549
+consumer 1: 537
+consumer 1: 538
+consumer 1: 539
+consumer 1: 540
+consumer 1: 541
+producer: 550
+producer: 551
+producer: 552
+consumer 1: 542
+producer: 553
+producer: 554
+producer: 555
+consumer 1: 543
+consumer 1: 544
+consumer 1: 545
+consumer 1: 546
+consumer 1: 547
+consumer 1: 548
+consumer 1: 549
+consumer 1: 550
+consumer 1: 551
+consumer 1: 552
+consumer 1: 553
+consumer 1: 554
+consumer 1: 555
+producer: 556
+producer: 557
+consumer 2: 556
+consumer 2: 557
+producer: 558
+producer: 559
+producer: 560
+producer: 561
+consumer 2: 558
+consumer 2: 559
+consumer 4: 560
+consumer 4: 561
+producer: 562
+producer: 563
+producer: 564
+consumer 1: 562
+consumer 1: 563
+consumer 2: 564
+producer: 565
+producer: 566
+producer: 567
+producer: 568
+producer: 569
+producer: 570
+producer: 571
+producer: 572
+producer: 573
+consumer 4: 565
+producer: 574
+consumer 3: 566
+consumer 3: 567
+consumer 3: 568
+consumer 3: 569
+consumer 3: 570
+consumer 3: 571
+consumer 3: 572
+producer: 575
+consumer 1: 573
+consumer 1: 574
+consumer 1: 575
+producer: 576
+producer: 577
+producer: 578
+producer: 579
+producer: 580
+producer: 581
+consumer 1: 576
+consumer 2: 577
+consumer 2: 578
+consumer 3: 579
+consumer 3: 580
+consumer 3: 581
+producer: 582
+producer: 583
+consumer 2: 582
+consumer 2: 583
+producer: 584
+producer: 585
+producer: 586
+consumer 4: 584
+consumer 4: 585
+consumer 4: 586
+producer: 587
+producer: 588
+producer: 589
+consumer 4: 587
+producer: 590
+producer: 591
+consumer 4: 588
+consumer 4: 589
+consumer 4: 590
+producer: 592
+producer: 593
+producer: 594
+producer: 595
+producer: 596
+producer: 597
+producer: 598
+producer: 599
+consumer 4: 591
+producer: 600
+consumer 4: 592
+producer: 601
+consumer 4: 593
+consumer 4: 594
+producer: 602
+producer: 603
+producer: 604
+producer: 605
+consumer 4: 595
+consumer 4: 596
+consumer 4: 597
+consumer 4: 598
+consumer 4: 599
+consumer 4: 600
+consumer 4: 601
+consumer 4: 602
+consumer 4: 603
+consumer 4: 604
+producer: 606
+consumer 4: 605
+consumer 4: 606
+producer: 607
+producer: 608
+consumer 4: 607
+consumer 5: 608
+producer: 609
+producer: 610
+producer: 611
+producer: 612
+producer: 613
+producer: 614
+producer: 615
+producer: 616
+consumer 1: 609
+consumer 1: 610
+consumer 1: 611
+consumer 1: 612
+consumer 1: 613
+consumer 1: 614
+consumer 1: 615
+consumer 1: 616
+producer: 617
+consumer 1: 617
+producer: 618
+producer: 619
+producer: 620
+producer: 621
+consumer 4: 618
+consumer 4: 619
+consumer 4: 620
+consumer 5: 621
+producer: 622
+producer: 623
+consumer 5: 622
+consumer 5: 623
+producer: 624
+producer: 625
+consumer 1: 624
+consumer 2: 625
+producer: 626
+consumer 4: 626
+producer: 627
+consumer 4: 627
+producer: 628
+consumer 4: 628
+producer: 629
+consumer 4: 629
+producer: 630
+producer: 631
+producer: 632
+producer: 633
+producer: 634
+producer: 635
+consumer 2: 630
+consumer 2: 631
+consumer 4: 632
+producer: 636
+consumer 4: 633
+producer: 637
+producer: 638
+producer: 639
+consumer 4: 634
+consumer 4: 635
+consumer 1: 636
+consumer 1: 637
+consumer 2: 638
+producer: 640
+producer: 641
+producer: 642
+producer: 643
+producer: 644
+producer: 645
+producer: 646
+producer: 647
+producer: 648
+producer: 649
+consumer 5: 639
+consumer 5: 640
+consumer 5: 641
+consumer 5: 642
+consumer 5: 643
+consumer 5: 644
+consumer 2: 645
+consumer 2: 646
+consumer 2: 647
+consumer 5: 648
+consumer 5: 649
+producer: 650
+producer: 651
+producer: 652
+producer: 653
+consumer 2: 650
+consumer 3: 651
+consumer 3: 652
+consumer 3: 653
+producer: 654
+producer: 655
+producer: 656
+producer: 657
+producer: 658
+consumer 3: 654
+consumer 3: 655
+consumer 4: 656
+consumer 4: 657
+consumer 4: 658
+producer: 659
+consumer 4: 659
+producer: 660
+producer: 661
+producer: 662
+producer: 663
+producer: 664
+consumer 4: 660
+consumer 4: 661
+consumer 4: 662
+consumer 4: 663
+consumer 4: 664
+producer: 665
+producer: 666
+consumer 4: 665
+consumer 4: 666
+producer: 667
+consumer 4: 667
+producer: 668
+consumer 4: 668
+producer: 669
+producer: 670
+consumer 4: 669
+producer: 671
+producer: 672
+producer: 673
+producer: 674
+producer: 675
+consumer 4: 670
+consumer 4: 671
+consumer 4: 672
+consumer 4: 673
+consumer 4: 674
+consumer 4: 675
+producer: 676
+consumer 4: 676
+producer: 677
+consumer 4: 677
+producer: 678
+producer: 679
+producer: 680
+consumer 4: 678
+consumer 4: 679
+consumer 4: 680
+producer: 681
+producer: 682
+consumer 4: 681
+consumer 4: 682
+producer: 683
+producer: 684
+producer: 685
+producer: 686
+producer: 687
+consumer 2: 683
+consumer 2: 684
+consumer 2: 685
+producer: 688
+producer: 689
+producer: 690
+producer: 691
+producer: 692
+producer: 693
+producer: 694
+producer: 695
+producer: 696
+producer: 697
+producer: 698
+producer: 699
+consumer 3: 686
+consumer 1: 687
+consumer 1: 688
+consumer 1: 689
+consumer 1: 690
+consumer 3: 691
+consumer 3: 692
+consumer 5: 693
+consumer 5: 694
+consumer 5: 695
+producer: 700
+producer: 701
+consumer 3: 696
+consumer 3: 697
+consumer 3: 698
+consumer 5: 699
+consumer 5: 700
+consumer 4: 701
+producer: 702
+producer: 703
+consumer 5: 702
+consumer 5: 703
+producer: 704
+consumer 1: 704
+producer: 705
+producer: 706
+consumer 5: 705
+consumer 2: 706
+producer: 707
+producer: 708
+producer: 709
+producer: 710
+consumer 2: 707
+consumer 1: 708
+consumer 1: 709
+consumer 1: 710
+producer: 711
+producer: 712
+consumer 1: 711
+consumer 5: 712
+producer: 713
+producer: 714
+consumer 3: 713
+consumer 3: 714
+producer: 715
+consumer 2: 715
+producer: 716
+producer: 717
+producer: 718
+producer: 719
+consumer 3: 716
+consumer 3: 717
+consumer 3: 718
+consumer 3: 719
+producer: 720
+producer: 721
+producer: 722
+producer: 723
+consumer 5: 720
+consumer 1: 721
+consumer 1: 722
+consumer 4: 723
+producer: 724
+producer: 725
+producer: 726
+producer: 727
+consumer 4: 724
+producer: 728
+consumer 1: 725
+consumer 1: 726
+consumer 1: 727
+producer: 729
+producer: 730
+producer: 731
+producer: 732
+producer: 733
+producer: 734
+consumer 4: 728
+consumer 4: 729
+consumer 4: 730
+consumer 4: 731
+consumer 4: 732
+consumer 4: 733
+consumer 2: 734
+producer: 735
+producer: 736
+producer: 737
+producer: 738
+producer: 739
+consumer 2: 735
+consumer 2: 736
+consumer 2: 737
+consumer 2: 738
+producer: 740
+producer: 741
+producer: 742
+producer: 743
+producer: 744
+producer: 745
+producer: 746
+producer: 747
+producer: 748
+consumer 5: 739
+producer: 749
+producer: 750
+producer: 751
+producer: 752
+producer: 753
+producer: 754
+consumer 5: 740
+consumer 5: 741
+consumer 5: 742
+consumer 5: 743
+producer: 755
+consumer 4: 744
+consumer 4: 745
+consumer 4: 746
+consumer 4: 747
+consumer 4: 748
+consumer 4: 749
+consumer 4: 750
+consumer 4: 751
+consumer 4: 752
+consumer 4: 753
+consumer 4: 754
+consumer 1: 755
+producer: 756
+producer: 757
+producer: 758
+producer: 759
+producer: 760
+producer: 761
+producer: 762
+consumer 4: 756
+producer: 763
+consumer 4: 757
+consumer 4: 758
+consumer 1: 759
+consumer 1: 760
+consumer 1: 761
+consumer 1: 762
+consumer 1: 763
+producer: 764
+consumer 4: 764
+producer: 765
+producer: 766
+producer: 767
+consumer 3: 765
+consumer 3: 766
+consumer 3: 767
+producer: 768
+producer: 769
+consumer 5: 768
+producer: 770
+producer: 771
+producer: 772
+producer: 773
+consumer 4: 769
+producer: 774
+consumer 4: 770
+consumer 4: 771
+consumer 1: 772
+consumer 1: 773
+consumer 4: 774
+producer: 775
+consumer 2: 775
+producer: 776
+producer: 777
+producer: 778
+consumer 4: 776
+consumer 4: 777
+consumer 4: 778
+producer: 779
+consumer 3: 779
+producer: 780
+producer: 781
+consumer 4: 780
+consumer 5: 781
+producer: 782
+producer: 783
+producer: 784
+consumer 3: 782
+consumer 3: 783
+consumer 3: 784
+producer: 785
+producer: 786
+producer: 787
+producer: 788
+consumer 5: 785
+consumer 5: 786
+consumer 5: 787
+consumer 5: 788
+producer: 789
+producer: 790
+producer: 791
+producer: 792
+producer: 793
+consumer 1: 789
+consumer 1: 790
+consumer 1: 791
+consumer 1: 792
+consumer 1: 793
+producer: 794
+producer: 795
+producer: 796
+producer: 797
+consumer 1: 794
+consumer 1: 795
+consumer 1: 796
+consumer 4: 797
+producer: 798
+producer: 799
+consumer 4: 798
+consumer 4: 799
+producer: 800
+producer: 801
+consumer 5: 800
+consumer 5: 801
+producer: 802
+consumer 5: 802
+producer: 803
+producer: 804
+producer: 805
+consumer 3: 803
+consumer 4: 804
+producer: 806
+consumer 5: 805
+producer: 807
+consumer 1: 806
+producer: 808
+consumer 1: 807
+consumer 4: 808
+producer: 809
+producer: 810
+producer: 811
+producer: 812
+consumer 4: 809
+consumer 4: 810
+consumer 4: 811
+consumer 4: 812
+producer: 813
+producer: 814
+producer: 815
+producer: 816
+consumer 2: 813
+consumer 2: 814
+consumer 3: 815
+consumer 4: 816
+producer: 817
+producer: 818
+producer: 819
+producer: 820
+consumer 4: 817
+consumer 4: 818
+consumer 4: 819
+consumer 5: 820
+producer: 821
+consumer 5: 821
+producer: 822
+consumer 5: 822
+producer: 823
+producer: 824
+producer: 825
+producer: 826
+producer: 827
+producer: 828
+producer: 829
+consumer 5: 823
+consumer 5: 824
+consumer 5: 825
+consumer 5: 826
+consumer 5: 827
+consumer 5: 828
+consumer 1: 829
+producer: 830
+producer: 831
+producer: 832
+producer: 833
+consumer 5: 830
+producer: 834
+producer: 835
+producer: 836
+consumer 1: 831
+producer: 837
+producer: 838
+producer: 839
+producer: 840
+consumer 5: 832
+consumer 5: 833
+consumer 2: 834
+consumer 3: 835
+producer: 841
+consumer 1: 836
+producer: 842
+producer: 843
+consumer 2: 837
+consumer 2: 838
+consumer 1: 839
+consumer 1: 840
+consumer 1: 841
+consumer 5: 842
+consumer 5: 843
+producer: 844
+consumer 5: 844
+producer: 845
+producer: 846
+consumer 5: 845
+consumer 5: 846
+producer: 847
+producer: 848
+producer: 849
+producer: 850
+producer: 851
+producer: 852
+consumer 2: 847
+consumer 2: 848
+consumer 4: 849
+consumer 4: 850
+consumer 4: 851
+consumer 4: 852
+producer: 853
+consumer 4: 853
+producer: 854
+producer: 855
+consumer 5: 854
+consumer 5: 855
+producer: 856
+producer: 857
+producer: 858
+consumer 3: 856
+consumer 4: 857
+consumer 4: 858
+producer: 859
+producer: 860
+producer: 861
+producer: 862
+consumer 3: 859
+consumer 3: 860
+consumer 3: 861
+consumer 4: 862
+producer: 863
+producer: 864
+producer: 865
+producer: 866
+consumer 1: 863
+producer: 867
+consumer 3: 864
+consumer 3: 865
+producer: 868
+producer: 869
+producer: 870
+producer: 871
+producer: 872
+producer: 873
+producer: 874
+producer: 875
+producer: 876
+producer: 877
+producer: 878
+producer: 879
+producer: 880
+producer: 881
+producer: 882
+producer: 883
+producer: 884
+producer: 885
+producer: 886
+producer: 887
+consumer 3: 866
+consumer 3: 867
+consumer 3: 868
+consumer 3: 869
+producer: 888
+consumer 1: 870
+consumer 2: 871
+consumer 2: 872
+consumer 5: 873
+consumer 5: 874
+consumer 5: 875
+consumer 1: 876
+consumer 1: 877
+consumer 3: 878
+consumer 3: 879
+consumer 3: 880
+consumer 3: 881
+consumer 3: 882
+consumer 3: 883
+consumer 3: 884
+consumer 3: 885
+consumer 2: 886
+consumer 3: 887
+producer: 889
+consumer 2: 888
+consumer 2: 889
+producer: 890
+consumer 2: 890
+producer: 891
+consumer 2: 891
+producer: 892
+producer: 893
+producer: 894
+producer: 895
+producer: 896
+consumer 4: 892
+consumer 4: 893
+consumer 4: 894
+consumer 4: 895
+consumer 4: 896
+producer: 897
+producer: 898
+consumer 4: 897
+consumer 4: 898
+producer: 899
+consumer 4: 899
+producer: 900
+producer: 901
+producer: 902
+consumer 1: 900
+consumer 4: 901
+consumer 4: 902
+producer: 903
+producer: 904
+consumer 3: 903
+producer: 905
+producer: 906
+producer: 907
+producer: 908
+consumer 1: 904
+producer: 909
+consumer 1: 905
+consumer 1: 906
+consumer 1: 907
+consumer 1: 908
+consumer 1: 909
+producer: 910
+consumer 1: 910
+producer: 911
+producer: 912
+consumer 2: 911
+consumer 2: 912
+producer: 913
+consumer 5: 913
+producer: 914
+producer: 915
+consumer 2: 914
+consumer 2: 915
+producer: 916
+producer: 917
+producer: 918
+consumer 3: 916
+producer: 919
+consumer 2: 917
+consumer 1: 918
+consumer 1: 919
+producer: 920
+consumer 1: 920
+producer: 921
+producer: 922
+producer: 923
+consumer 5: 921
+consumer 5: 922
+consumer 5: 923
+producer: 924
+producer: 925
+producer: 926
+producer: 927
+consumer 2: 924
+consumer 2: 925
+consumer 2: 926
+consumer 2: 927
+producer: 928
+consumer 2: 928
+producer: 929
+producer: 930
+producer: 931
+producer: 932
+consumer 5: 929
+consumer 5: 930
+consumer 5: 931
+consumer 3: 932
+producer: 933
+producer: 934
+producer: 935
+producer: 936
+consumer 5: 933
+consumer 5: 934
+consumer 5: 935
+consumer 5: 936
+producer: 937
+producer: 938
+consumer 4: 937
+producer: 939
+producer: 940
+consumer 1: 938
+consumer 4: 939
+consumer 4: 940
+producer: 941
+consumer 4: 941
+producer: 942
+consumer 4: 942
+producer: 943
+consumer 3: 943
+producer: 944
+producer: 945
+consumer 3: 944
+consumer 3: 945
+producer: 946
+producer: 947
+consumer 3: 946
+consumer 3: 947
+producer: 948
+consumer 5: 948
+producer: 949
+producer: 950
+consumer 5: 949
+consumer 5: 950
+producer: 951
+consumer 5: 951
+producer: 952
+producer: 953
+producer: 954
+consumer 1: 952
+consumer 1: 953
+consumer 2: 954
+producer: 955
+producer: 956
+producer: 957
+consumer 2: 955
+consumer 2: 956
+consumer 2: 957
+producer: 958
+producer: 959
+consumer 5: 958
+consumer 5: 959
+producer: 960
+producer: 961
+producer: 962
+producer: 963
+consumer 4: 960
+consumer 4: 961
+producer: 964
+producer: 965
+producer: 966
+producer: 967
+producer: 968
+producer: 969
+producer: 970
+producer: 971
+producer: 972
+producer: 973
+producer: 974
+producer: 975
+producer: 976
+producer: 977
+producer: 978
+producer: 979
+producer: 980
+producer: 981
+consumer 5: 962
+consumer 5: 963
+consumer 1: 964
+consumer 1: 965
+consumer 3: 966
+consumer 3: 967
+consumer 5: 968
+consumer 5: 969
+consumer 5: 970
+consumer 5: 971
+consumer 2: 972
+consumer 2: 973
+consumer 2: 974
+consumer 5: 975
+consumer 5: 976
+consumer 5: 977
+consumer 5: 978
+consumer 5: 979
+consumer 5: 980
+producer: 982
+producer: 983
+producer: 984
+producer: 985
+consumer 3: 981
+consumer 3: 982
+consumer 3: 983
+producer: 986
+producer: 987
+producer: 988
+consumer 3: 984
+consumer 5: 985
+consumer 5: 986
+consumer 3: 987
+consumer 3: 988
+producer: 989
+consumer 3: 989
+producer: 990
+producer: 991
+consumer 5: 990
+consumer 1: 991
+producer: 992
+producer: 993
+consumer 1: 992
+consumer 1: 993
+producer: 994
+producer: 995
+producer: 996
+consumer 3: 994
+consumer 3: 995
+consumer 4: 996
+producer: 997
+producer: 998
+producer: 999
+producer: 1000
+producer: 1001
+consumer 3: 997
+consumer 3: 998
+consumer 3: 999
+consumer 3: 1000
+consumer 5: 1001
+producer: 1002
+producer: 1003
+consumer 3: 1002
+consumer 3: 1003
+producer: 1004
+consumer 5: 1004
+producer: 1005
+producer: 1006
+producer: 1007
+consumer 5: 1005
+consumer 5: 1006
+consumer 5: 1007
+producer: 1008
+producer: 1009
+consumer 2: 1008
+consumer 2: 1009
+producer: 1010
+consumer 1: 1010
+producer: 1011
+producer: 1012
+producer: 1013
+producer: 1014
+consumer 1: 1011
+consumer 1: 1012
+consumer 1: 1013
+consumer 1: 1014
+producer: 1015
+producer: 1016
+consumer 4: 1015
+consumer 4: 1016
+producer: 1017
+producer: 1018
+consumer 3: 1017
+consumer 5: 1018
+producer: 1019
+producer: 1020
+consumer 4: 1019
+consumer 2: 1020
+producer: 1021
+producer: 1022
+producer: 1023
+producer: 1024
+consumer 1: 1021
+consumer 1: 1022
+consumer 3: 1023
+consumer 3: 1024
+producer: 1025
+producer: 1026
+consumer 4: 1025
+consumer 4: 1026
+producer: 1027
+producer: 1028
+producer: 1029
+consumer 4: 1027
+consumer 1: 1028
+consumer 1: 1029
+producer: 1030
+producer: 1031
+producer: 1032
+consumer 1: 1030
+consumer 1: 1031
+consumer 1: 1032
+producer: 1033
+producer: 1034
+producer: 1035
+producer: 1036
+producer: 1037
+producer: 1038
+producer: 1039
+producer: 1040
+producer: 1041
+producer: 1042
+producer: 1043
+consumer 3: 1033
+consumer 3: 1034
+consumer 3: 1035
+consumer 3: 1036
+consumer 3: 1037
+consumer 2: 1038
+consumer 3: 1039
+consumer 3: 1040
+consumer 3: 1041
+consumer 3: 1042
+producer: 1044
+consumer 3: 1043
+consumer 3: 1044
+producer: 1045
+consumer 3: 1045
+producer: 1046
+producer: 1047
+consumer 2: 1046
+consumer 2: 1047
+producer: 1048
+consumer 4: 1048
+producer: 1049
+producer: 1050
+consumer 5: 1049
+consumer 5: 1050
+producer: 1051
+consumer 2: 1051
+producer: 1052
+producer: 1053
+producer: 1054
+consumer 3: 1052
+consumer 3: 1053
+consumer 3: 1054
+producer: 1055
+producer: 1056
+producer: 1057
+consumer 3: 1055
+consumer 3: 1056
+consumer 3: 1057
+producer: 1058
+consumer 3: 1058
+producer: 1059
+consumer 2: 1059
+producer: 1060
+consumer 5: 1060
+producer: 1061
+producer: 1062
+producer: 1063
+producer: 1064
+producer: 1065
+consumer 5: 1061
+consumer 2: 1062
+consumer 2: 1063
+consumer 2: 1064
+consumer 2: 1065
+producer: 1066
+producer: 1067
+producer: 1068
+producer: 1069
+consumer 5: 1066
+consumer 5: 1067
+producer: 1070
+producer: 1071
+producer: 1072
+producer: 1073
+producer: 1074
+producer: 1075
+consumer 5: 1068
+consumer 5: 1069
+consumer 5: 1070
+consumer 5: 1071
+consumer 2: 1072
+producer: 1076
+producer: 1077
+producer: 1078
+producer: 1079
+producer: 1080
+consumer 3: 1073
+consumer 3: 1074
+consumer 3: 1075
+consumer 5: 1076
+consumer 3: 1077
+consumer 1: 1078
+consumer 1: 1079
+producer: 1081
+producer: 1082
+producer: 1083
+producer: 1084
+consumer 1: 1080
+consumer 1: 1081
+consumer 1: 1082
+consumer 1: 1083
+consumer 1: 1084
+producer: 1085
+consumer 1: 1085
+producer: 1086
+consumer 2: 1086
+producer: 1087
+consumer 1: 1087
+producer: 1088
+producer: 1089
+producer: 1090
+producer: 1091
+consumer 2: 1088
+consumer 2: 1089
+consumer 2: 1090
+consumer 2: 1091
+producer: 1092
+producer: 1093
+consumer 2: 1092
+consumer 2: 1093
+producer: 1094
+consumer 1: 1094
+producer: 1095
+producer: 1096
+producer: 1097
+producer: 1098
+producer: 1099
+consumer 3: 1095
+consumer 3: 1096
+consumer 3: 1097
+consumer 2: 1098
+consumer 2: 1099
+producer: 1100
+producer: 1101
+producer: 1102
+consumer 4: 1100
+consumer 4: 1101
+consumer 4: 1102
+producer: 1103
+producer: 1104
+producer: 1105
+producer: 1106
+producer: 1107
+consumer 2: 1103
+consumer 2: 1104
+consumer 2: 1105
+consumer 2: 1106
+consumer 4: 1107
+producer: 1108
+consumer 4: 1108
+producer: 1109
+producer: 1110
+consumer 2: 1109
+consumer 5: 1110
+producer: 1111
+producer: 1112
+producer: 1113
+producer: 1114
+producer: 1115
+producer: 1116
+producer: 1117
+consumer 5: 1111
+consumer 5: 1112
+consumer 5: 1113
+consumer 3: 1114
+consumer 5: 1115
+consumer 5: 1116
+consumer 1: 1117
+producer: 1118
+consumer 4: 1118
+producer: 1119
+producer: 1120
+producer: 1121
+consumer 3: 1119
+consumer 3: 1120
+consumer 3: 1121
+producer: 1122
+producer: 1123
+producer: 1124
+producer: 1125
+consumer 2: 1122
+consumer 2: 1123
+consumer 2: 1124
+consumer 2: 1125
+producer: 1126
+producer: 1127
+producer: 1128
+consumer 2: 1126
+consumer 4: 1127
+consumer 1: 1128
+producer: 1129
+producer: 1130
+consumer 5: 1129
+consumer 5: 1130
+producer: 1131
+producer: 1132
+consumer 3: 1131
+consumer 3: 1132
+producer: 1133
+producer: 1134
+consumer 4: 1133
+producer: 1135
+producer: 1136
+consumer 3: 1134
+consumer 5: 1135
+consumer 2: 1136
+producer: 1137
+producer: 1138
+consumer 2: 1137
+consumer 2: 1138
+producer: 1139
+producer: 1140
+producer: 1141
+consumer 2: 1139
+consumer 2: 1140
+consumer 2: 1141
+producer: 1142
+producer: 1143
+producer: 1144
+producer: 1145
+consumer 5: 1142
+consumer 5: 1143
+consumer 3: 1144
+consumer 3: 1145
+producer: 1146
+consumer 3: 1146
+producer: 1147
+producer: 1148
+producer: 1149
+consumer 1: 1147
+consumer 4: 1148
+consumer 4: 1149
+producer: 1150
+producer: 1151
+consumer 2: 1150
+consumer 2: 1151
+producer: 1152
+producer: 1153
+producer: 1154
+producer: 1155
+consumer 2: 1152
+consumer 2: 1153
+consumer 2: 1154
+consumer 2: 1155
+producer: 1156
+producer: 1157
+producer: 1158
+consumer 2: 1156
+consumer 1: 1157
+consumer 1: 1158
+producer: 1159
+producer: 1160
+producer: 1161
+consumer 1: 1159
+consumer 1: 1160
+producer: 1162
+producer: 1163
+producer: 1164
+producer: 1165
+producer: 1166
+producer: 1167
+producer: 1168
+producer: 1169
+consumer 5: 1161
+consumer 5: 1162
+consumer 5: 1163
+consumer 5: 1164
+consumer 1: 1165
+consumer 1: 1166
+consumer 1: 1167
+consumer 1: 1168
+consumer 1: 1169
+producer: 1170
+consumer 1: 1170
+producer: 1171
+producer: 1172
+producer: 1173
+consumer 2: 1171
+producer: 1174
+producer: 1175
+consumer 3: 1172
+consumer 3: 1173
+consumer 3: 1174
+consumer 3: 1175
+producer: 1176
+consumer 3: 1176
+producer: 1177
+consumer 4: 1177
+producer: 1178
+producer: 1179
+producer: 1180
+producer: 1181
+consumer 1: 1178
+consumer 1: 1179
+consumer 1: 1180
+consumer 1: 1181
+producer: 1182
+producer: 1183
+consumer 1: 1182
+consumer 1: 1183
+producer: 1184
+producer: 1185
+producer: 1186
+producer: 1187
+consumer 1: 1184
+consumer 1: 1185
+consumer 3: 1186
+consumer 3: 1187
+producer: 1188
+producer: 1189
+producer: 1190
+producer: 1191
+producer: 1192
+producer: 1193
+producer: 1194
+producer: 1195
+producer: 1196
+producer: 1197
+producer: 1198
+consumer 5: 1188
+consumer 5: 1189
+consumer 5: 1190
+consumer 5: 1191
+consumer 2: 1192
+producer: 1199
+producer: 1200
+consumer 2: 1193
+consumer 2: 1194
+consumer 2: 1195
+consumer 2: 1196
+consumer 2: 1197
+producer: 1201
+consumer 5: 1198
+consumer 5: 1199
+consumer 4: 1200
+consumer 4: 1201
+producer: 1202
+producer: 1203
+consumer 2: 1202
+producer: 1204
+producer: 1205
+producer: 1206
+producer: 1207
+producer: 1208
+producer: 1209
+producer: 1210
+consumer 4: 1203
+producer: 1211
+consumer 4: 1204
+producer: 1212
+producer: 1213
+consumer 4: 1205
+consumer 4: 1206
+consumer 4: 1207
+consumer 1: 1208
+producer: 1214
+producer: 1215
+producer: 1216
+producer: 1217
+producer: 1218
+producer: 1219
+producer: 1220
+consumer 1: 1209
+consumer 1: 1210
+producer: 1221
+producer: 1222
+producer: 1223
+producer: 1224
+producer: 1225
+consumer 1: 1211
+consumer 1: 1212
+consumer 1: 1213
+consumer 1: 1214
+consumer 1: 1215
+consumer 2: 1216
+producer: 1226
+producer: 1227
+producer: 1228
+producer: 1229
+producer: 1230
+producer: 1231
+producer: 1232
+producer: 1233
+consumer 1: 1217
+consumer 1: 1218
+consumer 2: 1219
+consumer 2: 1220
+consumer 2: 1221
+consumer 2: 1222
+consumer 2: 1223
+consumer 2: 1224
+consumer 2: 1225
+consumer 2: 1226
+consumer 2: 1227
+consumer 2: 1228
+consumer 2: 1229
+consumer 2: 1230
+consumer 2: 1231
+consumer 2: 1232
+consumer 2: 1233
+producer: 1234
+consumer 2: 1234
+producer: 1235
+producer: 1236
+producer: 1237
+producer: 1238
+producer: 1239
+producer: 1240
+consumer 2: 1235
+consumer 2: 1236
+consumer 2: 1237
+consumer 2: 1238
+producer: 1241
+producer: 1242
+producer: 1243
+producer: 1244
+producer: 1245
+producer: 1246
+producer: 1247
+producer: 1248
+producer: 1249
+consumer 1: 1239
+consumer 1: 1240
+consumer 1: 1241
+consumer 1: 1242
+consumer 4: 1243
+consumer 4: 1244
+consumer 4: 1245
+consumer 4: 1246
+producer: 1250
+producer: 1251
+producer: 1252
+producer: 1253
+producer: 1254
+producer: 1255
+producer: 1256
+producer: 1257
+producer: 1258
+producer: 1259
+consumer 5: 1247
+producer: 1260
+consumer 5: 1248
+consumer 5: 1249
+consumer 5: 1250
+consumer 5: 1251
+consumer 5: 1252
+consumer 1: 1253
+producer: 1261
+producer: 1262
+consumer 2: 1254
+consumer 2: 1255
+producer: 1263
+producer: 1264
+producer: 1265
+consumer 4: 1256
+consumer 4: 1257
+consumer 4: 1258
+consumer 4: 1259
+consumer 4: 1260
+consumer 2: 1261
+consumer 2: 1262
+consumer 2: 1263
+consumer 2: 1264
+consumer 3: 1265
+producer: 1266
+producer: 1267
+consumer 3: 1266
+consumer 3: 1267
+producer: 1268
+producer: 1269
+consumer 5: 1268
+consumer 1: 1269
+producer: 1270
+producer: 1271
+producer: 1272
+consumer 2: 1270
+consumer 2: 1271
+consumer 2: 1272
+producer: 1273
+producer: 1274
+producer: 1275
+consumer 4: 1273
+consumer 4: 1274
+consumer 4: 1275
+producer: 1276
+producer: 1277
+consumer 4: 1276
+consumer 4: 1277
+producer: 1278
+producer: 1279
+producer: 1280
+consumer 5: 1278
+consumer 5: 1279
+consumer 4: 1280
+producer: 1281
+producer: 1282
+producer: 1283
+consumer 3: 1281
+consumer 2: 1282
+consumer 2: 1283
+producer: 1284
+producer: 1285
+producer: 1286
+consumer 2: 1284
+consumer 2: 1285
+consumer 2: 1286
+producer: 1287
+consumer 4: 1287
+producer: 1288
+consumer 5: 1288
+producer: 1289
+producer: 1290
+consumer 2: 1289
+consumer 2: 1290
+producer: 1291
+producer: 1292
+consumer 1: 1291
+consumer 1: 1292
+producer: 1293
+producer: 1294
+consumer 2: 1293
+consumer 2: 1294
+producer: 1295
+producer: 1296
+consumer 2: 1295
+consumer 2: 1296
+producer: 1297
+consumer 5: 1297
+producer: 1298
+producer: 1299
+producer: 1300
+consumer 2: 1298
+consumer 2: 1299
+consumer 2: 1300
+producer: 1301
+producer: 1302
+producer: 1303
+producer: 1304
+consumer 5: 1301
+consumer 5: 1302
+consumer 5: 1303
+consumer 5: 1304
+producer: 1305
+producer: 1306
+consumer 2: 1305
+consumer 2: 1306
+producer: 1307
+producer: 1308
+producer: 1309
+consumer 3: 1307
+consumer 3: 1308
+consumer 3: 1309
+producer: 1310
+producer: 1311
+producer: 1312
+consumer 4: 1310
+consumer 4: 1311
+consumer 4: 1312
+producer: 1313
+producer: 1314
+producer: 1315
+consumer 2: 1313
+consumer 2: 1314
+consumer 1: 1315
+producer: 1316
+producer: 1317
+producer: 1318
+producer: 1319
+consumer 1: 1316
+consumer 3: 1317
+consumer 3: 1318
+producer: 1320
+consumer 3: 1319
+consumer 3: 1320
+producer: 1321
+producer: 1322
+producer: 1323
+consumer 3: 1321
+producer: 1324
+producer: 1325
+producer: 1326
+producer: 1327
+producer: 1328
+producer: 1329
+consumer 3: 1322
+producer: 1330
+consumer 3: 1323
+producer: 1331
+consumer 1: 1324
+consumer 1: 1325
+consumer 1: 1326
+consumer 1: 1327
+consumer 1: 1328
+consumer 1: 1329
+producer: 1332
+consumer 1: 1330
+consumer 1: 1331
+consumer 1: 1332
+producer: 1333
+consumer 4: 1333
+producer: 1334
+consumer 5: 1334
+producer: 1335
+producer: 1336
+producer: 1337
+consumer 4: 1335
+producer: 1338
+producer: 1339
+producer: 1340
+producer: 1341
+producer: 1342
+producer: 1343
+producer: 1344
+producer: 1345
+producer: 1346
+producer: 1347
+producer: 1348
+consumer 3: 1336
+consumer 5: 1337
+producer: 1349
+producer: 1350
+producer: 1351
+consumer 5: 1338
+consumer 5: 1339
+consumer 5: 1340
+consumer 5: 1341
+consumer 5: 1342
+consumer 5: 1343
+consumer 5: 1344
+consumer 5: 1345
+consumer 5: 1346
+producer: 1352
+producer: 1353
+producer: 1354
+producer: 1355
+consumer 5: 1347
+consumer 5: 1348
+consumer 5: 1349
+consumer 5: 1350
+consumer 2: 1351
+consumer 2: 1352
+consumer 2: 1353
+consumer 2: 1354
+consumer 5: 1355
+producer: 1356
+consumer 3: 1356
+producer: 1357
+consumer 3: 1357
+producer: 1358
+consumer 2: 1358
+producer: 1359
+producer: 1360
+producer: 1361
+producer: 1362
+producer: 1363
+consumer 4: 1359
+consumer 4: 1360
+consumer 4: 1361
+consumer 4: 1362
+consumer 4: 1363
+producer: 1364
+consumer 4: 1364
+producer: 1365
+consumer 3: 1365
+producer: 1366
+producer: 1367
+producer: 1368
+producer: 1369
+consumer 3: 1366
+consumer 1: 1367
+consumer 1: 1368
+consumer 1: 1369
+producer: 1370
+producer: 1371
+producer: 1372
+producer: 1373
+producer: 1374
+producer: 1375
+consumer 3: 1370
+consumer 3: 1371
+consumer 3: 1372
+consumer 2: 1373
+producer: 1376
+producer: 1377
+producer: 1378
+consumer 2: 1374
+producer: 1379
+consumer 2: 1375
+producer: 1380
+producer: 1381
+producer: 1382
+producer: 1383
+consumer 2: 1376
+producer: 1384
+consumer 2: 1377
+producer: 1385
+producer: 1386
+producer: 1387
+producer: 1388
+producer: 1389
+producer: 1390
+producer: 1391
+consumer 2: 1378
+consumer 2: 1379
+consumer 2: 1380
+consumer 2: 1381
+consumer 2: 1382
+consumer 2: 1383
+consumer 2: 1384
+consumer 2: 1385
+consumer 2: 1386
+consumer 2: 1387
+consumer 2: 1388
+consumer 2: 1389
+consumer 2: 1390
+consumer 2: 1391
+producer: 1392
+consumer 2: 1392
+producer: 1393
+producer: 1394
+consumer 2: 1393
+consumer 4: 1394
+producer: 1395
+producer: 1396
+producer: 1397
+producer: 1398
+consumer 3: 1395
+consumer 3: 1396
+consumer 3: 1397
+consumer 3: 1398
+producer: 1399
+consumer 2: 1399
+producer: 1400
+producer: 1401
+consumer 2: 1400
+consumer 2: 1401
+producer: 1402
+consumer 5: 1402
+producer: 1403
+consumer 5: 1403
+producer: 1404
+producer: 1405
+producer: 1406
+consumer 4: 1404
+consumer 2: 1405
+consumer 4: 1406
+producer: 1407
+producer: 1408
+producer: 1409
+producer: 1410
+producer: 1411
+producer: 1412
+producer: 1413
+producer: 1414
+consumer 2: 1407
+consumer 2: 1408
+consumer 2: 1409
+consumer 2: 1410
+consumer 2: 1411
+consumer 2: 1412
+consumer 2: 1413
+consumer 2: 1414
+producer: 1415
+consumer 2: 1415
+producer: 1416
+producer: 1417
+producer: 1418
+producer: 1419
+producer: 1420
+producer: 1421
+producer: 1422
+producer: 1423
+consumer 1: 1416
+consumer 1: 1417
+consumer 5: 1418
+consumer 2: 1419
+consumer 2: 1420
+consumer 2: 1421
+consumer 3: 1422
+consumer 3: 1423
+producer: 1424
+producer: 1425
+consumer 5: 1424
+consumer 5: 1425
+producer: 1426
+consumer 2: 1426
+producer: 1427
+producer: 1428
+consumer 5: 1427
+consumer 5: 1428
+producer: 1429
+consumer 4: 1429
+producer: 1430
+producer: 1431
+producer: 1432
+producer: 1433
+consumer 3: 1430
+consumer 5: 1431
+consumer 5: 1432
+consumer 5: 1433
+producer: 1434
+producer: 1435
+consumer 5: 1434
+consumer 5: 1435
+producer: 1436
+producer: 1437
+producer: 1438
+consumer 1: 1436
+consumer 1: 1437
+consumer 4: 1438
+producer: 1439
+consumer 2: 1439
+producer: 1440
+consumer 2: 1440
+producer: 1441
+producer: 1442
+producer: 1443
+producer: 1444
+consumer 3: 1441
+consumer 3: 1442
+consumer 3: 1443
+consumer 1: 1444
+producer: 1445
+producer: 1446
+producer: 1447
+consumer 3: 1445
+consumer 3: 1446
+consumer 3: 1447
+producer: 1448
+consumer 3: 1448
+producer: 1449
+consumer 2: 1449
+producer: 1450
+producer: 1451
+consumer 5: 1450
+consumer 5: 1451
+producer: 1452
+producer: 1453
+consumer 2: 1452
+consumer 2: 1453
+producer: 1454
+producer: 1455
+producer: 1456
+producer: 1457
+producer: 1458
+producer: 1459
+producer: 1460
+consumer 5: 1454
+producer: 1461
+producer: 1462
+producer: 1463
+consumer 5: 1455
+consumer 5: 1456
+consumer 5: 1457
+producer: 1464
+producer: 1465
+consumer 1: 1458
+consumer 3: 1459
+producer: 1466
+producer: 1467
+consumer 3: 1460
+consumer 3: 1461
+consumer 3: 1462
+consumer 1: 1463
+producer: 1468
+producer: 1469
+producer: 1470
+producer: 1471
+producer: 1472
+producer: 1473
+consumer 3: 1464
+consumer 3: 1465
+producer: 1474
+producer: 1475
+producer: 1476
+producer: 1477
+producer: 1478
+producer: 1479
+consumer 1: 1466
+consumer 1: 1467
+producer: 1480
+consumer 3: 1468
+consumer 1: 1469
+consumer 1: 1470
+consumer 1: 1471
+consumer 1: 1472
+consumer 1: 1473
+consumer 1: 1474
+consumer 5: 1475
+consumer 5: 1476
+consumer 5: 1477
+consumer 5: 1478
+consumer 5: 1479
+consumer 5: 1480
+producer: 1481
+consumer 2: 1481
+producer: 1482
+producer: 1483
+consumer 5: 1482
+consumer 5: 1483
+producer: 1484
+consumer 3: 1484
+producer: 1485
+producer: 1486
+producer: 1487
+producer: 1488
+consumer 3: 1485
+consumer 3: 1486
+consumer 5: 1487
+consumer 5: 1488
+producer: 1489
+producer: 1490
+producer: 1491
+producer: 1492
+producer: 1493
+producer: 1494
+producer: 1495
+producer: 1496
+consumer 2: 1489
+consumer 2: 1490
+consumer 5: 1491
+consumer 1: 1492
+consumer 1: 1493
+consumer 1: 1494
+consumer 1: 1495
+producer: 1497
+producer: 1498
+producer: 1499
+consumer 4: 1496
+consumer 4: 1497
+consumer 5: 1498
+consumer 5: 1499
+producer: 1500
+producer: 1501
+producer: 1502
+producer: 1503
+producer: 1504
+producer: 1505
+producer: 1506
+producer: 1507
+consumer 5: 1500
+producer: 1508
+producer: 1509
+producer: 1510
+producer: 1511
+producer: 1512
+producer: 1513
+producer: 1514
+producer: 1515
+producer: 1516
+producer: 1517
+producer: 1518
+consumer 5: 1501
+consumer 5: 1502
+consumer 5: 1503
+consumer 5: 1504
+consumer 5: 1505
+consumer 5: 1506
+consumer 5: 1507
+consumer 5: 1508
+consumer 5: 1509
+consumer 5: 1510
+consumer 5: 1511
+consumer 5: 1512
+consumer 5: 1513
+consumer 5: 1514
+consumer 5: 1515
+consumer 5: 1516
+consumer 3: 1517
+consumer 3: 1518
+producer: 1519
+producer: 1520
+producer: 1521
+producer: 1522
+consumer 1: 1519
+consumer 3: 1520
+consumer 3: 1521
+consumer 2: 1522
+producer: 1523
+producer: 1524
+producer: 1525
+consumer 1: 1523
+consumer 1: 1524
+consumer 1: 1525
+producer: 1526
+producer: 1527
+producer: 1528
+producer: 1529
+producer: 1530
+producer: 1531
+producer: 1532
+producer: 1533
+producer: 1534
+consumer 4: 1526
+producer: 1535
+producer: 1536
+producer: 1537
+consumer 5: 1527
+consumer 5: 1528
+consumer 5: 1529
+consumer 5: 1530
+consumer 5: 1531
+consumer 5: 1532
+consumer 5: 1533
+consumer 5: 1534
+producer: 1538
+producer: 1539
+producer: 1540
+consumer 4: 1535
+consumer 2: 1536
+producer: 1541
+consumer 2: 1537
+producer: 1542
+producer: 1543
+producer: 1544
+consumer 5: 1538
+consumer 1: 1539
+consumer 1: 1540
+consumer 1: 1541
+consumer 1: 1542
+consumer 1: 1543
+consumer 1: 1544
+producer: 1545
+producer: 1546
+consumer 2: 1545
+consumer 2: 1546
+producer: 1547
+producer: 1548
+producer: 1549
+consumer 2: 1547
+consumer 2: 1548
+producer: 1550
+producer: 1551
+producer: 1552
+producer: 1553
+producer: 1554
+producer: 1555
+consumer 2: 1549
+consumer 2: 1550
+consumer 2: 1551
+consumer 2: 1552
+consumer 2: 1553
+consumer 2: 1554
+consumer 2: 1555
+producer: 1556
+consumer 2: 1556
+producer: 1557
+consumer 5: 1557
+producer: 1558
+producer: 1559
+consumer 4: 1558
+consumer 2: 1559
+producer: 1560
+consumer 4: 1560
+producer: 1561
+consumer 2: 1561
+producer: 1562
+producer: 1563
+producer: 1564
+producer: 1565
+consumer 2: 1562
+producer: 1566
+producer: 1567
+consumer 2: 1563
+consumer 1: 1564
+consumer 1: 1565
+consumer 1: 1566
+consumer 2: 1567
+producer: 1568
+consumer 2: 1568
+producer: 1569
+producer: 1570
+consumer 3: 1569
+consumer 5: 1570
+producer: 1571
+producer: 1572
+consumer 4: 1571
+consumer 4: 1572
+producer: 1573
+consumer 2: 1573
+producer: 1574
+producer: 1575
+consumer 3: 1574
+consumer 5: 1575
+producer: 1576
+consumer 4: 1576
+producer: 1577
+producer: 1578
+producer: 1579
+producer: 1580
+consumer 4: 1577
+consumer 5: 1578
+consumer 5: 1579
+consumer 5: 1580
+producer: 1581
+producer: 1582
+consumer 2: 1581
+consumer 3: 1582
+producer: 1583
+consumer 5: 1583
+producer: 1584
+producer: 1585
+consumer 1: 1584
+consumer 4: 1585
+producer: 1586
+producer: 1587
+producer: 1588
+producer: 1589
+consumer 4: 1586
+consumer 3: 1587
+producer: 1590
+producer: 1591
+producer: 1592
+producer: 1593
+consumer 4: 1588
+consumer 2: 1589
+consumer 2: 1590
+consumer 2: 1591
+producer: 1594
+consumer 2: 1592
+producer: 1595
+producer: 1596
+producer: 1597
+producer: 1598
+producer: 1599
+producer: 1600
+producer: 1601
+producer: 1602
+producer: 1603
+producer: 1604
+producer: 1605
+producer: 1606
+producer: 1607
+producer: 1608
+producer: 1609
+producer: 1610
+producer: 1611
+producer: 1612
+producer: 1613
+producer: 1614
+producer: 1615
+producer: 1616
+producer: 1617
+producer: 1618
+producer: 1619
+consumer 3: 1593
+producer: 1620
+producer: 1621
+producer: 1622
+producer: 1623
+producer: 1624
+producer: 1625
+consumer 1: 1594
+consumer 1: 1595
+consumer 1: 1596
+consumer 2: 1597
+consumer 2: 1598
+consumer 2: 1599
+consumer 4: 1600
+consumer 5: 1601
+consumer 5: 1602
+producer: 1626
+consumer 1: 1603
+consumer 1: 1604
+consumer 4: 1605
+consumer 3: 1606
+consumer 3: 1607
+consumer 3: 1608
+producer: 1627
+producer: 1628
+producer: 1629
+consumer 4: 1609
+consumer 4: 1610
+consumer 5: 1611
+consumer 5: 1612
+consumer 5: 1613
+consumer 5: 1614
+consumer 1: 1615
+consumer 1: 1616
+consumer 3: 1617
+consumer 5: 1618
+consumer 5: 1619
+consumer 1: 1620
+consumer 5: 1621
+consumer 4: 1622
+producer: 1630
+consumer 4: 1623
+consumer 4: 1624
+consumer 4: 1625
+producer: 1631
+producer: 1632
+producer: 1633
+producer: 1634
+producer: 1635
+producer: 1636
+producer: 1637
+producer: 1638
+producer: 1639
+consumer 1: 1626
+consumer 3: 1627
+producer: 1640
+producer: 1641
+consumer 3: 1628
+consumer 3: 1629
+consumer 3: 1630
+consumer 3: 1631
+consumer 4: 1632
+consumer 4: 1633
+consumer 4: 1634
+consumer 3: 1635
+consumer 4: 1636
+consumer 4: 1637
+consumer 4: 1638
+consumer 4: 1639
+consumer 4: 1640
+consumer 4: 1641
+producer: 1642
+consumer 4: 1642
+producer: 1643
+producer: 1644
+producer: 1645
+producer: 1646
+producer: 1647
+producer: 1648
+consumer 5: 1643
+producer: 1649
+consumer 3: 1644
+producer: 1650
+producer: 1651
+producer: 1652
+producer: 1653
+producer: 1654
+consumer 2: 1645
+consumer 2: 1646
+consumer 5: 1647
+consumer 5: 1648
+consumer 4: 1649
+consumer 4: 1650
+consumer 4: 1651
+consumer 4: 1652
+producer: 1655
+consumer 4: 1653
+consumer 4: 1654
+consumer 4: 1655
+producer: 1656
+producer: 1657
+producer: 1658
+producer: 1659
+consumer 1: 1656
+producer: 1660
+producer: 1661
+consumer 4: 1657
+consumer 5: 1658
+consumer 5: 1659
+consumer 5: 1660
+producer: 1662
+consumer 5: 1661
+producer: 1663
+producer: 1664
+consumer 3: 1662
+consumer 3: 1663
+consumer 3: 1664
+producer: 1665
+consumer 3: 1665
+producer: 1666
+producer: 1667
+consumer 2: 1666
+consumer 2: 1667
+producer: 1668
+consumer 5: 1668
+producer: 1669
+producer: 1670
+producer: 1671
+consumer 2: 1669
+consumer 2: 1670
+consumer 3: 1671
+producer: 1672
+producer: 1673
+consumer 1: 1672
+consumer 1: 1673
+producer: 1674
+producer: 1675
+consumer 3: 1674
+consumer 3: 1675
+producer: 1676
+consumer 2: 1676
+producer: 1677
+consumer 3: 1677
+producer: 1678
+producer: 1679
+consumer 4: 1678
+consumer 4: 1679
+producer: 1680
+producer: 1681
+producer: 1682
+consumer 5: 1680
+consumer 5: 1681
+producer: 1683
+producer: 1684
+consumer 4: 1682
+consumer 4: 1683
+consumer 4: 1684
+producer: 1685
+consumer 4: 1685
+producer: 1686
+consumer 4: 1686
+producer: 1687
+producer: 1688
+producer: 1689
+consumer 2: 1687
+consumer 5: 1688
+consumer 3: 1689
+producer: 1690
+consumer 4: 1690
+producer: 1691
+producer: 1692
+producer: 1693
+consumer 3: 1691
+consumer 1: 1692
+consumer 5: 1693
+producer: 1694
+producer: 1695
+producer: 1696
+producer: 1697
+consumer 5: 1694
+consumer 5: 1695
+consumer 1: 1696
+consumer 1: 1697
+producer: 1698
+producer: 1699
+consumer 2: 1698
+consumer 2: 1699
+producer: 1700
+consumer 2: 1700
+producer: 1701
+producer: 1702
+consumer 4: 1701
+consumer 4: 1702
+producer: 1703
+producer: 1704
+producer: 1705
+producer: 1706
+producer: 1707
+producer: 1708
+producer: 1709
+producer: 1710
+producer: 1711
+consumer 1: 1703
+consumer 1: 1704
+producer: 1712
+consumer 1: 1705
+consumer 1: 1706
+consumer 1: 1707
+consumer 1: 1708
+consumer 4: 1709
+consumer 3: 1710
+consumer 3: 1711
+producer: 1713
+producer: 1714
+producer: 1715
+consumer 1: 1712
+consumer 2: 1713
+producer: 1716
+producer: 1717
+producer: 1718
+producer: 1719
+consumer 4: 1714
+consumer 4: 1715
+consumer 4: 1716
+consumer 2: 1717
+consumer 4: 1718
+consumer 3: 1719
+producer: 1720
+consumer 4: 1720
+producer: 1721
+producer: 1722
+producer: 1723
+producer: 1724
+producer: 1725
+consumer 4: 1721
+consumer 4: 1722
+consumer 4: 1723
+consumer 4: 1724
+consumer 4: 1725
+producer: 1726
+producer: 1727
+consumer 4: 1726
+consumer 4: 1727
+producer: 1728
+producer: 1729
+producer: 1730
+producer: 1731
+consumer 2: 1728
+consumer 2: 1729
+producer: 1732
+consumer 3: 1730
+consumer 3: 1731
+consumer 3: 1732
+producer: 1733
+consumer 3: 1733
+producer: 1734
+producer: 1735
+consumer 4: 1734
+consumer 4: 1735
+producer: 1736
+producer: 1737
+producer: 1738
+consumer 4: 1736
+consumer 4: 1737
+producer: 1739
+producer: 1740
+producer: 1741
+producer: 1742
+consumer 3: 1738
+consumer 3: 1739
+consumer 3: 1740
+consumer 2: 1741
+producer: 1743
+producer: 1744
+producer: 1745
+producer: 1746
+producer: 1747
+producer: 1748
+consumer 1: 1742
+consumer 1: 1743
+consumer 4: 1744
+consumer 1: 1745
+consumer 1: 1746
+consumer 2: 1747
+consumer 1: 1748
+producer: 1749
+consumer 1: 1749
+producer: 1750
+producer: 1751
+producer: 1752
+consumer 2: 1750
+consumer 2: 1751
+consumer 3: 1752
+producer: 1753
+producer: 1754
+producer: 1755
+consumer 3: 1753
+consumer 3: 1754
+consumer 3: 1755
+producer: 1756
+producer: 1757
+consumer 3: 1756
+consumer 3: 1757
+producer: 1758
+producer: 1759
+producer: 1760
+consumer 3: 1758
+producer: 1761
+consumer 5: 1759
+consumer 5: 1760
+consumer 5: 1761
+producer: 1762
+producer: 1763
+producer: 1764
+producer: 1765
+consumer 5: 1762
+consumer 5: 1763
+consumer 5: 1764
+consumer 5: 1765
+producer: 1766
+consumer 3: 1766
+producer: 1767
+producer: 1768
+consumer 3: 1767
+consumer 3: 1768
+producer: 1769
+consumer 1: 1769
+producer: 1770
+consumer 3: 1770
+producer: 1771
+consumer 1: 1771
+producer: 1772
+producer: 1773
+producer: 1774
+producer: 1775
+producer: 1776
+producer: 1777
+producer: 1778
+producer: 1779
+producer: 1780
+producer: 1781
+producer: 1782
+producer: 1783
+producer: 1784
+producer: 1785
+producer: 1786
+producer: 1787
+producer: 1788
+producer: 1789
+consumer 2: 1772
+consumer 2: 1773
+consumer 2: 1774
+consumer 2: 1775
+producer: 1790
+producer: 1791
+consumer 2: 1776
+producer: 1792
+producer: 1793
+producer: 1794
+producer: 1795
+producer: 1796
+consumer 2: 1777
+producer: 1797
+consumer 2: 1778
+producer: 1798
+producer: 1799
+producer: 1800
+consumer 2: 1779
+consumer 2: 1780
+producer: 1801
+producer: 1802
+producer: 1803
+producer: 1804
+consumer 2: 1781
+consumer 5: 1782
+consumer 2: 1783
+consumer 2: 1784
+consumer 2: 1785
+consumer 2: 1786
+consumer 4: 1787
+consumer 4: 1788
+consumer 4: 1789
+consumer 5: 1790
+consumer 5: 1791
+consumer 5: 1792
+consumer 1: 1793
+consumer 2: 1794
+consumer 2: 1795
+consumer 2: 1796
+consumer 2: 1797
+consumer 2: 1798
+consumer 2: 1799
+consumer 2: 1800
+consumer 2: 1801
+consumer 1: 1802
+producer: 1805
+producer: 1806
+producer: 1807
+producer: 1808
+consumer 1: 1803
+producer: 1809
+producer: 1810
+producer: 1811
+producer: 1812
+producer: 1813
+producer: 1814
+producer: 1815
+consumer 1: 1804
+consumer 1: 1805
+consumer 3: 1806
+consumer 3: 1807
+producer: 1816
+consumer 3: 1808
+producer: 1817
+consumer 3: 1809
+producer: 1818
+producer: 1819
+producer: 1820
+producer: 1821
+producer: 1822
+consumer 2: 1810
+consumer 2: 1811
+consumer 2: 1812
+consumer 2: 1813
+consumer 2: 1814
+consumer 2: 1815
+consumer 3: 1816
+consumer 2: 1817
+consumer 1: 1818
+consumer 3: 1819
+consumer 1: 1820
+consumer 1: 1821
+consumer 1: 1822
+producer: 1823
+consumer 1: 1823
+producer: 1824
+producer: 1825
+producer: 1826
+producer: 1827
+producer: 1828
+consumer 1: 1824
+consumer 1: 1825
+consumer 1: 1826
+consumer 1: 1827
+producer: 1829
+producer: 1830
+producer: 1831
+producer: 1832
+producer: 1833
+producer: 1834
+consumer 1: 1828
+consumer 1: 1829
+consumer 1: 1830
+consumer 5: 1831
+consumer 5: 1832
+consumer 1: 1833
+producer: 1835
+producer: 1836
+producer: 1837
+producer: 1838
+producer: 1839
+producer: 1840
+producer: 1841
+consumer 5: 1834
+consumer 5: 1835
+consumer 5: 1836
+consumer 5: 1837
+consumer 5: 1838
+producer: 1842
+consumer 5: 1839
+consumer 5: 1840
+consumer 5: 1841
+consumer 5: 1842
+producer: 1843
+consumer 5: 1843
+producer: 1844
+producer: 1845
+consumer 1: 1844
+consumer 1: 1845
+producer: 1846
+producer: 1847
+consumer 3: 1846
+consumer 3: 1847
+producer: 1848
+producer: 1849
+producer: 1850
+producer: 1851
+producer: 1852
+consumer 3: 1848
+consumer 3: 1849
+consumer 3: 1850
+consumer 3: 1851
+consumer 2: 1852
+producer: 1853
+producer: 1854
+producer: 1855
+producer: 1856
+producer: 1857
+producer: 1858
+consumer 4: 1853
+consumer 5: 1854
+consumer 2: 1855
+consumer 4: 1856
+consumer 1: 1857
+consumer 1: 1858
+producer: 1859
+producer: 1860
+producer: 1861
+consumer 5: 1859
+consumer 5: 1860
+consumer 5: 1861
+producer: 1862
+producer: 1863
+consumer 3: 1862
+consumer 3: 1863
+producer: 1864
+producer: 1865
+producer: 1866
+producer: 1867
+producer: 1868
+producer: 1869
+consumer 1: 1864
+consumer 2: 1865
+consumer 3: 1866
+consumer 3: 1867
+consumer 3: 1868
+consumer 3: 1869
+producer: 1870
+consumer 2: 1870
+producer: 1871
+consumer 3: 1871
+producer: 1872
+consumer 3: 1872
+producer: 1873
+consumer 1: 1873
+producer: 1874
+producer: 1875
+producer: 1876
+producer: 1877
+producer: 1878
+consumer 1: 1874
+producer: 1879
+producer: 1880
+producer: 1881
+consumer 4: 1875
+consumer 4: 1876
+consumer 4: 1877
+producer: 1882
+consumer 3: 1878
+consumer 3: 1879
+consumer 3: 1880
+consumer 3: 1881
+consumer 1: 1882
+producer: 1883
+consumer 1: 1883
+producer: 1884
+producer: 1885
+producer: 1886
+consumer 3: 1884
+consumer 5: 1885
+consumer 5: 1886
+producer: 1887
+consumer 1: 1887
+producer: 1888
+consumer 1: 1888
+producer: 1889
+producer: 1890
+consumer 2: 1889
+consumer 2: 1890
+producer: 1891
+producer: 1892
+producer: 1893
+consumer 3: 1891
+consumer 3: 1892
+consumer 3: 1893
+producer: 1894
+producer: 1895
+producer: 1896
+producer: 1897
+producer: 1898
+consumer 5: 1894
+consumer 5: 1895
+consumer 5: 1896
+consumer 4: 1897
+consumer 2: 1898
+producer: 1899
+producer: 1900
+producer: 1901
+producer: 1902
+producer: 1903
+producer: 1904
+producer: 1905
+consumer 4: 1899
+consumer 5: 1900
+consumer 5: 1901
+consumer 5: 1902
+consumer 5: 1903
+consumer 5: 1904
+consumer 5: 1905
+producer: 1906
+producer: 1907
+producer: 1908
+consumer 5: 1906
+consumer 5: 1907
+consumer 5: 1908
+producer: 1909
+producer: 1910
+consumer 5: 1909
+consumer 5: 1910
+producer: 1911
+producer: 1912
+producer: 1913
+producer: 1914
+producer: 1915
+consumer 2: 1911
+consumer 2: 1912
+consumer 3: 1913
+consumer 3: 1914
+consumer 3: 1915
+producer: 1916
+producer: 1917
+producer: 1918
+consumer 1: 1916
+consumer 1: 1917
+consumer 5: 1918
+producer: 1919
+consumer 3: 1919
+producer: 1920
+producer: 1921
+producer: 1922
+consumer 3: 1920
+consumer 3: 1921
+consumer 3: 1922
+producer: 1923
+consumer 2: 1923
+producer: 1924
+producer: 1925
+producer: 1926
+consumer 3: 1924
+consumer 3: 1925
+consumer 3: 1926
+producer: 1927
+consumer 5: 1927
+producer: 1928
+consumer 4: 1928
+producer: 1929
+producer: 1930
+producer: 1931
+producer: 1932
+consumer 2: 1929
+consumer 2: 1930
+consumer 2: 1931
+consumer 2: 1932
+producer: 1933
+consumer 4: 1933
+producer: 1934
+producer: 1935
+producer: 1936
+producer: 1937
+consumer 4: 1934
+consumer 4: 1935
+consumer 4: 1936
+consumer 5: 1937
+producer: 1938
+producer: 1939
+producer: 1940
+consumer 5: 1938
+consumer 5: 1939
+producer: 1941
+producer: 1942
+producer: 1943
+consumer 4: 1940
+consumer 2: 1941
+consumer 2: 1942
+consumer 2: 1943
+producer: 1944
+consumer 2: 1944
+producer: 1945
+producer: 1946
+consumer 3: 1945
+consumer 3: 1946
+producer: 1947
+producer: 1948
+consumer 5: 1947
+consumer 5: 1948
+producer: 1949
+producer: 1950
+producer: 1951
+producer: 1952
+producer: 1953
+producer: 1954
+producer: 1955
+producer: 1956
+producer: 1957
+producer: 1958
+producer: 1959
+producer: 1960
+producer: 1961
+producer: 1962
+producer: 1963
+producer: 1964
+consumer 2: 1949
+producer: 1965
+consumer 3: 1950
+consumer 3: 1951
+consumer 4: 1952
+consumer 4: 1953
+consumer 4: 1954
+consumer 4: 1955
+consumer 5: 1956
+consumer 4: 1957
+consumer 4: 1958
+consumer 4: 1959
+consumer 4: 1960
+consumer 5: 1961
+consumer 3: 1962
+consumer 2: 1963
+consumer 2: 1964
+consumer 2: 1965
+producer: 1966
+producer: 1967
+consumer 2: 1966
+consumer 2: 1967
+producer: 1968
+producer: 1969
+producer: 1970
+producer: 1971
+producer: 1972
+producer: 1973
+producer: 1974
+producer: 1975
+producer: 1976
+producer: 1977
+consumer 2: 1968
+consumer 2: 1969
+consumer 2: 1970
+consumer 2: 1971
+consumer 2: 1972
+consumer 2: 1973
+consumer 3: 1974
+consumer 3: 1975
+producer: 1978
+consumer 3: 1976
+consumer 3: 1977
+consumer 3: 1978
+producer: 1979
+consumer 3: 1979
+producer: 1980
+producer: 1981
+consumer 2: 1980
+consumer 2: 1981
+producer: 1982
+consumer 1: 1982
+producer: 1983
+producer: 1984
+consumer 2: 1983
+consumer 4: 1984
+producer: 1985
+producer: 1986
+producer: 1987
+producer: 1988
+producer: 1989
+producer: 1990
+producer: 1991
+producer: 1992
+consumer 4: 1985
+consumer 4: 1986
+consumer 4: 1987
+consumer 4: 1988
+consumer 4: 1989
+consumer 4: 1990
+consumer 4: 1991
+consumer 4: 1992
+producer: 1993
+consumer 4: 1993
+producer: 1994
+producer: 1995
+producer: 1996
+consumer 3: 1994
+consumer 3: 1995
+consumer 3: 1996
+producer: 1997
+producer: 1998
+consumer 5: 1997
+consumer 5: 1998
+producer: 1999
+consumer 3: 1999
+producer: 2000
+producer: 2001
+consumer 4: 2000
+consumer 4: 2001
+producer: 2002
+producer: 2003
+consumer 2: 2002
+consumer 2: 2003
+producer: 2004
+producer: 2005
+producer: 2006
+consumer 1: 2004
+consumer 3: 2005
+consumer 3: 2006
+producer: 2007
+consumer 2: 2007
+producer: 2008
+producer: 2009
+producer: 2010
+producer: 2011
+consumer 1: 2008
+consumer 1: 2009
+consumer 1: 2010
+producer: 2012
+producer: 2013
+producer: 2014
+producer: 2015
+producer: 2016
+producer: 2017
+consumer 5: 2011
+consumer 5: 2012
+consumer 1: 2013
+consumer 1: 2014
+consumer 5: 2015
+consumer 5: 2016
+consumer 5: 2017
+producer: 2018
+consumer 5: 2018
+producer: 2019
+producer: 2020
+producer: 2021
+consumer 5: 2019
+consumer 5: 2020
+consumer 5: 2021
+producer: 2022
+producer: 2023
+consumer 5: 2022
+consumer 5: 2023
+producer: 2024
+consumer 2: 2024
+producer: 2025
+producer: 2026
+producer: 2027
+producer: 2028
+consumer 4: 2025
+consumer 4: 2026
+consumer 4: 2027
+consumer 2: 2028
+producer: 2029
+producer: 2030
+producer: 2031
+consumer 5: 2029
+consumer 5: 2030
+consumer 5: 2031
+producer: 2032
+consumer 1: 2032
+producer: 2033
+producer: 2034
+producer: 2035
+producer: 2036
+consumer 1: 2033
+producer: 2037
+consumer 4: 2034
+consumer 4: 2035
+consumer 4: 2036
+consumer 4: 2037
+producer: 2038
+producer: 2039
+consumer 4: 2038
+producer: 2040
+consumer 4: 2039
+consumer 2: 2040
+producer: 2041
+producer: 2042
+consumer 4: 2041
+consumer 5: 2042
+producer: 2043
+producer: 2044
+consumer 5: 2043
+consumer 5: 2044
+producer: 2045
+consumer 5: 2045
+producer: 2046
+producer: 2047
+consumer 1: 2046
+consumer 5: 2047
+producer: 2048
+producer: 2049
+producer: 2050
+consumer 5: 2048
+consumer 5: 2049
+producer: 2051
+producer: 2052
+producer: 2053
+producer: 2054
+producer: 2055
+producer: 2056
+producer: 2057
+producer: 2058
+producer: 2059
+producer: 2060
+producer: 2061
+producer: 2062
+producer: 2063
+producer: 2064
+consumer 4: 2050
+consumer 5: 2051
+consumer 5: 2052
+consumer 3: 2053
+consumer 3: 2054
+consumer 5: 2055
+consumer 1: 2056
+consumer 5: 2057
+consumer 5: 2058
+consumer 5: 2059
+consumer 5: 2060
+consumer 5: 2061
+consumer 2: 2062
+consumer 2: 2063
+consumer 2: 2064
+producer: 2065
+consumer 2: 2065
+producer: 2066
+producer: 2067
+consumer 3: 2066
+consumer 3: 2067
+producer: 2068
+producer: 2069
+producer: 2070
+consumer 5: 2068
+consumer 5: 2069
+producer: 2071
+consumer 3: 2070
+consumer 1: 2071
+producer: 2072
+producer: 2073
+producer: 2074
+consumer 1: 2072
+producer: 2075
+consumer 1: 2073
+consumer 1: 2074
+consumer 5: 2075
+producer: 2076
+producer: 2077
+producer: 2078
+producer: 2079
+producer: 2080
+producer: 2081
+producer: 2082
+producer: 2083
+producer: 2084
+producer: 2085
+consumer 2: 2076
+consumer 4: 2077
+consumer 5: 2078
+consumer 5: 2079
+consumer 5: 2080
+consumer 5: 2081
+consumer 5: 2082
+consumer 5: 2083
+consumer 5: 2084
+consumer 5: 2085
+producer: 2086
+producer: 2087
+producer: 2088
+producer: 2089
+producer: 2090
+consumer 5: 2086
+consumer 5: 2087
+consumer 5: 2088
+consumer 4: 2089
+consumer 4: 2090
+producer: 2091
+producer: 2092
+consumer 4: 2091
+consumer 4: 2092
+producer: 2093
+producer: 2094
+consumer 3: 2093
+consumer 3: 2094
+producer: 2095
+producer: 2096
+producer: 2097
+consumer 1: 2095
+consumer 1: 2096
+consumer 1: 2097
+producer: 2098
+producer: 2099
+producer: 2100
+producer: 2101
+consumer 4: 2098
+consumer 4: 2099
+consumer 5: 2100
+consumer 5: 2101
+producer: 2102
+producer: 2103
+producer: 2104
+producer: 2105
+producer: 2106
+producer: 2107
+producer: 2108
+producer: 2109
+consumer 4: 2102
+consumer 4: 2103
+producer: 2110
+producer: 2111
+producer: 2112
+consumer 4: 2104
+consumer 4: 2105
+consumer 4: 2106
+consumer 4: 2107
+consumer 4: 2108
+producer: 2113
+producer: 2114
+consumer 3: 2109
+consumer 1: 2110
+producer: 2115
+consumer 1: 2111
+consumer 1: 2112
+consumer 1: 2113
+producer: 2116
+producer: 2117
+producer: 2118
+producer: 2119
+producer: 2120
+consumer 2: 2114
+consumer 2: 2115
+consumer 2: 2116
+consumer 2: 2117
+consumer 2: 2118
+consumer 2: 2119
+consumer 2: 2120
+producer: 2121
+producer: 2122
+consumer 1: 2121
+consumer 1: 2122
+producer: 2123
+producer: 2124
+consumer 5: 2123
+consumer 5: 2124
+producer: 2125
+producer: 2126
+producer: 2127
+producer: 2128
+consumer 3: 2125
+consumer 4: 2126
+consumer 5: 2127
+producer: 2129
+consumer 4: 2128
+consumer 3: 2129
+producer: 2130
+consumer 3: 2130
+producer: 2131
+producer: 2132
+producer: 2133
+consumer 2: 2131
+consumer 2: 2132
+consumer 2: 2133
+producer: 2134
+producer: 2135
+producer: 2136
+consumer 3: 2134
+consumer 3: 2135
+consumer 3: 2136
+producer: 2137
+producer: 2138
+producer: 2139
+producer: 2140
+consumer 3: 2137
+consumer 3: 2138
+consumer 3: 2139
+consumer 3: 2140
+producer: 2141
+consumer 1: 2141
+producer: 2142
+producer: 2143
+consumer 2: 2142
+consumer 2: 2143
+producer: 2144
+producer: 2145
+producer: 2146
+producer: 2147
+consumer 1: 2144
+producer: 2148
+producer: 2149
+producer: 2150
+producer: 2151
+producer: 2152
+producer: 2153
+producer: 2154
+consumer 4: 2145
+producer: 2155
+producer: 2156
+producer: 2157
+consumer 3: 2146
+consumer 3: 2147
+consumer 3: 2148
+producer: 2158
+producer: 2159
+producer: 2160
+producer: 2161
+consumer 3: 2149
+producer: 2162
+producer: 2163
+producer: 2164
+consumer 1: 2150
+consumer 1: 2151
+consumer 1: 2152
+consumer 1: 2153
+consumer 5: 2154
+consumer 5: 2155
+consumer 5: 2156
+consumer 5: 2157
+consumer 5: 2158
+consumer 5: 2159
+consumer 5: 2160
+producer: 2165
+producer: 2166
+producer: 2167
+producer: 2168
+producer: 2169
+producer: 2170
+producer: 2171
+consumer 5: 2161
+consumer 5: 2162
+producer: 2172
+producer: 2173
+producer: 2174
+consumer 1: 2163
+consumer 1: 2164
+consumer 1: 2165
+consumer 1: 2166
+consumer 1: 2167
+consumer 2: 2168
+consumer 2: 2169
+consumer 2: 2170
+consumer 2: 2171
+consumer 2: 2172
+consumer 2: 2173
+consumer 2: 2174
+producer: 2175
+producer: 2176
+consumer 1: 2175
+consumer 1: 2176
+producer: 2177
+producer: 2178
+consumer 4: 2177
+consumer 2: 2178
+producer: 2179
+consumer 4: 2179
+producer: 2180
+producer: 2181
+consumer 3: 2180
+consumer 3: 2181
+producer: 2182
+consumer 1: 2182
+producer: 2183
+producer: 2184
+producer: 2185
+consumer 4: 2183
+consumer 4: 2184
+consumer 2: 2185
+producer: 2186
+producer: 2187
+producer: 2188
+producer: 2189
+producer: 2190
+producer: 2191
+producer: 2192
+producer: 2193
+consumer 3: 2186
+consumer 3: 2187
+consumer 3: 2188
+consumer 5: 2189
+consumer 5: 2190
+consumer 5: 2191
+consumer 4: 2192
+consumer 2: 2193
+producer: 2194
+producer: 2195
+consumer 5: 2194
+consumer 5: 2195
+producer: 2196
+producer: 2197
+consumer 2: 2196
+consumer 2: 2197
+producer: 2198
+consumer 1: 2198
+producer: 2199
+producer: 2200
+producer: 2201
+consumer 4: 2199
+consumer 4: 2200
+consumer 4: 2201
+producer: 2202
+producer: 2203
+producer: 2204
+consumer 4: 2202
+consumer 4: 2203
+consumer 4: 2204
+producer: 2205
+producer: 2206
+producer: 2207
+producer: 2208
+consumer 3: 2205
+producer: 2209
+producer: 2210
+producer: 2211
+producer: 2212
+producer: 2213
+consumer 3: 2206
+consumer 4: 2207
+consumer 4: 2208
+consumer 4: 2209
+consumer 4: 2210
+consumer 4: 2211
+consumer 4: 2212
+consumer 3: 2213
+producer: 2214
+producer: 2215
+producer: 2216
+consumer 2: 2214
+consumer 2: 2215
+consumer 4: 2216
+producer: 2217
+consumer 1: 2217
+producer: 2218
+producer: 2219
+producer: 2220
+producer: 2221
+producer: 2222
+producer: 2223
+producer: 2224
+producer: 2225
+producer: 2226
+producer: 2227
+producer: 2228
+producer: 2229
+consumer 3: 2218
+consumer 3: 2219
+consumer 4: 2220
+consumer 4: 2221
+consumer 4: 2222
+consumer 4: 2223
+consumer 2: 2224
+consumer 5: 2225
+consumer 5: 2226
+consumer 1: 2227
+consumer 1: 2228
+consumer 1: 2229
+producer: 2230
+producer: 2231
+producer: 2232
+producer: 2233
+producer: 2234
+producer: 2235
+producer: 2236
+consumer 2: 2230
+consumer 4: 2231
+consumer 2: 2232
+consumer 4: 2233
+consumer 4: 2234
+consumer 3: 2235
+consumer 4: 2236
+producer: 2237
+consumer 3: 2237
+producer: 2238
+consumer 2: 2238
+producer: 2239
+producer: 2240
+consumer 3: 2239
+consumer 3: 2240
+producer: 2241
+producer: 2242
+consumer 3: 2241
+consumer 3: 2242
+producer: 2243
+producer: 2244
+consumer 3: 2243
+consumer 3: 2244
+producer: 2245
+producer: 2246
+consumer 4: 2245
+consumer 4: 2246
+producer: 2247
+producer: 2248
+producer: 2249
+producer: 2250
+consumer 4: 2247
+consumer 4: 2248
+consumer 4: 2249
+consumer 4: 2250
+producer: 2251
+producer: 2252
+producer: 2253
+producer: 2254
+consumer 4: 2251
+consumer 4: 2252
+producer: 2255
+consumer 4: 2253
+consumer 4: 2254
+consumer 4: 2255
+producer: 2256
+consumer 4: 2256
+producer: 2257
+producer: 2258
+producer: 2259
+consumer 1: 2257
+consumer 4: 2258
+consumer 5: 2259
+producer: 2260
+producer: 2261
+producer: 2262
+producer: 2263
+producer: 2264
+producer: 2265
+producer: 2266
+producer: 2267
+producer: 2268
+producer: 2269
+producer: 2270
+producer: 2271
+consumer 2: 2260
+producer: 2272
+consumer 2: 2261
+producer: 2273
+producer: 2274
+producer: 2275
+producer: 2276
+consumer 5: 2262
+consumer 5: 2263
+consumer 5: 2264
+consumer 1: 2265
+consumer 1: 2266
+consumer 3: 2267
+consumer 3: 2268
+consumer 4: 2269
+consumer 4: 2270
+consumer 5: 2271
+consumer 2: 2272
+consumer 2: 2273
+producer: 2277
+producer: 2278
+producer: 2279
+producer: 2280
+producer: 2281
+producer: 2282
+producer: 2283
+producer: 2284
+producer: 2285
+producer: 2286
+producer: 2287
+producer: 2288
+producer: 2289
+consumer 2: 2274
+consumer 2: 2275
+consumer 2: 2276
+consumer 3: 2277
+producer: 2290
+producer: 2291
+producer: 2292
+consumer 4: 2278
+consumer 4: 2279
+consumer 4: 2280
+consumer 4: 2281
+consumer 4: 2282
+producer: 2293
+consumer 3: 2283
+consumer 4: 2284
+consumer 3: 2285
+consumer 3: 2286
+consumer 3: 2287
+producer: 2294
+producer: 2295
+producer: 2296
+producer: 2297
+producer: 2298
+producer: 2299
+producer: 2300
+producer: 2301
+producer: 2302
+consumer 5: 2288
+producer: 2303
+consumer 5: 2289
+consumer 5: 2290
+consumer 5: 2291
+consumer 5: 2292
+consumer 5: 2293
+consumer 5: 2294
+producer: 2304
+producer: 2305
+producer: 2306
+consumer 2: 2295
+consumer 2: 2296
+consumer 2: 2297
+consumer 3: 2298
+consumer 1: 2299
+consumer 5: 2300
+consumer 1: 2301
+consumer 4: 2302
+consumer 1: 2303
+producer: 2307
+producer: 2308
+producer: 2309
+producer: 2310
+consumer 3: 2304
+consumer 4: 2305
+consumer 3: 2306
+consumer 3: 2307
+producer: 2311
+producer: 2312
+producer: 2313
+producer: 2314
+producer: 2315
+producer: 2316
+producer: 2317
+producer: 2318
+consumer 1: 2308
+consumer 1: 2309
+consumer 3: 2310
+consumer 1: 2311
+consumer 1: 2312
+producer: 2319
+producer: 2320
+producer: 2321
+producer: 2322
+producer: 2323
+producer: 2324
+consumer 1: 2313
+consumer 1: 2314
+consumer 1: 2315
+consumer 4: 2316
+consumer 4: 2317
+consumer 4: 2318
+consumer 4: 2319
+consumer 4: 2320
+consumer 4: 2321
+consumer 4: 2322
+consumer 4: 2323
+consumer 2: 2324
+producer: 2325
+producer: 2326
+consumer 5: 2325
+consumer 5: 2326
+producer: 2327
+producer: 2328
+consumer 5: 2327
+consumer 5: 2328
+producer: 2329
+producer: 2330
+consumer 5: 2329
+consumer 5: 2330
+producer: 2331
+producer: 2332
+producer: 2333
+producer: 2334
+consumer 2: 2331
+producer: 2335
+producer: 2336
+consumer 3: 2332
+consumer 3: 2333
+consumer 1: 2334
+producer: 2337
+consumer 5: 2335
+consumer 5: 2336
+consumer 5: 2337
+producer: 2338
+producer: 2339
+producer: 2340
+consumer 2: 2338
+consumer 2: 2339
+consumer 2: 2340
+producer: 2341
+producer: 2342
+producer: 2343
+producer: 2344
+producer: 2345
+producer: 2346
+consumer 2: 2341
+consumer 3: 2342
+consumer 3: 2343
+consumer 3: 2344
+consumer 3: 2345
+consumer 2: 2346
+producer: 2347
+consumer 3: 2347
+producer: 2348
+producer: 2349
+consumer 3: 2348
+consumer 3: 2349
+producer: 2350
+producer: 2351
+producer: 2352
+producer: 2353
+producer: 2354
+consumer 5: 2350
+consumer 3: 2351
+consumer 3: 2352
+consumer 4: 2353
+consumer 1: 2354
+producer: 2355
+producer: 2356
+producer: 2357
+producer: 2358
+producer: 2359
+consumer 4: 2355
+consumer 4: 2356
+consumer 5: 2357
+consumer 5: 2358
+consumer 5: 2359
+producer: 2360
+producer: 2361
+producer: 2362
+producer: 2363
+consumer 5: 2360
+consumer 5: 2361
+consumer 5: 2362
+consumer 5: 2363
+producer: 2364
+producer: 2365
+producer: 2366
+producer: 2367
+consumer 4: 2364
+consumer 4: 2365
+consumer 4: 2366
+consumer 4: 2367
+producer: 2368
+producer: 2369
+producer: 2370
+producer: 2371
+consumer 4: 2368
+consumer 4: 2369
+consumer 2: 2370
+consumer 2: 2371
+producer: 2372
+consumer 3: 2372
+producer: 2373
+producer: 2374
+producer: 2375
+consumer 4: 2373
+consumer 4: 2374
+consumer 4: 2375
+producer: 2376
+consumer 1: 2376
+producer: 2377
+producer: 2378
+producer: 2379
+consumer 1: 2377
+consumer 1: 2378
+consumer 2: 2379
+producer: 2380
+producer: 2381
+consumer 5: 2380
+consumer 5: 2381
+producer: 2382
+producer: 2383
+producer: 2384
+consumer 5: 2382
+consumer 5: 2383
+consumer 5: 2384
+producer: 2385
+producer: 2386
+producer: 2387
+consumer 5: 2385
+consumer 5: 2386
+consumer 5: 2387
+producer: 2388
+producer: 2389
+producer: 2390
+producer: 2391
+producer: 2392
+producer: 2393
+consumer 5: 2388
+consumer 5: 2389
+consumer 5: 2390
+consumer 5: 2391
+consumer 5: 2392
+consumer 5: 2393
+producer: 2394
+producer: 2395
+consumer 2: 2394
+consumer 2: 2395
+producer: 2396
+producer: 2397
+producer: 2398
+producer: 2399
+producer: 2400
+producer: 2401
+consumer 2: 2396
+consumer 2: 2397
+consumer 2: 2398
+consumer 2: 2399
+consumer 2: 2400
+consumer 2: 2401
+producer: 2402
+producer: 2403
+producer: 2404
+consumer 5: 2402
+consumer 5: 2403
+consumer 5: 2404
+producer: 2405
+producer: 2406
+consumer 1: 2405
+consumer 1: 2406
+producer: 2407
+producer: 2408
+consumer 1: 2407
+consumer 1: 2408
+producer: 2409
+consumer 1: 2409
+producer: 2410
+producer: 2411
+producer: 2412
+producer: 2413
+producer: 2414
+consumer 1: 2410
+consumer 4: 2411
+consumer 4: 2412
+consumer 4: 2413
+consumer 4: 2414
+producer: 2415
+producer: 2416
+producer: 2417
+consumer 2: 2415
+consumer 2: 2416
+consumer 2: 2417
+producer: 2418
+consumer 1: 2418
+producer: 2419
+producer: 2420
+producer: 2421
+consumer 1: 2419
+consumer 1: 2420
+consumer 1: 2421
+producer: 2422
+producer: 2423
+producer: 2424
+producer: 2425
+producer: 2426
+producer: 2427
+producer: 2428
+producer: 2429
+producer: 2430
+consumer 4: 2422
+consumer 4: 2423
+consumer 4: 2424
+consumer 4: 2425
+consumer 4: 2426
+consumer 4: 2427
+consumer 4: 2428
+consumer 4: 2429
+producer: 2431
+producer: 2432
+producer: 2433
+producer: 2434
+producer: 2435
+consumer 4: 2430
+consumer 5: 2431
+consumer 5: 2432
+consumer 1: 2433
+producer: 2436
+producer: 2437
+producer: 2438
+producer: 2439
+producer: 2440
+consumer 1: 2434
+consumer 1: 2435
+consumer 1: 2436
+consumer 5: 2437
+consumer 5: 2438
+consumer 5: 2439
+consumer 5: 2440
+producer: 2441
+consumer 5: 2441
+producer: 2442
+producer: 2443
+producer: 2444
+producer: 2445
+producer: 2446
+producer: 2447
+producer: 2448
+producer: 2449
+producer: 2450
+producer: 2451
+producer: 2452
+consumer 2: 2442
+consumer 2: 2443
+consumer 2: 2444
+consumer 2: 2445
+consumer 1: 2446
+consumer 1: 2447
+consumer 1: 2448
+consumer 4: 2449
+consumer 4: 2450
+consumer 1: 2451
+consumer 4: 2452
+producer: 2453
+producer: 2454
+producer: 2455
+consumer 1: 2453
+consumer 1: 2454
+consumer 1: 2455
+producer: 2456
+consumer 5: 2456
+producer: 2457
+producer: 2458
+producer: 2459
+producer: 2460
+producer: 2461
+consumer 5: 2457
+consumer 5: 2458
+consumer 5: 2459
+consumer 5: 2460
+producer: 2462
+producer: 2463
+producer: 2464
+producer: 2465
+producer: 2466
+producer: 2467
+producer: 2468
+producer: 2469
+producer: 2470
+consumer 5: 2461
+producer: 2471
+consumer 5: 2462
+producer: 2472
+consumer 2: 2463
+consumer 2: 2464
+consumer 2: 2465
+consumer 2: 2466
+consumer 2: 2467
+consumer 3: 2468
+consumer 5: 2469
+consumer 5: 2470
+consumer 3: 2471
+consumer 5: 2472
+producer: 2473
+consumer 5: 2473
+producer: 2474
+producer: 2475
+producer: 2476
+producer: 2477
+producer: 2478
+producer: 2479
+producer: 2480
+producer: 2481
+consumer 1: 2474
+consumer 1: 2475
+producer: 2482
+consumer 2: 2476
+consumer 2: 2477
+consumer 2: 2478
+consumer 2: 2479
+consumer 5: 2480
+consumer 5: 2481
+consumer 5: 2482
+producer: 2483
+producer: 2484
+producer: 2485
+consumer 1: 2483
+consumer 1: 2484
+consumer 1: 2485
+producer: 2486
+producer: 2487
+consumer 3: 2486
+consumer 3: 2487
+producer: 2488
+producer: 2489
+producer: 2490
+producer: 2491
+consumer 2: 2488
+consumer 2: 2489
+consumer 3: 2490
+consumer 3: 2491
+producer: 2492
+producer: 2493
+consumer 3: 2492
+consumer 3: 2493
+producer: 2494
+consumer 1: 2494
+producer: 2495
+producer: 2496
+producer: 2497
+producer: 2498
+consumer 1: 2495
+consumer 1: 2496
+consumer 3: 2497
+consumer 3: 2498
+producer: 2499
+consumer 2: 2499
+producer: 2500
+producer: 2501
+producer: 2502
+producer: 2503
+producer: 2504
+consumer 1: 2500
+consumer 2: 2501
+consumer 1: 2502
+producer: 2505
+producer: 2506
+producer: 2507
+producer: 2508
+producer: 2509
+consumer 1: 2503
+consumer 1: 2504
+consumer 1: 2505
+consumer 1: 2506
+consumer 1: 2507
+consumer 1: 2508
+consumer 1: 2509
+producer: 2510
+consumer 1: 2510
+producer: 2511
+producer: 2512
+producer: 2513
+consumer 1: 2511
+consumer 1: 2512
+consumer 5: 2513
+producer: 2514
+producer: 2515
+producer: 2516
+producer: 2517
+producer: 2518
+consumer 5: 2514
+consumer 5: 2515
+consumer 5: 2516
+consumer 5: 2517
+consumer 5: 2518
+producer: 2519
+consumer 2: 2519
+producer: 2520
+producer: 2521
+consumer 1: 2520
+consumer 3: 2521
+producer: 2522
+producer: 2523
+producer: 2524
+consumer 3: 2522
+consumer 3: 2523
+consumer 1: 2524
+producer: 2525
+consumer 1: 2525
+producer: 2526
+producer: 2527
+producer: 2528
+producer: 2529
+consumer 4: 2526
+consumer 4: 2527
+consumer 4: 2528
+consumer 2: 2529
+producer: 2530
+producer: 2531
+producer: 2532
+consumer 4: 2530
+consumer 4: 2531
+consumer 1: 2532
+producer: 2533
+producer: 2534
+producer: 2535
+consumer 1: 2533
+consumer 1: 2534
+consumer 1: 2535
+producer: 2536
+consumer 1: 2536
+producer: 2537
+producer: 2538
+producer: 2539
+producer: 2540
+consumer 2: 2537
+consumer 2: 2538
+consumer 2: 2539
+consumer 5: 2540
+producer: 2541
+producer: 2542
+producer: 2543
+producer: 2544
+consumer 4: 2541
+producer: 2545
+consumer 4: 2542
+consumer 4: 2543
+consumer 4: 2544
+consumer 4: 2545
+producer: 2546
+producer: 2547
+producer: 2548
+producer: 2549
+producer: 2550
+producer: 2551
+consumer 4: 2546
+consumer 4: 2547
+consumer 4: 2548
+consumer 4: 2549
+consumer 4: 2550
+consumer 4: 2551
+producer: 2552
+consumer 4: 2552
+producer: 2553
+producer: 2554
+producer: 2555
+producer: 2556
+consumer 4: 2553
+consumer 4: 2554
+consumer 4: 2555
+consumer 4: 2556
+producer: 2557
+producer: 2558
+producer: 2559
+producer: 2560
+producer: 2561
+consumer 4: 2557
+consumer 5: 2558
+consumer 5: 2559
+consumer 5: 2560
+consumer 5: 2561
+producer: 2562
+producer: 2563
+producer: 2564
+producer: 2565
+producer: 2566
+consumer 1: 2562
+consumer 1: 2563
+consumer 1: 2564
+consumer 3: 2565
+consumer 3: 2566
+producer: 2567
+producer: 2568
+producer: 2569
+consumer 2: 2567
+consumer 2: 2568
+consumer 1: 2569
+producer: 2570
+producer: 2571
+producer: 2572
+producer: 2573
+producer: 2574
+producer: 2575
+consumer 3: 2570
+consumer 1: 2571
+consumer 1: 2572
+consumer 1: 2573
+consumer 1: 2574
+consumer 1: 2575
+producer: 2576
+producer: 2577
+producer: 2578
+producer: 2579
+producer: 2580
+producer: 2581
+producer: 2582
+consumer 2: 2576
+consumer 2: 2577
+consumer 2: 2578
+consumer 2: 2579
+consumer 2: 2580
+consumer 3: 2581
+producer: 2583
+consumer 3: 2582
+producer: 2584
+consumer 3: 2583
+producer: 2585
+producer: 2586
+producer: 2587
+producer: 2588
+producer: 2589
+consumer 1: 2584
+consumer 5: 2585
+consumer 1: 2586
+producer: 2590
+producer: 2591
+consumer 2: 2587
+consumer 2: 2588
+consumer 2: 2589
+consumer 2: 2590
+consumer 1: 2591
+producer: 2592
+producer: 2593
+consumer 2: 2592
+consumer 2: 2593
+producer: 2594
+consumer 4: 2594
+producer: 2595
+producer: 2596
+producer: 2597
+producer: 2598
+consumer 1: 2595
+consumer 1: 2596
+consumer 1: 2597
+consumer 2: 2598
+producer: 2599
+consumer 4: 2599
+producer: 2600
+producer: 2601
+consumer 4: 2600
+consumer 4: 2601
+producer: 2602
+producer: 2603
+producer: 2604
+consumer 2: 2602
+consumer 2: 2603
+consumer 2: 2604
+producer: 2605
+producer: 2606
+producer: 2607
+consumer 4: 2605
+producer: 2608
+consumer 4: 2606
+consumer 4: 2607
+consumer 4: 2608
+producer: 2609
+producer: 2610
+producer: 2611
+consumer 3: 2609
+producer: 2612
+consumer 3: 2610
+producer: 2613
+consumer 4: 2611
+consumer 4: 2612
+consumer 4: 2613
+producer: 2614
+producer: 2615
+consumer 4: 2614
+consumer 4: 2615
+producer: 2616
+consumer 4: 2616
+producer: 2617
+producer: 2618
+producer: 2619
+consumer 4: 2617
+consumer 4: 2618
+consumer 4: 2619
+producer: 2620
+producer: 2621
+producer: 2622
+consumer 4: 2620
+consumer 4: 2621
+consumer 4: 2622
+producer: 2623
+consumer 3: 2623
+producer: 2624
+consumer 4: 2624
+producer: 2625
+producer: 2626
+producer: 2627
+producer: 2628
+consumer 4: 2625
+consumer 4: 2626
+consumer 4: 2627
+consumer 4: 2628
+producer: 2629
+consumer 5: 2629
+producer: 2630
+producer: 2631
+producer: 2632
+producer: 2633
+consumer 3: 2630
+consumer 3: 2631
+producer: 2634
+producer: 2635
+producer: 2636
+producer: 2637
+producer: 2638
+producer: 2639
+producer: 2640
+consumer 4: 2632
+consumer 4: 2633
+consumer 4: 2634
+consumer 4: 2635
+consumer 4: 2636
+producer: 2641
+producer: 2642
+producer: 2643
+producer: 2644
+consumer 5: 2637
+producer: 2645
+producer: 2646
+producer: 2647
+consumer 5: 2638
+consumer 5: 2639
+consumer 1: 2640
+consumer 1: 2641
+consumer 1: 2642
+consumer 1: 2643
+producer: 2648
+consumer 2: 2644
+consumer 2: 2645
+consumer 3: 2646
+consumer 3: 2647
+consumer 3: 2648
+producer: 2649
+consumer 3: 2649
+producer: 2650
+producer: 2651
+consumer 1: 2650
+producer: 2652
+producer: 2653
+producer: 2654
+producer: 2655
+consumer 5: 2651
+consumer 5: 2652
+consumer 5: 2653
+consumer 4: 2654
+consumer 1: 2655
+producer: 2656
+producer: 2657
+producer: 2658
+producer: 2659
+producer: 2660
+producer: 2661
+consumer 1: 2656
+consumer 1: 2657
+consumer 1: 2658
+consumer 3: 2659
+consumer 3: 2660
+consumer 3: 2661
+producer: 2662
+producer: 2663
+consumer 4: 2662
+consumer 4: 2663
+producer: 2664
+producer: 2665
+producer: 2666
+producer: 2667
+consumer 5: 2664
+consumer 5: 2665
+consumer 5: 2666
+consumer 5: 2667
+producer: 2668
+producer: 2669
+consumer 1: 2668
+consumer 1: 2669
+producer: 2670
+consumer 3: 2670
+producer: 2671
+producer: 2672
+producer: 2673
+consumer 1: 2671
+consumer 1: 2672
+consumer 1: 2673
+producer: 2674
+producer: 2675
+producer: 2676
+consumer 1: 2674
+consumer 1: 2675
+consumer 4: 2676
+producer: 2677
+producer: 2678
+producer: 2679
+producer: 2680
+producer: 2681
+consumer 3: 2677
+consumer 2: 2678
+consumer 2: 2679
+consumer 2: 2680
+consumer 3: 2681
+producer: 2682
+producer: 2683
+producer: 2684
+consumer 4: 2682
+consumer 4: 2683
+producer: 2685
+producer: 2686
+producer: 2687
+producer: 2688
+producer: 2689
+producer: 2690
+producer: 2691
+producer: 2692
+consumer 5: 2684
+consumer 5: 2685
+producer: 2693
+producer: 2694
+producer: 2695
+producer: 2696
+producer: 2697
+producer: 2698
+producer: 2699
+producer: 2700
+producer: 2701
+producer: 2702
+consumer 5: 2686
+consumer 5: 2687
+consumer 5: 2688
+producer: 2703
+consumer 5: 2689
+consumer 1: 2690
+consumer 1: 2691
+consumer 1: 2692
+consumer 2: 2693
+consumer 2: 2694
+consumer 2: 2695
+consumer 2: 2696
+consumer 2: 2697
+consumer 4: 2698
+producer: 2704
+producer: 2705
+producer: 2706
+producer: 2707
+producer: 2708
+producer: 2709
+consumer 1: 2699
+consumer 1: 2700
+consumer 1: 2701
+consumer 1: 2702
+consumer 1: 2703
+consumer 1: 2704
+consumer 1: 2705
+producer: 2710
+consumer 4: 2706
+consumer 4: 2707
+consumer 1: 2708
+consumer 1: 2709
+producer: 2711
+consumer 4: 2710
+consumer 4: 2711
+producer: 2712
+producer: 2713
+consumer 2: 2712
+consumer 2: 2713
+producer: 2714
+consumer 1: 2714
+producer: 2715
+producer: 2716
+producer: 2717
+consumer 2: 2715
+consumer 2: 2716
+consumer 2: 2717
+producer: 2718
+producer: 2719
+producer: 2720
+consumer 2: 2718
+producer: 2721
+producer: 2722
+consumer 5: 2719
+consumer 5: 2720
+producer: 2723
+producer: 2724
+consumer 3: 2721
+producer: 2725
+consumer 3: 2722
+producer: 2726
+consumer 4: 2723
+consumer 4: 2724
+consumer 2: 2725
+consumer 2: 2726
+producer: 2727
+producer: 2728
+producer: 2729
+consumer 5: 2727
+consumer 5: 2728
+consumer 3: 2729
+producer: 2730
+producer: 2731
+producer: 2732
+consumer 3: 2730
+consumer 3: 2731
+consumer 1: 2732
+producer: 2733
+producer: 2734
+producer: 2735
+producer: 2736
+consumer 5: 2733
+consumer 5: 2734
+consumer 5: 2735
+consumer 5: 2736
+producer: 2737
+producer: 2738
+producer: 2739
+consumer 4: 2737
+consumer 4: 2738
+consumer 4: 2739
+producer: 2740
+producer: 2741
+consumer 3: 2740
+consumer 4: 2741
+producer: 2742
+producer: 2743
+producer: 2744
+consumer 5: 2742
+consumer 5: 2743
+consumer 3: 2744
+producer: 2745
+producer: 2746
+producer: 2747
+consumer 3: 2745
+consumer 3: 2746
+consumer 3: 2747
+producer: 2748
+producer: 2749
+producer: 2750
+producer: 2751
+producer: 2752
+producer: 2753
+consumer 5: 2748
+consumer 4: 2749
+consumer 4: 2750
+consumer 4: 2751
+consumer 4: 2752
+producer: 2754
+consumer 4: 2753
+producer: 2755
+consumer 4: 2754
+consumer 4: 2755
+producer: 2756
+producer: 2757
+producer: 2758
+producer: 2759
+producer: 2760
+producer: 2761
+consumer 4: 2756
+consumer 4: 2757
+consumer 4: 2758
+consumer 4: 2759
+consumer 4: 2760
+producer: 2762
+producer: 2763
+producer: 2764
+consumer 4: 2761
+consumer 4: 2762
+consumer 4: 2763
+consumer 2: 2764
+producer: 2765
+consumer 2: 2765
+producer: 2766
+consumer 2: 2766
+producer: 2767
+consumer 5: 2767
+producer: 2768
+consumer 1: 2768
+producer: 2769
+producer: 2770
+producer: 2771
+producer: 2772
+producer: 2773
+producer: 2774
+consumer 3: 2769
+consumer 3: 2770
+consumer 3: 2771
+consumer 3: 2772
+producer: 2775
+producer: 2776
+producer: 2777
+producer: 2778
+producer: 2779
+producer: 2780
+consumer 4: 2773
+consumer 3: 2774
+consumer 3: 2775
+consumer 3: 2776
+consumer 3: 2777
+consumer 3: 2778
+producer: 2781
+producer: 2782
+producer: 2783
+producer: 2784
+producer: 2785
+producer: 2786
+producer: 2787
+producer: 2788
+consumer 3: 2779
+consumer 3: 2780
+consumer 3: 2781
+consumer 3: 2782
+consumer 3: 2783
+consumer 2: 2784
+producer: 2789
+producer: 2790
+producer: 2791
+producer: 2792
+producer: 2793
+producer: 2794
+producer: 2795
+consumer 2: 2785
+consumer 2: 2786
+consumer 2: 2787
+consumer 2: 2788
+consumer 2: 2789
+producer: 2796
+consumer 4: 2790
+consumer 4: 2791
+consumer 4: 2792
+consumer 4: 2793
+consumer 4: 2794
+consumer 5: 2795
+consumer 4: 2796
+producer: 2797
+producer: 2798
+consumer 5: 2797
+consumer 5: 2798
+producer: 2799
+producer: 2800
+producer: 2801
+producer: 2802
+consumer 5: 2799
+consumer 5: 2800
+consumer 5: 2801
+consumer 5: 2802
+producer: 2803
+producer: 2804
+producer: 2805
+producer: 2806
+producer: 2807
+producer: 2808
+producer: 2809
+producer: 2810
+consumer 4: 2803
+consumer 3: 2804
+consumer 3: 2805
+consumer 3: 2806
+consumer 3: 2807
+consumer 3: 2808
+consumer 4: 2809
+producer: 2811
+consumer 2: 2810
+consumer 5: 2811
+producer: 2812
+consumer 5: 2812
+producer: 2813
+producer: 2814
+producer: 2815
+consumer 5: 2813
+consumer 5: 2814
+consumer 5: 2815
+producer: 2816
+producer: 2817
+producer: 2818
+consumer 5: 2816
+consumer 5: 2817
+consumer 5: 2818
+producer: 2819
+consumer 4: 2819
+producer: 2820
+consumer 5: 2820
+producer: 2821
+producer: 2822
+consumer 1: 2821
+consumer 3: 2822
+producer: 2823
+consumer 5: 2823
+producer: 2824
+producer: 2825
+producer: 2826
+consumer 1: 2824
+consumer 1: 2825
+consumer 1: 2826
+producer: 2827
+producer: 2828
+producer: 2829
+producer: 2830
+producer: 2831
+consumer 1: 2827
+consumer 1: 2828
+consumer 1: 2829
+consumer 1: 2830
+consumer 1: 2831
+producer: 2832
+producer: 2833
+producer: 2834
+producer: 2835
+consumer 3: 2832
+consumer 3: 2833
+consumer 1: 2834
+consumer 1: 2835
+producer: 2836
+producer: 2837
+producer: 2838
+consumer 1: 2836
+consumer 1: 2837
+consumer 1: 2838
+producer: 2839
+consumer 1: 2839
+producer: 2840
+consumer 5: 2840
+producer: 2841
+producer: 2842
+consumer 4: 2841
+consumer 4: 2842
+producer: 2843
+producer: 2844
+producer: 2845
+producer: 2846
+producer: 2847
+producer: 2848
+consumer 3: 2843
+consumer 3: 2844
+consumer 5: 2845
+consumer 3: 2846
+producer: 2849
+consumer 3: 2847
+producer: 2850
+producer: 2851
+consumer 1: 2848
+consumer 1: 2849
+consumer 1: 2850
+consumer 5: 2851
+producer: 2852
+consumer 5: 2852
+producer: 2853
+producer: 2854
+producer: 2855
+producer: 2856
+consumer 5: 2853
+consumer 5: 2854
+consumer 5: 2855
+consumer 5: 2856
+producer: 2857
+producer: 2858
+consumer 5: 2857
+consumer 5: 2858
+producer: 2859
+producer: 2860
+producer: 2861
+producer: 2862
+consumer 3: 2859
+consumer 3: 2860
+consumer 3: 2861
+consumer 3: 2862
+producer: 2863
+producer: 2864
+consumer 5: 2863
+consumer 5: 2864
+producer: 2865
+producer: 2866
+producer: 2867
+producer: 2868
+consumer 2: 2865
+consumer 2: 2866
+consumer 2: 2867
+consumer 2: 2868
+producer: 2869
+producer: 2870
+producer: 2871
+producer: 2872
+consumer 3: 2869
+consumer 3: 2870
+consumer 3: 2871
+consumer 3: 2872
+producer: 2873
+producer: 2874
+consumer 3: 2873
+consumer 5: 2874
+producer: 2875
+producer: 2876
+consumer 5: 2875
+consumer 5: 2876
+producer: 2877
+consumer 4: 2877
+producer: 2878
+producer: 2879
+producer: 2880
+consumer 3: 2878
+consumer 3: 2879
+consumer 1: 2880
+producer: 2881
+producer: 2882
+producer: 2883
+producer: 2884
+consumer 2: 2881
+consumer 2: 2882
+consumer 2: 2883
+consumer 2: 2884
+producer: 2885
+consumer 5: 2885
+producer: 2886
+producer: 2887
+consumer 2: 2886
+producer: 2888
+producer: 2889
+producer: 2890
+producer: 2891
+consumer 2: 2887
+consumer 2: 2888
+consumer 2: 2889
+consumer 2: 2890
+consumer 2: 2891
+producer: 2892
+consumer 2: 2892
+producer: 2893
+producer: 2894
+producer: 2895
+consumer 5: 2893
+producer: 2896
+consumer 5: 2894
+producer: 2897
+producer: 2898
+producer: 2899
+producer: 2900
+consumer 4: 2895
+consumer 4: 2896
+consumer 4: 2897
+consumer 4: 2898
+consumer 4: 2899
+consumer 4: 2900
+producer: 2901
+producer: 2902
+producer: 2903
+producer: 2904
+producer: 2905
+producer: 2906
+consumer 1: 2901
+producer: 2907
+consumer 1: 2902
+producer: 2908
+consumer 1: 2903
+producer: 2909
+producer: 2910
+producer: 2911
+producer: 2912
+consumer 4: 2904
+consumer 4: 2905
+consumer 4: 2906
+consumer 4: 2907
+consumer 2: 2908
+consumer 3: 2909
+consumer 3: 2910
+consumer 3: 2911
+consumer 3: 2912
+producer: 2913
+producer: 2914
+consumer 2: 2913
+consumer 5: 2914
+producer: 2915
+consumer 4: 2915
+producer: 2916
+producer: 2917
+producer: 2918
+consumer 4: 2916
+consumer 4: 2917
+consumer 4: 2918
+producer: 2919
+producer: 2920
+producer: 2921
+consumer 4: 2919
+consumer 4: 2920
+consumer 5: 2921
+producer: 2922
+producer: 2923
+producer: 2924
+producer: 2925
+consumer 3: 2922
+consumer 3: 2923
+consumer 1: 2924
+producer: 2926
+producer: 2927
+producer: 2928
+producer: 2929
+producer: 2930
+producer: 2931
+producer: 2932
+producer: 2933
+consumer 1: 2925
+consumer 1: 2926
+consumer 1: 2927
+consumer 1: 2928
+consumer 1: 2929
+consumer 1: 2930
+consumer 1: 2931
+consumer 1: 2932
+consumer 1: 2933
+producer: 2934
+producer: 2935
+consumer 1: 2934
+producer: 2936
+producer: 2937
+consumer 1: 2935
+producer: 2938
+producer: 2939
+producer: 2940
+consumer 2: 2936
+consumer 2: 2937
+consumer 2: 2938
+producer: 2941
+producer: 2942
+producer: 2943
+producer: 2944
+producer: 2945
+producer: 2946
+producer: 2947
+producer: 2948
+producer: 2949
+producer: 2950
+consumer 5: 2939
+consumer 5: 2940
+consumer 1: 2941
+consumer 1: 2942
+consumer 1: 2943
+consumer 1: 2944
+consumer 1: 2945
+producer: 2951
+producer: 2952
+producer: 2953
+producer: 2954
+producer: 2955
+producer: 2956
+producer: 2957
+producer: 2958
+producer: 2959
+producer: 2960
+producer: 2961
+producer: 2962
+producer: 2963
+producer: 2964
+producer: 2965
+producer: 2966
+consumer 2: 2946
+consumer 2: 2947
+consumer 2: 2948
+consumer 4: 2949
+consumer 4: 2950
+consumer 4: 2951
+consumer 4: 2952
+consumer 4: 2953
+consumer 5: 2954
+producer: 2967
+producer: 2968
+consumer 4: 2955
+consumer 4: 2956
+consumer 4: 2957
+consumer 4: 2958
+producer: 2969
+producer: 2970
+producer: 2971
+consumer 4: 2959
+consumer 4: 2960
+consumer 4: 2961
+consumer 4: 2962
+consumer 4: 2963
+consumer 4: 2964
+consumer 4: 2965
+consumer 4: 2966
+consumer 4: 2967
+consumer 4: 2968
+consumer 1: 2969
+consumer 4: 2970
+consumer 4: 2971
+producer: 2972
+producer: 2973
+producer: 2974
+producer: 2975
+consumer 2: 2972
+consumer 2: 2973
+consumer 2: 2974
+consumer 2: 2975
+producer: 2976
+producer: 2977
+consumer 4: 2976
+producer: 2978
+producer: 2979
+producer: 2980
+producer: 2981
+producer: 2982
+consumer 2: 2977
+producer: 2983
+producer: 2984
+consumer 2: 2978
+consumer 2: 2979
+consumer 2: 2980
+consumer 2: 2981
+consumer 2: 2982
+consumer 5: 2983
+consumer 5: 2984
+producer: 2985
+producer: 2986
+producer: 2987
+producer: 2988
+producer: 2989
+producer: 2990
+producer: 2991
+consumer 2: 2985
+consumer 2: 2986
+consumer 1: 2987
+producer: 2992
+producer: 2993
+producer: 2994
+consumer 4: 2988
+consumer 1: 2989
+consumer 4: 2990
+consumer 4: 2991
+consumer 1: 2992
+consumer 1: 2993
+consumer 3: 2994
+producer: 2995
+consumer 1: 2995
+producer: 2996
+producer: 2997
+producer: 2998
+consumer 3: 2996
+consumer 3: 2997
+consumer 3: 2998
+producer: 2999
+producer: 3000
+consumer 3: 2999
+consumer 3: 3000
+producer: 3001
+producer: 3002
+consumer 5: 3001
+consumer 5: 3002
+producer: 3003
+producer: 3004
+producer: 3005
+producer: 3006
+producer: 3007
+consumer 3: 3003
+consumer 3: 3004
+consumer 3: 3005
+producer: 3008
+producer: 3009
+producer: 3010
+producer: 3011
+producer: 3012
+producer: 3013
+producer: 3014
+consumer 3: 3006
+consumer 3: 3007
+consumer 3: 3008
+consumer 3: 3009
+consumer 3: 3010
+consumer 3: 3011
+consumer 3: 3012
+consumer 3: 3013
+producer: 3015
+producer: 3016
+producer: 3017
+producer: 3018
+producer: 3019
+consumer 4: 3014
+consumer 5: 3015
+producer: 3020
+consumer 5: 3016
+producer: 3021
+producer: 3022
+producer: 3023
+consumer 5: 3017
+consumer 5: 3018
+consumer 5: 3019
+consumer 5: 3020
+consumer 5: 3021
+consumer 5: 3022
+consumer 5: 3023
+producer: 3024
+producer: 3025
+consumer 2: 3024
+consumer 2: 3025
+producer: 3026
+producer: 3027
+producer: 3028
+producer: 3029
+consumer 3: 3026
+consumer 3: 3027
+consumer 3: 3028
+consumer 3: 3029
+producer: 3030
+producer: 3031
+producer: 3032
+producer: 3033
+consumer 2: 3030
+consumer 2: 3031
+consumer 2: 3032
+consumer 4: 3033
+producer: 3034
+producer: 3035
+consumer 4: 3034
+producer: 3036
+producer: 3037
+producer: 3038
+producer: 3039
+consumer 4: 3035
+consumer 4: 3036
+consumer 4: 3037
+consumer 4: 3038
+consumer 1: 3039
+producer: 3040
+producer: 3041
+producer: 3042
+consumer 1: 3040
+consumer 1: 3041
+consumer 4: 3042
+producer: 3043
+consumer 4: 3043
+producer: 3044
+consumer 5: 3044
+producer: 3045
+producer: 3046
+producer: 3047
+consumer 3: 3045
+consumer 3: 3046
+consumer 4: 3047
+producer: 3048
+producer: 3049
+consumer 2: 3048
+consumer 2: 3049
+producer: 3050
+producer: 3051
+consumer 2: 3050
+producer: 3052
+producer: 3053
+producer: 3054
+consumer 2: 3051
+producer: 3055
+producer: 3056
+producer: 3057
+producer: 3058
+producer: 3059
+producer: 3060
+producer: 3061
+consumer 1: 3052
+consumer 1: 3053
+consumer 1: 3054
+consumer 1: 3055
+consumer 1: 3056
+producer: 3062
+producer: 3063
+producer: 3064
+consumer 1: 3057
+consumer 1: 3058
+consumer 1: 3059
+consumer 1: 3060
+consumer 1: 3061
+consumer 1: 3062
+consumer 1: 3063
+consumer 1: 3064
+producer: 3065
+consumer 1: 3065
+producer: 3066
+producer: 3067
+producer: 3068
+producer: 3069
+consumer 5: 3066
+consumer 5: 3067
+consumer 5: 3068
+consumer 5: 3069
+producer: 3070
+producer: 3071
+producer: 3072
+consumer 2: 3070
+consumer 2: 3071
+consumer 2: 3072
+producer: 3073
+producer: 3074
+producer: 3075
+producer: 3076
+producer: 3077
+consumer 5: 3073
+consumer 5: 3074
+consumer 5: 3075
+consumer 5: 3076
+consumer 5: 3077
+producer: 3078
+producer: 3079
+producer: 3080
+consumer 4: 3078
+consumer 5: 3079
+consumer 1: 3080
+producer: 3081
+producer: 3082
+consumer 4: 3081
+consumer 4: 3082
+producer: 3083
+producer: 3084
+producer: 3085
+producer: 3086
+producer: 3087
+consumer 3: 3083
+consumer 5: 3084
+consumer 5: 3085
+consumer 5: 3086
+consumer 5: 3087
+producer: 3088
+producer: 3089
+producer: 3090
+producer: 3091
+producer: 3092
+producer: 3093
+producer: 3094
+producer: 3095
+consumer 4: 3088
+consumer 4: 3089
+consumer 4: 3090
+consumer 4: 3091
+consumer 4: 3092
+consumer 4: 3093
+consumer 4: 3094
+consumer 5: 3095
+producer: 3096
+producer: 3097
+producer: 3098
+consumer 4: 3096
+consumer 4: 3097
+consumer 4: 3098
+producer: 3099
+producer: 3100
+consumer 5: 3099
+consumer 5: 3100
+producer: 3101
+producer: 3102
+consumer 5: 3101
+consumer 5: 3102
+producer: 3103
+producer: 3104
+consumer 2: 3103
+consumer 2: 3104
+producer: 3105
+producer: 3106
+producer: 3107
+consumer 5: 3105
+consumer 5: 3106
+consumer 5: 3107
+producer: 3108
+consumer 5: 3108
+producer: 3109
+consumer 5: 3109
+producer: 3110
+producer: 3111
+consumer 5: 3110
+producer: 3112
+producer: 3113
+consumer 3: 3111
+consumer 4: 3112
+consumer 1: 3113
+producer: 3114
+producer: 3115
+producer: 3116
+producer: 3117
+producer: 3118
+consumer 4: 3114
+consumer 4: 3115
+consumer 5: 3116
+producer: 3119
+consumer 5: 3117
+consumer 5: 3118
+consumer 5: 3119
+producer: 3120
+producer: 3121
+consumer 4: 3120
+consumer 4: 3121
+producer: 3122
+producer: 3123
+consumer 4: 3122
+consumer 4: 3123
+producer: 3124
+producer: 3125
+producer: 3126
+consumer 2: 3124
+consumer 2: 3125
+consumer 2: 3126
+producer: 3127
+producer: 3128
+consumer 3: 3127
+consumer 3: 3128
+producer: 3129
+producer: 3130
+consumer 3: 3129
+consumer 3: 3130
+producer: 3131
+producer: 3132
+consumer 3: 3131
+consumer 3: 3132
+producer: 3133
+producer: 3134
+consumer 5: 3133
+consumer 5: 3134
+producer: 3135
+producer: 3136
+producer: 3137
+producer: 3138
+producer: 3139
+producer: 3140
+producer: 3141
+consumer 4: 3135
+consumer 4: 3136
+consumer 4: 3137
+consumer 4: 3138
+consumer 4: 3139
+consumer 4: 3140
+consumer 4: 3141
+producer: 3142
+producer: 3143
+producer: 3144
+producer: 3145
+producer: 3146
+producer: 3147
+producer: 3148
+consumer 1: 3142
+consumer 3: 3143
+consumer 3: 3144
+consumer 1: 3145
+producer: 3149
+producer: 3150
+producer: 3151
+producer: 3152
+producer: 3153
+producer: 3154
+producer: 3155
+producer: 3156
+producer: 3157
+producer: 3158
+producer: 3159
+producer: 3160
+consumer 3: 3146
+consumer 3: 3147
+consumer 3: 3148
+consumer 1: 3149
+consumer 1: 3150
+producer: 3161
+producer: 3162
+producer: 3163
+producer: 3164
+producer: 3165
+consumer 1: 3151
+consumer 1: 3152
+consumer 1: 3153
+consumer 1: 3154
+producer: 3166
+producer: 3167
+producer: 3168
+producer: 3169
+producer: 3170
+producer: 3171
+producer: 3172
+producer: 3173
+consumer 2: 3155
+consumer 2: 3156
+consumer 2: 3157
+consumer 2: 3158
+consumer 2: 3159
+consumer 2: 3160
+consumer 2: 3161
+consumer 2: 3162
+consumer 5: 3163
+consumer 5: 3164
+consumer 2: 3165
+consumer 2: 3166
+consumer 2: 3167
+producer: 3174
+consumer 4: 3168
+consumer 2: 3169
+consumer 2: 3170
+consumer 2: 3171
+consumer 3: 3172
+consumer 1: 3173
+consumer 2: 3174
+producer: 3175
+producer: 3176
+producer: 3177
+producer: 3178
+producer: 3179
+producer: 3180
+producer: 3181
+producer: 3182
+producer: 3183
+producer: 3184
+consumer 1: 3175
+consumer 1: 3176
+consumer 1: 3177
+consumer 1: 3178
+consumer 1: 3179
+consumer 1: 3180
+consumer 2: 3181
+consumer 2: 3182
+consumer 2: 3183
+consumer 2: 3184
+producer: 3185
+producer: 3186
+consumer 1: 3185
+consumer 1: 3186
+producer: 3187
+producer: 3188
+producer: 3189
+consumer 1: 3187
+consumer 5: 3188
+consumer 5: 3189
+producer: 3190
+producer: 3191
+producer: 3192
+producer: 3193
+producer: 3194
+producer: 3195
+producer: 3196
+consumer 2: 3190
+consumer 2: 3191
+consumer 2: 3192
+consumer 2: 3193
+consumer 2: 3194
+consumer 2: 3195
+consumer 2: 3196
+producer: 3197
+producer: 3198
+consumer 1: 3197
+consumer 1: 3198
+producer: 3199
+consumer 3: 3199
+producer: 3200
+producer: 3201
+producer: 3202
+producer: 3203
+producer: 3204
+producer: 3205
+consumer 5: 3200
+consumer 5: 3201
+consumer 5: 3202
+consumer 5: 3203
+consumer 5: 3204
+consumer 5: 3205
+producer: 3206
+consumer 2: 3206
+producer: 3207
+producer: 3208
+producer: 3209
+producer: 3210
+producer: 3211
+producer: 3212
+producer: 3213
+producer: 3214
+producer: 3215
+producer: 3216
+producer: 3217
+producer: 3218
+producer: 3219
+consumer 4: 3207
+consumer 4: 3208
+producer: 3220
+producer: 3221
+producer: 3222
+producer: 3223
+producer: 3224
+producer: 3225
+producer: 3226
+producer: 3227
+consumer 4: 3209
+consumer 4: 3210
+consumer 4: 3211
+consumer 4: 3212
+consumer 4: 3213
+consumer 4: 3214
+consumer 2: 3215
+consumer 3: 3216
+consumer 3: 3217
+consumer 3: 3218
+consumer 3: 3219
+consumer 3: 3220
+consumer 2: 3221
+consumer 5: 3222
+consumer 5: 3223
+consumer 1: 3224
+consumer 1: 3225
+producer: 3228
+producer: 3229
+producer: 3230
+producer: 3231
+producer: 3232
+consumer 5: 3226
+consumer 5: 3227
+consumer 5: 3228
+consumer 5: 3229
+consumer 5: 3230
+consumer 5: 3231
+producer: 3233
+producer: 3234
+producer: 3235
+producer: 3236
+producer: 3237
+consumer 5: 3232
+consumer 5: 3233
+consumer 5: 3234
+consumer 5: 3235
+consumer 2: 3236
+consumer 2: 3237
+producer: 3238
+consumer 2: 3238
+producer: 3239
+consumer 5: 3239
+producer: 3240
+producer: 3241
+consumer 2: 3240
+consumer 2: 3241
+producer: 3242
+producer: 3243
+producer: 3244
+producer: 3245
+consumer 3: 3242
+consumer 3: 3243
+consumer 5: 3244
+consumer 5: 3245
+producer: 3246
+producer: 3247
+producer: 3248
+producer: 3249
+consumer 2: 3246
+consumer 2: 3247
+consumer 2: 3248
+consumer 2: 3249
+producer: 3250
+producer: 3251
+producer: 3252
+producer: 3253
+producer: 3254
+producer: 3255
+producer: 3256
+producer: 3257
+producer: 3258
+consumer 2: 3250
+consumer 2: 3251
+producer: 3259
+producer: 3260
+producer: 3261
+consumer 3: 3252
+consumer 3: 3253
+consumer 3: 3254
+consumer 3: 3255
+consumer 3: 3256
+consumer 3: 3257
+consumer 3: 3258
+consumer 3: 3259
+consumer 3: 3260
+consumer 2: 3261
+producer: 3262
+consumer 2: 3262
+producer: 3263
+producer: 3264
+producer: 3265
+producer: 3266
+consumer 4: 3263
+consumer 1: 3264
+consumer 5: 3265
+consumer 3: 3266
+producer: 3267
+producer: 3268
+producer: 3269
+producer: 3270
+producer: 3271
+producer: 3272
+producer: 3273
+producer: 3274
+consumer 1: 3267
+consumer 1: 3268
+consumer 1: 3269
+consumer 1: 3270
+consumer 1: 3271
+consumer 1: 3272
+consumer 1: 3273
+consumer 1: 3274
+producer: 3275
+producer: 3276
+producer: 3277
+producer: 3278
+consumer 4: 3275
+consumer 4: 3276
+consumer 4: 3277
+consumer 4: 3278
+producer: 3279
+producer: 3280
+producer: 3281
+consumer 1: 3279
+consumer 1: 3280
+consumer 1: 3281
+producer: 3282
+consumer 1: 3282
+producer: 3283
+producer: 3284
+producer: 3285
+producer: 3286
+producer: 3287
+producer: 3288
+consumer 4: 3283
+consumer 4: 3284
+consumer 4: 3285
+consumer 4: 3286
+producer: 3289
+consumer 4: 3287
+consumer 4: 3288
+consumer 4: 3289
+producer: 3290
+producer: 3291
+consumer 4: 3290
+consumer 4: 3291
+producer: 3292
+producer: 3293
+consumer 4: 3292
+consumer 4: 3293
+producer: 3294
+producer: 3295
+producer: 3296
+consumer 1: 3294
+consumer 1: 3295
+consumer 1: 3296
+producer: 3297
+consumer 1: 3297
+producer: 3298
+producer: 3299
+producer: 3300
+consumer 4: 3298
+consumer 4: 3299
+consumer 4: 3300
+producer: 3301
+producer: 3302
+producer: 3303
+producer: 3304
+consumer 1: 3301
+consumer 1: 3302
+consumer 5: 3303
+consumer 5: 3304
+producer: 3305
+producer: 3306
+producer: 3307
+consumer 5: 3305
+consumer 5: 3306
+consumer 5: 3307
+producer: 3308
+producer: 3309
+consumer 4: 3308
+consumer 4: 3309
+producer: 3310
+producer: 3311
+producer: 3312
+consumer 4: 3310
+consumer 4: 3311
+consumer 5: 3312
+producer: 3313
+producer: 3314
+producer: 3315
+producer: 3316
+producer: 3317
+producer: 3318
+producer: 3319
+producer: 3320
+producer: 3321
+producer: 3322
+producer: 3323
+producer: 3324
+producer: 3325
+producer: 3326
+producer: 3327
+producer: 3328
+producer: 3329
+producer: 3330
+producer: 3331
+producer: 3332
+consumer 1: 3313
+consumer 1: 3314
+consumer 1: 3315
+producer: 3333
+consumer 1: 3316
+consumer 1: 3317
+consumer 1: 3318
+consumer 1: 3319
+consumer 1: 3320
+consumer 1: 3321
+consumer 5: 3322
+consumer 5: 3323
+consumer 4: 3324
+producer: 3334
+consumer 4: 3325
+consumer 4: 3326
+consumer 4: 3327
+consumer 5: 3328
+consumer 5: 3329
+consumer 5: 3330
+consumer 5: 3331
+consumer 5: 3332
+consumer 5: 3333
+consumer 5: 3334
+producer: 3335
+consumer 5: 3335
+producer: 3336
+producer: 3337
+producer: 3338
+consumer 1: 3336
+consumer 1: 3337
+consumer 1: 3338
+producer: 3339
+producer: 3340
+consumer 5: 3339
+consumer 5: 3340
+producer: 3341
+consumer 2: 3341
+producer: 3342
+producer: 3343
+producer: 3344
+consumer 4: 3342
+consumer 1: 3343
+consumer 1: 3344
+producer: 3345
+producer: 3346
+producer: 3347
+producer: 3348
+producer: 3349
+consumer 2: 3345
+consumer 2: 3346
+consumer 2: 3347
+consumer 2: 3348
+consumer 2: 3349
+producer: 3350
+producer: 3351
+producer: 3352
+consumer 3: 3350
+consumer 3: 3351
+consumer 3: 3352
+producer: 3353
+producer: 3354
+producer: 3355
+producer: 3356
+producer: 3357
+producer: 3358
+consumer 1: 3353
+consumer 1: 3354
+consumer 1: 3355
+consumer 1: 3356
+consumer 1: 3357
+consumer 1: 3358
+producer: 3359
+producer: 3360
+consumer 1: 3359
+consumer 1: 3360
+producer: 3361
+consumer 2: 3361
+producer: 3362
+producer: 3363
+producer: 3364
+producer: 3365
+producer: 3366
+consumer 3: 3362
+consumer 3: 3363
+consumer 3: 3364
+consumer 3: 3365
+consumer 3: 3366
+producer: 3367
+producer: 3368
+producer: 3369
+producer: 3370
+consumer 5: 3367
+consumer 5: 3368
+consumer 5: 3369
+consumer 5: 3370
+producer: 3371
+consumer 1: 3371
+producer: 3372
+producer: 3373
+producer: 3374
+consumer 3: 3372
+consumer 3: 3373
+consumer 1: 3374
+producer: 3375
+consumer 4: 3375
+producer: 3376
+producer: 3377
+producer: 3378
+consumer 3: 3376
+consumer 3: 3377
+consumer 3: 3378
+producer: 3379
+producer: 3380
+producer: 3381
+producer: 3382
+consumer 5: 3379
+consumer 3: 3380
+consumer 3: 3381
+consumer 3: 3382
+producer: 3383
+producer: 3384
+producer: 3385
+producer: 3386
+consumer 4: 3383
+consumer 4: 3384
+consumer 4: 3385
+consumer 4: 3386
+producer: 3387
+consumer 3: 3387
+producer: 3388
+producer: 3389
+producer: 3390
+producer: 3391
+consumer 3: 3388
+consumer 3: 3389
+consumer 3: 3390
+consumer 3: 3391
+producer: 3392
+producer: 3393
+producer: 3394
+producer: 3395
+producer: 3396
+producer: 3397
+producer: 3398
+producer: 3399
+producer: 3400
+producer: 3401
+producer: 3402
+producer: 3403
+producer: 3404
+producer: 3405
+producer: 3406
+producer: 3407
+producer: 3408
+producer: 3409
+producer: 3410
+consumer 5: 3392
+consumer 5: 3393
+consumer 5: 3394
+consumer 1: 3395
+producer: 3411
+producer: 3412
+producer: 3413
+producer: 3414
+producer: 3415
+producer: 3416
+producer: 3417
+consumer 1: 3396
+consumer 1: 3397
+consumer 1: 3398
+consumer 2: 3399
+consumer 5: 3400
+producer: 3418
+producer: 3419
+producer: 3420
+producer: 3421
+producer: 3422
+producer: 3423
+consumer 5: 3401
+producer: 3424
+consumer 5: 3402
+producer: 3425
+producer: 3426
+consumer 5: 3403
+consumer 3: 3404
+consumer 5: 3405
+consumer 5: 3406
+producer: 3427
+producer: 3428
+producer: 3429
+producer: 3430
+consumer 5: 3407
+consumer 3: 3408
+producer: 3431
+producer: 3432
+producer: 3433
+producer: 3434
+consumer 1: 3409
+producer: 3435
+consumer 1: 3410
+consumer 1: 3411
+consumer 1: 3412
+consumer 5: 3413
+consumer 5: 3414
+consumer 5: 3415
+consumer 5: 3416
+consumer 5: 3417
+consumer 5: 3418
+consumer 2: 3419
+consumer 2: 3420
+consumer 2: 3421
+consumer 2: 3422
+producer: 3436
+producer: 3437
+consumer 2: 3423
+consumer 1: 3424
+consumer 1: 3425
+consumer 1: 3426
+consumer 1: 3427
+consumer 1: 3428
+consumer 1: 3429
+consumer 1: 3430
+consumer 5: 3431
+producer: 3438
+consumer 1: 3432
+producer: 3439
+producer: 3440
+producer: 3441
+producer: 3442
+consumer 1: 3433
+consumer 1: 3434
+consumer 1: 3435
+consumer 1: 3436
+consumer 1: 3437
+consumer 1: 3438
+consumer 3: 3439
+consumer 4: 3440
+consumer 4: 3441
+consumer 4: 3442
+producer: 3443
+producer: 3444
+producer: 3445
+producer: 3446
+producer: 3447
+producer: 3448
+consumer 4: 3443
+consumer 4: 3444
+consumer 4: 3445
+consumer 2: 3446
+consumer 2: 3447
+consumer 2: 3448
+producer: 3449
+producer: 3450
+producer: 3451
+consumer 2: 3449
+consumer 4: 3450
+producer: 3452
+producer: 3453
+producer: 3454
+producer: 3455
+producer: 3456
+producer: 3457
+consumer 4: 3451
+consumer 4: 3452
+consumer 4: 3453
+consumer 4: 3454
+producer: 3458
+consumer 4: 3455
+producer: 3459
+consumer 4: 3456
+producer: 3460
+consumer 1: 3457
+producer: 3461
+consumer 1: 3458
+consumer 4: 3459
+consumer 4: 3460
+consumer 4: 3461
+producer: 3462
+consumer 2: 3462
+producer: 3463
+producer: 3464
+consumer 2: 3463
+producer: 3465
+consumer 2: 3464
+consumer 2: 3465
+producer: 3466
+producer: 3467
+consumer 3: 3466
+consumer 1: 3467
+producer: 3468
+producer: 3469
+producer: 3470
+producer: 3471
+consumer 4: 3468
+consumer 5: 3469
+consumer 5: 3470
+consumer 1: 3471
+producer: 3472
+producer: 3473
+producer: 3474
+consumer 5: 3472
+consumer 2: 3473
+consumer 4: 3474
+producer: 3475
+producer: 3476
+consumer 3: 3475
+consumer 3: 3476
+producer: 3477
+producer: 3478
+consumer 2: 3477
+consumer 3: 3478
+producer: 3479
+producer: 3480
+producer: 3481
+producer: 3482
+producer: 3483
+consumer 4: 3479
+consumer 4: 3480
+consumer 4: 3481
+consumer 4: 3482
+consumer 4: 3483
+producer: 3484
+consumer 4: 3484
+producer: 3485
+producer: 3486
+producer: 3487
+consumer 4: 3485
+consumer 1: 3486
+consumer 1: 3487
+producer: 3488
+producer: 3489
+producer: 3490
+consumer 2: 3488
+consumer 3: 3489
+consumer 3: 3490
+producer: 3491
+producer: 3492
+consumer 2: 3491
+consumer 2: 3492
+producer: 3493
+producer: 3494
+producer: 3495
+consumer 2: 3493
+consumer 2: 3494
+consumer 2: 3495
+producer: 3496
+producer: 3497
+producer: 3498
+producer: 3499
+producer: 3500
+producer: 3501
+producer: 3502
+consumer 5: 3496
+consumer 5: 3497
+consumer 5: 3498
+consumer 5: 3499
+consumer 1: 3500
+consumer 1: 3501
+producer: 3503
+consumer 4: 3502
+consumer 2: 3503
+producer: 3504
+producer: 3505
+producer: 3506
+producer: 3507
+producer: 3508
+producer: 3509
+consumer 1: 3504
+producer: 3510
+consumer 1: 3505
+producer: 3511
+producer: 3512
+consumer 4: 3506
+consumer 4: 3507
+consumer 4: 3508
+producer: 3513
+consumer 2: 3509
+consumer 1: 3510
+consumer 2: 3511
+consumer 2: 3512
+consumer 2: 3513
+producer: 3514
+producer: 3515
+producer: 3516
+producer: 3517
+consumer 1: 3514
+consumer 1: 3515
+consumer 1: 3516
+consumer 1: 3517
+producer: 3518
+producer: 3519
+producer: 3520
+producer: 3521
+producer: 3522
+producer: 3523
+producer: 3524
+producer: 3525
+producer: 3526
+consumer 1: 3518
+consumer 3: 3519
+consumer 3: 3520
+consumer 3: 3521
+consumer 3: 3522
+consumer 3: 3523
+consumer 3: 3524
+consumer 3: 3525
+consumer 3: 3526
+producer: 3527
+producer: 3528
+producer: 3529
+consumer 1: 3527
+consumer 1: 3528
+consumer 4: 3529
+producer: 3530
+producer: 3531
+producer: 3532
+producer: 3533
+consumer 1: 3530
+consumer 1: 3531
+consumer 5: 3532
+consumer 5: 3533
+producer: 3534
+producer: 3535
+producer: 3536
+producer: 3537
+consumer 4: 3534
+consumer 3: 3535
+consumer 3: 3536
+consumer 3: 3537
+producer: 3538
+producer: 3539
+producer: 3540
+consumer 1: 3538
+consumer 1: 3539
+consumer 1: 3540
+producer: 3541
+producer: 3542
+producer: 3543
+producer: 3544
+consumer 5: 3541
+consumer 5: 3542
+consumer 1: 3543
+producer: 3545
+consumer 5: 3544
+consumer 1: 3545
+producer: 3546
+consumer 2: 3546
+producer: 3547
+producer: 3548
+consumer 2: 3547
+consumer 2: 3548
+producer: 3549
+producer: 3550
+producer: 3551
+producer: 3552
+producer: 3553
+consumer 3: 3549
+consumer 3: 3550
+consumer 3: 3551
+consumer 1: 3552
+consumer 1: 3553
+producer: 3554
+consumer 1: 3554
+producer: 3555
+producer: 3556
+producer: 3557
+producer: 3558
+consumer 1: 3555
+consumer 1: 3556
+consumer 1: 3557
+consumer 1: 3558
+producer: 3559
+producer: 3560
+producer: 3561
+producer: 3562
+consumer 3: 3559
+consumer 3: 3560
+producer: 3563
+producer: 3564
+producer: 3565
+producer: 3566
+producer: 3567
+producer: 3568
+producer: 3569
+producer: 3570
+producer: 3571
+producer: 3572
+producer: 3573
+producer: 3574
+producer: 3575
+producer: 3576
+producer: 3577
+consumer 5: 3561
+consumer 5: 3562
+consumer 5: 3563
+consumer 5: 3564
+consumer 2: 3565
+consumer 3: 3566
+consumer 3: 3567
+consumer 4: 3568
+consumer 4: 3569
+consumer 1: 3570
+consumer 1: 3571
+consumer 1: 3572
+consumer 1: 3573
+consumer 1: 3574
+consumer 1: 3575
+consumer 5: 3576
+consumer 5: 3577
+producer: 3578
+producer: 3579
+producer: 3580
+producer: 3581
+producer: 3582
+producer: 3583
+producer: 3584
+consumer 1: 3578
+consumer 1: 3579
+consumer 1: 3580
+consumer 5: 3581
+consumer 2: 3582
+consumer 2: 3583
+consumer 2: 3584
+producer: 3585
+producer: 3586
+producer: 3587
+consumer 5: 3585
+consumer 5: 3586
+consumer 5: 3587
+producer: 3588
+producer: 3589
+producer: 3590
+producer: 3591
+consumer 1: 3588
+consumer 1: 3589
+consumer 1: 3590
+producer: 3592
+producer: 3593
+consumer 1: 3591
+consumer 1: 3592
+consumer 1: 3593
+producer: 3594
+producer: 3595
+consumer 1: 3594
+consumer 1: 3595
+producer: 3596
+producer: 3597
+consumer 3: 3596
+consumer 3: 3597
+producer: 3598
+producer: 3599
+producer: 3600
+consumer 5: 3598
+consumer 5: 3599
+consumer 5: 3600
+producer: 3601
+producer: 3602
+consumer 1: 3601
+consumer 1: 3602
+producer: 3603
+producer: 3604
+producer: 3605
+consumer 2: 3603
+consumer 2: 3604
+consumer 2: 3605
+producer: 3606
+producer: 3607
+producer: 3608
+consumer 2: 3606
+consumer 5: 3607
+producer: 3609
+producer: 3610
+producer: 3611
+producer: 3612
+producer: 3613
+producer: 3614
+consumer 5: 3608
+consumer 1: 3609
+consumer 1: 3610
+consumer 1: 3611
+consumer 1: 3612
+consumer 1: 3613
+producer: 3615
+producer: 3616
+producer: 3617
+consumer 1: 3614
+consumer 1: 3615
+consumer 1: 3616
+consumer 1: 3617
+producer: 3618
+consumer 1: 3618
+producer: 3619
+producer: 3620
+producer: 3621
+producer: 3622
+producer: 3623
+consumer 2: 3619
+consumer 4: 3620
+consumer 4: 3621
+consumer 3: 3622
+consumer 3: 3623
+producer: 3624
+consumer 3: 3624
+producer: 3625
+producer: 3626
+producer: 3627
+producer: 3628
+consumer 2: 3625
+consumer 2: 3626
+consumer 2: 3627
+consumer 2: 3628
+producer: 3629
+producer: 3630
+producer: 3631
+producer: 3632
+producer: 3633
+consumer 4: 3629
+consumer 3: 3630
+consumer 3: 3631
+consumer 3: 3632
+consumer 3: 3633
+producer: 3634
+producer: 3635
+producer: 3636
+producer: 3637
+producer: 3638
+producer: 3639
+producer: 3640
+producer: 3641
+producer: 3642
+producer: 3643
+producer: 3644
+consumer 3: 3634
+consumer 3: 3635
+consumer 4: 3636
+consumer 4: 3637
+consumer 4: 3638
+consumer 4: 3639
+consumer 4: 3640
+consumer 1: 3641
+consumer 5: 3642
+consumer 4: 3643
+consumer 4: 3644
+producer: 3645
+consumer 2: 3645
+producer: 3646
+producer: 3647
+producer: 3648
+consumer 2: 3646
+consumer 2: 3647
+consumer 2: 3648
+producer: 3649
+consumer 2: 3649
+producer: 3650
+producer: 3651
+producer: 3652
+producer: 3653
+consumer 4: 3650
+consumer 4: 3651
+consumer 5: 3652
+consumer 5: 3653
+producer: 3654
+producer: 3655
+producer: 3656
+producer: 3657
+producer: 3658
+producer: 3659
+producer: 3660
+producer: 3661
+producer: 3662
+producer: 3663
+producer: 3664
+producer: 3665
+consumer 3: 3654
+consumer 3: 3655
+consumer 3: 3656
+consumer 3: 3657
+consumer 3: 3658
+consumer 3: 3659
+producer: 3666
+producer: 3667
+producer: 3668
+producer: 3669
+producer: 3670
+producer: 3671
+producer: 3672
+producer: 3673
+producer: 3674
+producer: 3675
+producer: 3676
+producer: 3677
+producer: 3678
+producer: 3679
+consumer 2: 3660
+consumer 5: 3661
+consumer 5: 3662
+consumer 5: 3663
+consumer 5: 3664
+consumer 5: 3665
+consumer 4: 3666
+producer: 3680
+producer: 3681
+producer: 3682
+consumer 2: 3667
+consumer 2: 3668
+consumer 2: 3669
+consumer 1: 3670
+consumer 1: 3671
+consumer 3: 3672
+consumer 3: 3673
+consumer 3: 3674
+consumer 3: 3675
+producer: 3683
+producer: 3684
+producer: 3685
+consumer 1: 3676
+consumer 1: 3677
+consumer 1: 3678
+consumer 2: 3679
+consumer 2: 3680
+consumer 1: 3681
+consumer 1: 3682
+consumer 1: 3683
+consumer 1: 3684
+producer: 3686
+producer: 3687
+producer: 3688
+producer: 3689
+producer: 3690
+consumer 1: 3685
+consumer 1: 3686
+consumer 1: 3687
+consumer 1: 3688
+consumer 1: 3689
+consumer 1: 3690
+producer: 3691
+producer: 3692
+consumer 2: 3691
+consumer 1: 3692
+producer: 3693
+producer: 3694
+producer: 3695
+producer: 3696
+producer: 3697
+producer: 3698
+producer: 3699
+producer: 3700
+producer: 3701
+producer: 3702
+consumer 2: 3693
+consumer 2: 3694
+consumer 2: 3695
+consumer 2: 3696
+consumer 2: 3697
+consumer 2: 3698
+consumer 2: 3699
+consumer 2: 3700
+consumer 2: 3701
+consumer 2: 3702
+producer: 3703
+producer: 3704
+producer: 3705
+producer: 3706
+consumer 1: 3703
+consumer 2: 3704
+consumer 2: 3705
+consumer 2: 3706
+producer: 3707
+producer: 3708
+producer: 3709
+consumer 5: 3707
+producer: 3710
+producer: 3711
+producer: 3712
+producer: 3713
+producer: 3714
+consumer 2: 3708
+consumer 2: 3709
+producer: 3715
+producer: 3716
+consumer 1: 3710
+consumer 1: 3711
+consumer 1: 3712
+consumer 1: 3713
+consumer 1: 3714
+consumer 1: 3715
+consumer 1: 3716
+producer: 3717
+producer: 3718
+producer: 3719
+producer: 3720
+producer: 3721
+producer: 3722
+producer: 3723
+producer: 3724
+producer: 3725
+producer: 3726
+producer: 3727
+producer: 3728
+producer: 3729
+producer: 3730
+producer: 3731
+producer: 3732
+producer: 3733
+consumer 5: 3717
+consumer 5: 3718
+consumer 2: 3719
+consumer 5: 3720
+consumer 4: 3721
+consumer 4: 3722
+consumer 1: 3723
+consumer 1: 3724
+consumer 1: 3725
+consumer 1: 3726
+consumer 2: 3727
+consumer 2: 3728
+consumer 2: 3729
+producer: 3734
+consumer 4: 3730
+consumer 1: 3731
+consumer 1: 3732
+consumer 1: 3733
+consumer 1: 3734
+producer: 3735
+consumer 1: 3735
+producer: 3736
+producer: 3737
+consumer 3: 3736
+consumer 3: 3737
+producer: 3738
+producer: 3739
+producer: 3740
+consumer 3: 3738
+consumer 3: 3739
+consumer 2: 3740
+producer: 3741
+producer: 3742
+producer: 3743
+producer: 3744
+producer: 3745
+producer: 3746
+producer: 3747
+producer: 3748
+producer: 3749
+consumer 2: 3741
+consumer 2: 3742
+consumer 2: 3743
+producer: 3750
+consumer 3: 3744
+consumer 3: 3745
+consumer 3: 3746
+producer: 3751
+producer: 3752
+producer: 3753
+consumer 3: 3747
+consumer 3: 3748
+consumer 2: 3749
+producer: 3754
+producer: 3755
+consumer 2: 3750
+consumer 2: 3751
+consumer 2: 3752
+consumer 2: 3753
+consumer 2: 3754
+consumer 2: 3755
+producer: 3756
+producer: 3757
+producer: 3758
+producer: 3759
+consumer 3: 3756
+consumer 3: 3757
+consumer 1: 3758
+consumer 1: 3759
+producer: 3760
+producer: 3761
+producer: 3762
+consumer 5: 3760
+consumer 5: 3761
+consumer 5: 3762
+producer: 3763
+producer: 3764
+producer: 3765
+consumer 4: 3763
+consumer 5: 3764
+consumer 3: 3765
+producer: 3766
+consumer 2: 3766
+producer: 3767
+producer: 3768
+producer: 3769
+consumer 1: 3767
+consumer 1: 3768
+consumer 1: 3769
+producer: 3770
+producer: 3771
+consumer 3: 3770
+consumer 3: 3771
+producer: 3772
+producer: 3773
+producer: 3774
+producer: 3775
+consumer 3: 3772
+consumer 3: 3773
+consumer 3: 3774
+consumer 3: 3775
+producer: 3776
+producer: 3777
+producer: 3778
+producer: 3779
+producer: 3780
+producer: 3781
+producer: 3782
+consumer 1: 3776
+consumer 1: 3777
+consumer 1: 3778
+consumer 1: 3779
+consumer 1: 3780
+consumer 1: 3781
+consumer 1: 3782
+producer: 3783
+producer: 3784
+producer: 3785
+producer: 3786
+producer: 3787
+consumer 1: 3783
+consumer 1: 3784
+consumer 1: 3785
+consumer 1: 3786
+consumer 1: 3787
+producer: 3788
+consumer 1: 3788
+producer: 3789
+producer: 3790
+producer: 3791
+producer: 3792
+producer: 3793
+producer: 3794
+producer: 3795
+consumer 1: 3789
+consumer 1: 3790
+consumer 1: 3791
+producer: 3796
+consumer 1: 3792
+producer: 3797
+consumer 1: 3793
+consumer 1: 3794
+consumer 1: 3795
+consumer 1: 3796
+consumer 1: 3797
+producer: 3798
+consumer 1: 3798
+producer: 3799
+producer: 3800
+producer: 3801
+consumer 5: 3799
+consumer 5: 3800
+consumer 5: 3801
+producer: 3802
+producer: 3803
+producer: 3804
+producer: 3805
+consumer 3: 3802
+consumer 3: 3803
+consumer 3: 3804
+consumer 3: 3805
+producer: 3806
+producer: 3807
+producer: 3808
+producer: 3809
+consumer 1: 3806
+producer: 3810
+producer: 3811
+producer: 3812
+consumer 4: 3807
+producer: 3813
+consumer 3: 3808
+consumer 3: 3809
+consumer 5: 3810
+consumer 5: 3811
+consumer 5: 3812
+producer: 3814
+producer: 3815
+producer: 3816
+consumer 5: 3813
+consumer 3: 3814
+consumer 3: 3815
+consumer 3: 3816
+producer: 3817
+producer: 3818
+consumer 5: 3817
+consumer 5: 3818
+producer: 3819
+consumer 5: 3819
+producer: 3820
+producer: 3821
+producer: 3822
+producer: 3823
+consumer 2: 3820
+consumer 2: 3821
+consumer 1: 3822
+consumer 1: 3823
+producer: 3824
+producer: 3825
+producer: 3826
+producer: 3827
+producer: 3828
+producer: 3829
+producer: 3830
+consumer 3: 3824
+consumer 1: 3825
+consumer 1: 3826
+consumer 1: 3827
+consumer 1: 3828
+consumer 5: 3829
+consumer 5: 3830
+producer: 3831
+producer: 3832
+consumer 2: 3831
+consumer 1: 3832
+producer: 3833
+producer: 3834
+producer: 3835
+consumer 4: 3833
+consumer 5: 3834
+consumer 5: 3835
+producer: 3836
+producer: 3837
+producer: 3838
+producer: 3839
+producer: 3840
+consumer 3: 3836
+consumer 2: 3837
+consumer 2: 3838
+consumer 2: 3839
+consumer 2: 3840
+producer: 3841
+producer: 3842
+producer: 3843
+producer: 3844
+producer: 3845
+producer: 3846
+producer: 3847
+consumer 2: 3841
+consumer 2: 3842
+consumer 4: 3843
+consumer 2: 3844
+consumer 2: 3845
+consumer 2: 3846
+consumer 5: 3847
+producer: 3848
+producer: 3849
+consumer 5: 3848
+consumer 5: 3849
+producer: 3850
+producer: 3851
+producer: 3852
+producer: 3853
+consumer 1: 3850
+consumer 1: 3851
+consumer 1: 3852
+consumer 1: 3853
+producer: 3854
+producer: 3855
+producer: 3856
+producer: 3857
+producer: 3858
+producer: 3859
+producer: 3860
+producer: 3861
+producer: 3862
+producer: 3863
+producer: 3864
+producer: 3865
+producer: 3866
+producer: 3867
+producer: 3868
+consumer 4: 3854
+consumer 4: 3855
+consumer 2: 3856
+consumer 2: 3857
+consumer 2: 3858
+consumer 2: 3859
+consumer 1: 3860
+consumer 2: 3861
+consumer 2: 3862
+consumer 2: 3863
+consumer 2: 3864
+producer: 3869
+consumer 2: 3865
+consumer 2: 3866
+consumer 2: 3867
+consumer 2: 3868
+consumer 2: 3869
+producer: 3870
+consumer 2: 3870
+producer: 3871
+producer: 3872
+producer: 3873
+consumer 3: 3871
+consumer 3: 3872
+consumer 3: 3873
+producer: 3874
+consumer 4: 3874
+producer: 3875
+producer: 3876
+consumer 2: 3875
+producer: 3877
+consumer 4: 3876
+producer: 3878
+producer: 3879
+producer: 3880
+producer: 3881
+consumer 5: 3877
+consumer 5: 3878
+consumer 5: 3879
+consumer 5: 3880
+consumer 5: 3881
+producer: 3882
+consumer 5: 3882
+producer: 3883
+producer: 3884
+producer: 3885
+consumer 5: 3883
+consumer 5: 3884
+consumer 5: 3885
+producer: 3886
+producer: 3887
+producer: 3888
+producer: 3889
+consumer 3: 3886
+consumer 3: 3887
+consumer 5: 3888
+consumer 5: 3889
+producer: 3890
+producer: 3891
+producer: 3892
+consumer 3: 3890
+consumer 3: 3891
+consumer 3: 3892
+producer: 3893
+producer: 3894
+producer: 3895
+producer: 3896
+producer: 3897
+producer: 3898
+consumer 4: 3893
+consumer 4: 3894
+consumer 4: 3895
+consumer 4: 3896
+consumer 4: 3897
+consumer 2: 3898
+producer: 3899
+producer: 3900
+producer: 3901
+producer: 3902
+consumer 4: 3899
+producer: 3903
+consumer 5: 3900
+consumer 3: 3901
+consumer 3: 3902
+consumer 3: 3903
+producer: 3904
+producer: 3905
+producer: 3906
+producer: 3907
+consumer 3: 3904
+consumer 3: 3905
+consumer 3: 3906
+consumer 3: 3907
+producer: 3908
+producer: 3909
+producer: 3910
+consumer 3: 3908
+consumer 3: 3909
+consumer 3: 3910
+producer: 3911
+producer: 3912
+consumer 3: 3911
+consumer 3: 3912
+producer: 3913
+producer: 3914
+consumer 3: 3913
+consumer 3: 3914
+producer: 3915
+consumer 2: 3915
+producer: 3916
+producer: 3917
+producer: 3918
+producer: 3919
+consumer 5: 3916
+consumer 5: 3917
+consumer 5: 3918
+consumer 4: 3919
+producer: 3920
+producer: 3921
+consumer 1: 3920
+consumer 1: 3921
+producer: 3922
+producer: 3923
+producer: 3924
+producer: 3925
+producer: 3926
+producer: 3927
+consumer 4: 3922
+consumer 4: 3923
+consumer 4: 3924
+consumer 4: 3925
+consumer 4: 3926
+consumer 4: 3927
+producer: 3928
+producer: 3929
+producer: 3930
+producer: 3931
+consumer 1: 3928
+consumer 1: 3929
+consumer 1: 3930
+consumer 1: 3931
+producer: 3932
+consumer 1: 3932
+producer: 3933
+producer: 3934
+consumer 2: 3933
+consumer 1: 3934
+producer: 3935
+consumer 2: 3935
+producer: 3936
+producer: 3937
+producer: 3938
+producer: 3939
+consumer 4: 3936
+consumer 4: 3937
+consumer 4: 3938
+consumer 4: 3939
+producer: 3940
+producer: 3941
+consumer 4: 3940
+consumer 1: 3941
+producer: 3942
+producer: 3943
+producer: 3944
+producer: 3945
+producer: 3946
+producer: 3947
+consumer 4: 3942
+consumer 4: 3943
+consumer 4: 3944
+consumer 4: 3945
+consumer 4: 3946
+consumer 4: 3947
+producer: 3948
+producer: 3949
+consumer 4: 3948
+consumer 4: 3949
+producer: 3950
+producer: 3951
+producer: 3952
+consumer 2: 3950
+consumer 2: 3951
+producer: 3953
+producer: 3954
+consumer 1: 3952
+consumer 1: 3953
+consumer 1: 3954
+producer: 3955
+producer: 3956
+consumer 5: 3955
+consumer 5: 3956
+producer: 3957
+producer: 3958
+producer: 3959
+producer: 3960
+producer: 3961
+consumer 5: 3957
+consumer 5: 3958
+consumer 5: 3959
+consumer 5: 3960
+consumer 5: 3961
+producer: 3962
+producer: 3963
+producer: 3964
+consumer 2: 3962
+consumer 2: 3963
+consumer 2: 3964
+producer: 3965
+consumer 5: 3965
+producer: 3966
+producer: 3967
+consumer 2: 3966
+producer: 3968
+producer: 3969
+producer: 3970
+producer: 3971
+producer: 3972
+producer: 3973
+producer: 3974
+producer: 3975
+producer: 3976
+producer: 3977
+consumer 5: 3967
+consumer 3: 3968
+consumer 3: 3969
+producer: 3978
+producer: 3979
+producer: 3980
+producer: 3981
+producer: 3982
+producer: 3983
+producer: 3984
+producer: 3985
+producer: 3986
+producer: 3987
+producer: 3988
+producer: 3989
+consumer 3: 3970
+consumer 3: 3971
+consumer 3: 3972
+consumer 3: 3973
+consumer 3: 3974
+consumer 3: 3975
+consumer 3: 3976
+consumer 3: 3977
+consumer 3: 3978
+consumer 3: 3979
+consumer 3: 3980
+consumer 2: 3981
+consumer 2: 3982
+consumer 2: 3983
+consumer 2: 3984
+consumer 2: 3985
+consumer 2: 3986
+consumer 2: 3987
+consumer 2: 3988
+producer: 3990
+producer: 3991
+producer: 3992
+producer: 3993
+producer: 3994
+producer: 3995
+consumer 3: 3989
+consumer 3: 3990
+consumer 3: 3991
+consumer 3: 3992
+consumer 3: 3993
+consumer 3: 3994
+consumer 3: 3995
+producer: 3996
+producer: 3997
+consumer 2: 3996
+consumer 2: 3997
+producer: 3998
+producer: 3999
+producer: 4000
+consumer 2: 3998
+consumer 2: 3999
+consumer 2: 4000
+producer: 4001
+producer: 4002
+producer: 4003
+producer: 4004
+producer: 4005
+producer: 4006
+producer: 4007
+consumer 2: 4001
+producer: 4008
+producer: 4009
+producer: 4010
+producer: 4011
+consumer 2: 4002
+producer: 4012
+consumer 2: 4003
+producer: 4013
+consumer 2: 4004
+consumer 2: 4005
+consumer 2: 4006
+consumer 2: 4007
+consumer 2: 4008
+consumer 4: 4009
+consumer 4: 4010
+consumer 4: 4011
+consumer 5: 4012
+consumer 5: 4013
+producer: 4014
+producer: 4015
+consumer 4: 4014
+consumer 4: 4015
+producer: 4016
+producer: 4017
+consumer 4: 4016
+consumer 3: 4017
+producer: 4018
+producer: 4019
+consumer 5: 4018
+producer: 4020
+producer: 4021
+consumer 3: 4019
+consumer 1: 4020
+consumer 1: 4021
+producer: 4022
+consumer 2: 4022
+producer: 4023
+producer: 4024
+consumer 3: 4023
+consumer 3: 4024
+producer: 4025
+producer: 4026
+producer: 4027
+consumer 5: 4025
+producer: 4028
+consumer 5: 4026
+producer: 4029
+producer: 4030
+consumer 5: 4027
+consumer 5: 4028
+consumer 5: 4029
+consumer 5: 4030
+producer: 4031
+producer: 4032
+producer: 4033
+producer: 4034
+producer: 4035
+consumer 1: 4031
+consumer 1: 4032
+consumer 1: 4033
+consumer 5: 4034
+consumer 5: 4035
+producer: 4036
+producer: 4037
+producer: 4038
+consumer 5: 4036
+consumer 5: 4037
+consumer 5: 4038
+producer: 4039
+producer: 4040
+producer: 4041
+producer: 4042
+producer: 4043
+producer: 4044
+producer: 4045
+consumer 5: 4039
+consumer 2: 4040
+consumer 2: 4041
+consumer 2: 4042
+consumer 2: 4043
+consumer 2: 4044
+consumer 2: 4045
+producer: 4046
+producer: 4047
+producer: 4048
+consumer 2: 4046
+consumer 4: 4047
+consumer 5: 4048
+producer: 4049
+producer: 4050
+producer: 4051
+consumer 3: 4049
+consumer 3: 4050
+consumer 3: 4051
+producer: 4052
+producer: 4053
+producer: 4054
+consumer 3: 4052
+consumer 3: 4053
+consumer 3: 4054
+producer: 4055
+producer: 4056
+producer: 4057
+consumer 2: 4055
+producer: 4058
+producer: 4059
+consumer 1: 4056
+consumer 1: 4057
+consumer 1: 4058
+consumer 1: 4059
+producer: 4060
+producer: 4061
+producer: 4062
+producer: 4063
+consumer 4: 4060
+consumer 4: 4061
+producer: 4064
+producer: 4065
+producer: 4066
+consumer 4: 4062
+consumer 4: 4063
+consumer 4: 4064
+consumer 4: 4065
+consumer 4: 4066
+producer: 4067
+producer: 4068
+producer: 4069
+consumer 4: 4067
+consumer 4: 4068
+consumer 4: 4069
+producer: 4070
+producer: 4071
+producer: 4072
+consumer 2: 4070
+consumer 2: 4071
+consumer 2: 4072
+>>>>>>> 5881a2b42df0d73745b1b46121d890c7aaae4ad1
