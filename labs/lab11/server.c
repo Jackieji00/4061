@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
 
 		socklen_t size = sizeof(struct sockaddr_in);
 		int clientfd = accept(sock, (struct sockaddr*) &clientAddress, &size);
-		char buffer[1024];
+		
 		char acknowledgement[] = "Acknowledgement!";
 
 		// TODO:  Read from the socket and print the contents

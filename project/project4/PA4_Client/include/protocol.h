@@ -38,4 +38,10 @@
 #define RSP_OK                      0
 #define RSP_NOK                     1
 
+//requestStucture
+struct condBuffer {
+    int requestCode;
+    
+};
+
 #endif //SERVER_CLIENT_PROTOCOL_H
