@@ -88,8 +88,8 @@ void *socketThread(void *arg) {
         }
         write(clientfd,bufferResponse,sizeof(bufferResponse));
         pthread_mutex_unlock(&currentConn_lock);
+        sleep(1);
     }
-
     close(clientfd);
     printf("close connection from %s:%d\n",clientip,clientPort);
     pthread_exit(NULL);
