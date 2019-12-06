@@ -92,13 +92,17 @@ int main(int argc, char *argv[]) {
     pid_t pids[mappers];
 
 
-   char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));
-   struct condBuffer* buffer = (struct condBuffer*) malloc(sizeof(struct condBuffer));
-   buffer->requestCode=0;
-   buffer->mapperID = 0;
+  ;
 
    for (int i = 0; i < mappers; i++) {
     pids[i]=fork();
+    char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));
+    struct requestBuffer* buffer = (struct requestBuffer*) malloc(sizeof(struct requestBuffer));
+    buffer->requestCode=0;
+    buffer->mapperID = 0;
+    struct responseBuffer* buffer_response = (struct responseBuffer*) malloc(sizeof(struct responseBuffer));
+    buffer_response->requestCode=0;
+    buffer_response->responseCode = -1;
 
     if (pids[i]<0) {
       fprintf(stderr,"Fail to folk\n");
@@ -113,12 +117,15 @@ int main(int argc, char *argv[]) {
       address.sin_port = htons(server_port);
       address.sin_addr.s_addr = inet_addr(server_ip);
 
+      if (connect(sockfd, (struct sockaddr *) &address, sizeof(address)) == 0) {
 
       buffer->requestCode=CHECKIN;
       buffer->mapperID = i;
+      printf("[%d] open connection\n", buffer->mapperID);
 
       write(sockfd, buffer, REQUEST_MSG_SIZE);
-
+      read(sockfd, buffer_response, RESPONSE_MSG_SIZE);
+      printf( "[%d] CHECKIN: %d %d\n",buffer->mapperID,buffer_response->responseCode,buffer_response->data );
 
       sprintf(dicName,"MapperInput/Mapper_%d.txt",i);
       FILE * fp;
@@ -144,31 +151,56 @@ int main(int argc, char *argv[]) {
             break;
           }
           wordcount(txtName,alphaCount);
+          co++;
+          buffer->requestCode=UPDATE_AZLIST;
+          for(int i =0 ; i <26;i++){
+            buffer->data[i]=alphaCount[i];
+          }
+          write(sockfd, buffer, REQUEST_MSG_SIZE);
+          printf("[%d] UPDATE_AZLIST: %d\n",buffer->mapperID,co );
 
        }
        free(txtName);
       }else{
         printf("fail to read file %s\n",folderName);
       }
-      buffer->requestCode=UPDATE_AZLIST;
-      for(int i =0 ; i <26;i++){
-        buffer->data[i]=alphaCount[i];
-      }
-      write(sockfd, buffer, REQUEST_MSG_SIZE);
+
       fclose(fp);
       free(dicName);
       buffer->requestCode=GET_AZLIST;
-      read(sockfd, buffer, REQUEST_MSG_SIZE);
+      read(sockfd, buffer_response, LONG_RESPONSE_MSG_SIZE);
+
+      char a[53];
+      for(int i =0;i<26;i++){
+          sprintf(a, "%d ",buffer_response->data[i]);
+
+      }
+      printf( "[%d] GET_AZLIST: %d <26 numbers>\n",buffer->mapperID,buffer_response->responseCode, a);
 
       buffer->requestCode=GET_MAPPER_UPDATES;
-      read(sockfd, buffer, REQUEST_MSG_SIZE);
+      read(sockfd, buffer_response, RESPONSE_MSG_SIZE);
+      printf("[%d] GET_MAPPER_UPDATES: %d %d\n",buffer->mapperID,buffer_response->responseCode,buffer_response->data );
 
       buffer->requestCode=GET_ALL_UPDATES ;
       write(sockfd, buffer, REQUEST_MSG_SIZE);
-      read(sockfd, buffer, REQUEST_MSG_SIZE);
+      read(sockfd, buffer_response, RESPONSE_MSG_SIZE );
+      printf("[%d] GET_ALL_UPDATES: %d %d\n",buffer->mapperID,buffer_response->responseCode,buffer_response->data );
 
-      close(sockfd);
+      buffer->requestCode=CHECKOUT ;
+      write(sockfd, buffer, REQUEST_MSG_SIZE);
+      read(sockfd, buffer_response, RESPONSE_MSG_SIZE );
+      printf("[%d] CHECKOUT: %d %d\n",buffer->mapperID,buffer_response->responseCode,buffer_response->data );
 
+
+      //close connection
+  		close(sockfd);
+      printf("[%d] close connection\n", buffer->mapperID);
+      wait(NULL);
+
+  	} else {
+
+  		perror("Connection failed!");
+  	}
 
 
     }
