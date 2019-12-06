@@ -41,7 +41,8 @@
 //requestStucture
 struct condBuffer {
     int requestCode;
-    
+    int mapperID;
+    int data[26];
 };
 
 #endif //SERVER_CLIENT_PROTOCOL_H
