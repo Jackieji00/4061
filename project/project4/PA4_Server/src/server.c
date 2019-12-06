@@ -20,28 +20,43 @@ void *socketThread(void *arg) {
     int clientfd= buf->clientfd;
     char * clientip = buf->clientip;
     int clientPort = buf->clientport;
-    struct condBuffer* buffer = (struct condBuffer*) malloc(sizeof(struct condBuffer));
+    struct requestBuffer* buffer = (struct requestBuffer*) malloc(sizeof(struct requestBuffer));
+    struct responseBuffer* bufferResponse = (struct responseBuffer*)malloc(sizeof(struct responseBuffer));
+    bufferResponse->requestCode=0;
+    bufferResponse->responseCode=RSP_NOK;
     read(clientfd,buffer,1024);
     pthread_mutex_lock(&currentConn_lock);
     if(updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==0){
         if(buffer->requestCode==CHECKIN){
+            bufferResponse->requestCode=buffer->requestCode;
+            bufferResponse->responseCode=RSP_OK;
+            bufferResponse->data = &buffer->mapperID;
             updateStatus[buffer->mapperID][US_MAPPER_PID]=buffer->mapperID;
             updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=buffer->requestCode;
         }else{
+            bufferResponse->responseCode=RSP_NOK;
+            bufferResponse->requestCode=buffer->requestCode;
+            bufferResponse->data = &buffer->mapperID;
             printf("Cannot process request command %d due to not checkin yet.\n", buffer->requestCode);
         }
     }else{
         if(buffer->requestCode==GET_AZLIST){
-            write(clientfd,azList,sizeof(azList));
+            bufferResponse->responseCode=RSP_OK;
+            bufferResponse->requestCode=buffer->requestCode;
+            bufferResponse->data=azList;
         }else if(buffer->requestCode==GET_MAPPER_UPDATES){
-            write(clientfd,&updateStatus[buffer->mapperID][2],sizeof(int));
+            bufferResponse->responseCode=RSP_OK;
+            bufferResponse->requestCode=buffer->requestCode;
+            bufferResponse->data = &updateStatus[buffer->mapperID][US_NUM_UPDATES];
         }else if(buffer->requestCode==GET_ALL_UPDATES){
             int sum = 0;
             for(int i =0;i<50;i++){
                 if(updateStatus[i][0]==0){break;}
                 sum+=updateStatus[i][1];
             }
-            write(clientfd,&sum,sizeof(int));
+            bufferResponse->responseCode=RSP_OK;
+            bufferResponse->requestCode=buffer->requestCode;
+            bufferResponse->data = &sum;
         }else if(buffer->requestCode==UPDATE_AZLIST){
             updateStatus[buffer->mapperID][US_NUM_UPDATES]++;
             int * data = malloc(26*sizeof(int));
@@ -49,10 +64,20 @@ void *socketThread(void *arg) {
             for(int i =0;i<26;i++){
                 azList[i]+=data[i];
             }
+            bufferResponse->responseCode=RSP_OK;
+            bufferResponse->requestCode=buffer->requestCode;
+            bufferResponse->data = &buffer->mapperID;
         }else if(buffer->requestCode==CHECKOUT){
-            updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=0;
+            bufferResponse->responseCode=RSP_OK;
+            bufferResponse->requestCode=buffer->requestCode;
+            bufferResponse->data = &buffer->mapperID;
+        }else{
+            bufferResponse->responseCode=RSP_NOK;
+            bufferResponse->requestCode=buffer->requestCode;
+            bufferResponse->data = &buffer->mapperID;
         }
     }
+    write(clientfd,bufferResponse,sizeof(bufferResponse));
     pthread_mutex_unlock(&currentConn_lock);
     close(clientfd);
     printf("close connection from %s:%d\n",clientip,clientPort);

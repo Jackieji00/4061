@@ -37,7 +37,7 @@
 #define RSP_NOK                     1
 
 //requestStucture
-struct condBuffer {
+struct requestBuffer {
     int requestCode;
     int mapperID;
     int data[26];
@@ -47,6 +47,11 @@ struct threadArg {
 	int clientfd;
 	char * clientip;
 	int clientport;
+};
+struct responseBuffer{
+    int requestCode;
+    int responseCode;
+    int *data;
 };
 
 #endif //SERVER_CLIENT_PROTOCOL_H
