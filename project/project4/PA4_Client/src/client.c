@@ -101,14 +101,7 @@ int main(int argc, char *argv[]) {
     buffer->requestCode=0;
     buffer->mapperID = 0;
     struct responseBuffer* buffer_response = (struct responseBuffer*) malloc(sizeof(struct responseBuffer));
-<<<<<<< HEAD
-    // buffer_response->requestCode=0;
-    // buffer_response->responseCode = -1;
-    buffer_response->data =(int *)malloc(sizeof(int));
-=======
     buffer_response->data = (int*)malloc(26*sizeof(int));
-
->>>>>>> 7f9587116c171ae54197d38d7efa9dbba0af6c72
     if (pids[i]<0) {
       fprintf(stderr,"Fail to folk\n");
       return 4;

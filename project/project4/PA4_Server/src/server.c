@@ -33,7 +33,6 @@ void *socketThread(void *arg) {
                 bufferResponse->requestCode=buffer->requestCode;
                 bufferResponse->responseCode=RSP_OK;
                 bufferResponse->data = &buffer->mapperID;
-                printf("%d\n",*(&buffer->mapperID));
                 updateStatus[buffer->mapperID][US_MAPPER_PID]=buffer->mapperID;
                 updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=buffer->requestCode;
                 printf("[%d] CHECKIN\n",buffer->mapperID);
