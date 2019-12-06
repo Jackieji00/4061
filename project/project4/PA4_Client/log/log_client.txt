@@ -1,0 +1,30 @@
+[2] open connection
+[2] CHECKIN: 0 0
+[2] GET_AZLIST: 0 <0 >
+[2] GET_MAPPER_UPDATES: 0 0
+[2] GET_ALL_UPDATES: 0 0
+[2] CHECKOUT: 0 0
+[0] open connection
+[0] CHECKIN: 0 0
+[0] GET_AZLIST: 0 <0 >
+[0] GET_MAPPER_UPDATES: 0 0
+[0] GET_ALL_UPDATES: 0 0
+[0] CHECKOUT: 0 0
+[3] open connection
+[3] CHECKIN: 0 0
+[3] GET_AZLIST: 0 <0 >
+[3] GET_MAPPER_UPDATES: 0 0
+[3] GET_ALL_UPDATES: 0 0
+[3] CHECKOUT: 0 0
+[1] open connection
+[1] CHECKIN: 0 0
+[1] GET_AZLIST: 0 <0 >
+[1] GET_MAPPER_UPDATES: 0 0
+[1] GET_ALL_UPDATES: 0 0
+[1] CHECKOUT: 0 0
+[4] open connection
+[4] CHECKIN: 0 0
+[4] GET_AZLIST: 0 <0 >
+[4] GET_MAPPER_UPDATES: 0 0
+[4] GET_ALL_UPDATES: 0 0
+[4] CHECKOUT: 0 0
