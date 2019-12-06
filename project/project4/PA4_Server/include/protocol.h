@@ -35,11 +35,18 @@
 //Response Codes
 #define RSP_OK                      0
 #define RSP_NOK                     1
+
 //requestStucture
 struct condBuffer {
     int requestCode;
     int mapperID;
     int data[26];
+};
+
+struct threadArg {
+	int clientfd;
+	char * clientip;
+	int clientport;
 };
 
 #endif //SERVER_CLIENT_PROTOCOL_H

@@ -11,37 +11,58 @@
 #include <arpa/inet.h>
 #include "../include/protocol.h"
 
-int * azList;
-int ** updateStatus;
+int azList[26];
+int updateStatus[50][3];
+pthread_mutex_t currentConn_lock;
 
 void *socketThread(void *arg) {
-    int clientfd= *(int*)arg;
+    struct threadArg * buf = (struct threadArg *) arg;
+    int clientfd= buf->clientfd;
+    char * clientip = buf->clientip;
+    int clientPort = buf->clientport;
     struct condBuffer* buffer = (struct condBuffer*) malloc(sizeof(struct condBuffer));
     read(clientfd,buffer,1024);
-    if(updateStatus[buffer->mapperID][2]==0&&updateStatus[buffer->mapperID][0]==0&&buffer->requestCode==CHECKIN){
-        updateStatus[buffer->mapperID][0]=buffer->mapperID;
-        updateStatus[buffer->mapperID][2]=buffer->requestCode;
-    }else if(buffer->requestCode==GET_AZLIST){
-        send(clientfd,azList,sizeof(azList),0);
-    }else if(buffer->requestCode==GET_MAPPER_UPDATES){
-        send(clientfd,updateStatus[buffer->mapperID][2],sizeof(int),0)
-    }else if(buffer->requestCode==GET_ALL_UPDATES){
-        int sum = 0;
-        for(int i =0;i<50;i++){
-            sum+=updateStatus[i][1];
+    pthread_mutex_lock(&currentConn_lock);
+    if(updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==0){
+        if(buffer->requestCode==CHECKIN){
+            updateStatus[buffer->mapperID][US_MAPPER_PID]=buffer->mapperID;
+            updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=buffer->requestCode;
+        }else{
+            printf("Cannot process request command %d due to not checkin yet.\n", buffer->requestCode);
         }
-    }else if(buffer->requestCode==UPDATE_AZLIST){
-
+    }else{
+        if(buffer->requestCode==GET_AZLIST){
+            write(clientfd,azList,sizeof(azList));
+        }else if(buffer->requestCode==GET_MAPPER_UPDATES){
+            write(clientfd,&updateStatus[buffer->mapperID][2],sizeof(int));
+        }else if(buffer->requestCode==GET_ALL_UPDATES){
+            int sum = 0;
+            for(int i =0;i<50;i++){
+                if(updateStatus[i][0]==0){break;}
+                sum+=updateStatus[i][1];
+            }
+            write(clientfd,&sum,sizeof(int));
+        }else if(buffer->requestCode==UPDATE_AZLIST){
+            updateStatus[buffer->mapperID][US_NUM_UPDATES]++;
+            int * data = malloc(26*sizeof(int));
+            data=buffer->data;
+            for(int i =0;i<26;i++){
+                azList[i]+=data[i];
+            }
+        }else if(buffer->requestCode==CHECKOUT){
+            updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=0;
+        }
     }
+    pthread_mutex_unlock(&currentConn_lock);
     close(clientfd);
-    printf("close connection from %s:%d\n",clientid,clientPort);
+    printf("close connection from %s:%d\n",clientip,clientPort);
+    pthread_exit(NULL);
 }
-
 
 int main(int argc, char *argv[]) {
 
     int server_port;
-    FILE * log;
+    pthread_mutex_init(&currentConn_lock, NULL);
 
     if (argc == 2) { // 1 arguments
         server_port = atoi(argv[1]);
@@ -52,16 +73,14 @@ int main(int argc, char *argv[]) {
     }
     // Server (Reducer) code
     //initialize azList array;
-    azList = new int[26];
     for (int i = 0; i < 26; i++) {
         azList[i]=0;
     }
     //initialize updateStatus
-    updateStatus = new int[32][3];
     for (int i = 0; i < 32; i++) {
-        azList[i][0]=0;//mapperID
-        azList[i][1]=0;//update
-        azList[i][2]=-1;//CHECKIN/CHECKOUT
+        updateStatus[i][US_MAPPER_PID]=0;//mapperID
+        updateStatus[i][US_NUM_UPDATES]=0;//update
+        updateStatus[i][US_IS_CHECKEDIN]=-1;//CHECKIN/CHECKOUT
     }
     // Create a TCP socket.
   	int sock = socket(AF_INET , SOCK_STREAM , 0);
@@ -76,7 +95,7 @@ int main(int argc, char *argv[]) {
   	servAddress.sin_port = htons(server_port);
   	servAddress.sin_addr.s_addr = htonl(INADDR_ANY);//TODO:??
     //Set all bits of the padding field to 0
-    memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);
+    memset(servAddress.sin_zero, '\0', sizeof(servAddress.sin_zero));
   	bind(sock, (struct sockaddr *) &servAddress, sizeof(servAddress));
 
   	// We must now listen on this port.
@@ -95,19 +114,23 @@ int main(int argc, char *argv[]) {
 
       socklen_t size = sizeof(struct sockaddr_in);
       int clientfd = accept(sock, (struct sockaddr*) &clientAddress, &size);
-      printf("open connection from %s:%d\n",clientid,clientPort);
-      if( pthread_create(&condPool[i], NULL, socketThread, &clientfd) != 0 ){
+      struct threadArg *arg = (struct threadArg *) malloc(sizeof(struct threadArg));
+
+      arg->clientfd = clientfd;
+      arg->clientip = inet_ntoa(clientAddress.sin_addr);
+      arg->clientport = clientAddress.sin_port;
+
+      printf("open connection from %s:%d\n",inet_ntoa(clientAddress.sin_addr),clientAddress.sin_port);
+      if( pthread_create(&condPool[poolIndex++], NULL, socketThread, arg) != 0 ){
           printf("Failed to create thread\n");
       }
       if( poolIndex >= 50){
           poolIndex = 0;
-          while(i < 50){
-            pthread_join(tid[poolIndex++],NULL);
+          while(poolIndex < 50){
+            pthread_join(condPool[poolIndex++],NULL);
           }
           poolIndex = 0;
       }
-      break; //break the loop
     }
-
     return 0;
 }

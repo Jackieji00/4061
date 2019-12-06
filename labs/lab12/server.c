@@ -31,7 +31,7 @@ struct threadArg {
 void * threadFunction(void * arg) {
 	struct threadArg * tArg = (struct threadArg *) arg;
 	char readbuf[MAX_MSG_SIZE];
-	
+
 	read(tArg->clientfd, readbuf, MAX_MSG_SIZE);
 	printf("%s\n", readbuf);
 	write(tArg->clientfd, (void *) "Acknowledge", 12);
@@ -50,11 +50,11 @@ int main(int argc, char** argv) {
 		printf("Wrong number of args, expected %d, given %d\n", NUM_ARGS, argc - 1);
 		exit(1);
 	}
-	
+
 	pthread_t threads[MAX_CONCURRENT];
 	int count = 0;
 	pthread_mutex_init(&currentConn_lock, NULL);
-	
+
 	// Create a TCP socket.
 	int sock = socket(AF_INET , SOCK_STREAM , 0);
 
@@ -78,11 +78,11 @@ int main(int argc, char** argv) {
 		int clientfd = accept(sock, (struct sockaddr*) &clientAddress, &size);
 
         struct threadArg *arg = (struct threadArg *) malloc(sizeof(struct threadArg));
-		
+
 		arg->clientfd = clientfd;
 		arg->clientip = inet_ntoa(clientAddress.sin_addr);
 		arg->clientport = clientAddress.sin_port;
-		
+
 		//TODO: Handle the accepted connection by passing off functionality to a thread
 		//      Up to MAX_CONCURRENT threads can be running simultaneously, so you will
 		//      have to decide how to ensure that this condition holds.
@@ -95,15 +95,13 @@ int main(int argc, char** argv) {
 			free(arg);
 			continue;
         }else{
-            
-            if( pthread_create(&threads[count++], NULL, threadFunction, arg) != 0 )
-                printf("Failed to create thread\n");
-            
-            
+            if( pthread_create(&threads[count++], NULL, threadFunction, arg) != 0 ){
+				printf("Failed to create thread\n");
+			}
             currentConn++;
-            
-            if(count == MAX_CONCURRENT)
-                count = 0;
+            if(count == MAX_CONCURRENT){
+				count = 0;
+			}
         }
         pthread_mutex_unlock(&currentConn_lock);
 	}
