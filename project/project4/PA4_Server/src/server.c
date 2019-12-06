@@ -41,7 +41,7 @@ void *socketThread(void *arg) {
             printf("Cannot process request command %d due to not checkin yet.\n", buffer->requestCode);
         }
     }else{
-        printf("%d\n", buffer->requestCode);
+        //printf("%d\n", buffer->requestCode);
         if(buffer->requestCode==GET_AZLIST){
             bufferResponse->responseCode=RSP_OK;
             bufferResponse->requestCode=buffer->requestCode;
@@ -76,6 +76,7 @@ void *socketThread(void *arg) {
             bufferResponse->responseCode=RSP_OK;
             bufferResponse->requestCode=buffer->requestCode;
             bufferResponse->data = &buffer->mapperID;
+            updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=CHECKOUT;
             printf("[%d] CHECKOUT\n",buffer->mapperID);
         }else{
             bufferResponse->responseCode=RSP_NOK;
