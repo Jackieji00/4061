@@ -48,7 +48,7 @@ struct requestBuffer {
 struct responseBuffer{
     int requestCode;
     int responseCode;
-    int *data;
+    int data[26];
 };
 
 #endif //SERVER_CLIENT_PROTOCOL_H
