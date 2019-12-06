@@ -18,8 +18,21 @@ void *socketThread(void *arg) {
     int clientfd= *(int*)arg;
     struct condBuffer* buffer = (struct condBuffer*) malloc(sizeof(struct condBuffer));
     read(clientfd,buffer,1024);
-    send(clientfd,acknowledgement,strlen(acknowledgement),0);
+    if(updateStatus[buffer->mapperID][2]==0&&updateStatus[buffer->mapperID][0]==0&&buffer->requestCode==CHECKIN){
+        updateStatus[buffer->mapperID][0]=buffer->mapperID;
+        updateStatus[buffer->mapperID][2]=buffer->requestCode;
+    }else if(buffer->requestCode==GET_AZLIST){
+        send(clientfd,azList,sizeof(azList),0);
+    }else if(buffer->requestCode==GET_MAPPER_UPDATES){
+        send(clientfd,updateStatus[buffer->mapperID][2],sizeof(int),0)
+    }else if(buffer->requestCode==GET_ALL_UPDATES){
+        int sum = 0;
+        for(int i =0;i<50;i++){
+            sum+=updateStatus[i][1];
+        }
+    }else if(buffer->requestCode==UPDATE_AZLIST){
 
+    }
     close(clientfd);
     printf("close connection from %s:%d\n",clientid,clientPort);
 }
@@ -46,9 +59,9 @@ int main(int argc, char *argv[]) {
     //initialize updateStatus
     updateStatus = new int[32][3];
     for (int i = 0; i < 32; i++) {
-        azList[i][0]=0;
-        azList[i][1]=0;
-        azList[i][2]=-1;
+        azList[i][0]=0;//mapperID
+        azList[i][1]=0;//update
+        azList[i][2]=-1;//CHECKIN/CHECKOUT
     }
     // Create a TCP socket.
   	int sock = socket(AF_INET , SOCK_STREAM , 0);
@@ -61,7 +74,7 @@ int main(int argc, char *argv[]) {
   	struct sockaddr_in servAddress;
   	servAddress.sin_family = AF_INET;
   	servAddress.sin_port = htons(server_port);
-  	servAddress.sin_addr.s_addr = htonl(INADDR_ANY);
+  	servAddress.sin_addr.s_addr = htonl(INADDR_ANY);//TODO:??
     //Set all bits of the padding field to 0
     memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);
   	bind(sock, (struct sockaddr *) &servAddress, sizeof(servAddress));
@@ -73,7 +86,7 @@ int main(int argc, char *argv[]) {
         printf("listening is failed\n");
     }
 
-    pthread_t condPool[50];
+    pthread_t condPool[MAX_CONCURRENT_CLIENTS];
     int poolIndex = 0;
 
     while (1) {
