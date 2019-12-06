@@ -7,7 +7,7 @@ clean:
 test:
 	@printf "===Testing server===\n"
 	@printf "\nTestCase1: One line with no option\n"
-	./server 4061
+	./server 8088
 	@printf "\n"
 	# @printf "\nTestCase2: Normal Case with option\n"
 	# ./wcs 4 ${TST_DIR}/test2.txt -p

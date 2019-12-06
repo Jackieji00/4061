@@ -33,6 +33,7 @@ void *socketThread(void *arg) {
             bufferResponse->data = &buffer->mapperID;
             updateStatus[buffer->mapperID][US_MAPPER_PID]=buffer->mapperID;
             updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=buffer->requestCode;
+            printf("[%d] CHECKIN\n",buffer->mapperID);
         }else{
             bufferResponse->responseCode=RSP_NOK;
             bufferResponse->requestCode=buffer->requestCode;
@@ -44,10 +45,12 @@ void *socketThread(void *arg) {
             bufferResponse->responseCode=RSP_OK;
             bufferResponse->requestCode=buffer->requestCode;
             bufferResponse->data=azList;
+            printf("[%d] GET_AZLIST\n",buffer->mapperID);
         }else if(buffer->requestCode==GET_MAPPER_UPDATES){
             bufferResponse->responseCode=RSP_OK;
             bufferResponse->requestCode=buffer->requestCode;
             bufferResponse->data = &updateStatus[buffer->mapperID][US_NUM_UPDATES];
+            printf("[%d] GET_MAPPER_UPDATES\n",buffer->mapperID);
         }else if(buffer->requestCode==GET_ALL_UPDATES){
             int sum = 0;
             for(int i =0;i<50;i++){
@@ -57,6 +60,7 @@ void *socketThread(void *arg) {
             bufferResponse->responseCode=RSP_OK;
             bufferResponse->requestCode=buffer->requestCode;
             bufferResponse->data = &sum;
+            printf("[%d] GET_ALL_UPDATES\n",buffer->mapperID);
         }else if(buffer->requestCode==UPDATE_AZLIST){
             updateStatus[buffer->mapperID][US_NUM_UPDATES]++;
             int * data = malloc(26*sizeof(int));
@@ -71,6 +75,7 @@ void *socketThread(void *arg) {
             bufferResponse->responseCode=RSP_OK;
             bufferResponse->requestCode=buffer->requestCode;
             bufferResponse->data = &buffer->mapperID;
+            printf("[%d] CHECKOUT\n",buffer->mapperID);
         }else{
             bufferResponse->responseCode=RSP_NOK;
             bufferResponse->requestCode=buffer->requestCode;
