@@ -51,7 +51,7 @@ struct threadArg {
 struct responseBuffer{
     int requestCode;
     int responseCode;
-    int *data;
+    int * data;
 };
 
 #endif //SERVER_CLIENT_PROTOCOL_H

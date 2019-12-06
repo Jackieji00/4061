@@ -24,6 +24,7 @@ void *socketThread(void *arg) {
     struct responseBuffer* bufferResponse = (struct responseBuffer*)malloc(sizeof(struct responseBuffer));
     bufferResponse->requestCode=0;
     bufferResponse->responseCode=RSP_NOK;
+    bufferResponse->data =(int*) malloc(26*sizeof(int));
     while(1){
         read(clientfd,buffer,1024);
         pthread_mutex_lock(&currentConn_lock);
@@ -32,6 +33,7 @@ void *socketThread(void *arg) {
                 bufferResponse->requestCode=buffer->requestCode;
                 bufferResponse->responseCode=RSP_OK;
                 bufferResponse->data = &buffer->mapperID;
+                printf("%d\n",*(&buffer->mapperID));
                 updateStatus[buffer->mapperID][US_MAPPER_PID]=buffer->mapperID;
                 updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=buffer->requestCode;
                 printf("[%d] CHECKIN\n",buffer->mapperID);
