@@ -26,7 +26,7 @@ void *socketThread(void *arg) {
     bufferResponse->responseCode=RSP_NOK;
     read(clientfd,buffer,1024);
     pthread_mutex_lock(&currentConn_lock);
-    if(updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==0){
+    if(updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==0||updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==-1){
         if(buffer->requestCode==CHECKIN){
             bufferResponse->requestCode=buffer->requestCode;
             bufferResponse->responseCode=RSP_OK;
@@ -41,6 +41,7 @@ void *socketThread(void *arg) {
             printf("Cannot process request command %d due to not checkin yet.\n", buffer->requestCode);
         }
     }else{
+        printf("%d\n", buffer->requestCode);
         if(buffer->requestCode==GET_AZLIST){
             bufferResponse->responseCode=RSP_OK;
             bufferResponse->requestCode=buffer->requestCode;
