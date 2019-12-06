@@ -7,7 +7,7 @@
 #include <ctype.h>
 #include "../include/protocol.h"
 #define SIZE_TXTPATH 100
-#define ALPHA_NUM_SIZE 27
+
 
 
 FILE *logfp;
@@ -101,8 +101,14 @@ int main(int argc, char *argv[]) {
     buffer->requestCode=0;
     buffer->mapperID = 0;
     struct responseBuffer* buffer_response = (struct responseBuffer*) malloc(sizeof(struct responseBuffer));
+<<<<<<< HEAD
+    // buffer_response->requestCode=0;
+    // buffer_response->responseCode = -1;
+    buffer_response->data =(int *)malloc(sizeof(int));
+=======
     buffer_response->data = (int*)malloc(26*sizeof(int));
 
+>>>>>>> 7f9587116c171ae54197d38d7efa9dbba0af6c72
     if (pids[i]<0) {
       fprintf(stderr,"Fail to folk\n");
       return 4;
@@ -133,42 +139,42 @@ int main(int argc, char *argv[]) {
       fputs(aa, logfp);
 
       sprintf(dicName,"MapperInput/Mapper_%d.txt",i);
-      FILE * fp;
+      FILE *fp;
       char * txtName;
       char c;
       int co = 0;
       int* alphaCount;
-      alphaCount = malloc(ALPHA_NUM_SIZE*sizeof(int));
+      alphaCount = malloc(ALPHABETSIZE*sizeof(int));
       for (int i = 0; i < 26; i++) {
         alphaCount[i]=0;
       }
-    //read mapper text file and get the address call the function wordcount() to count
       if((fp = fopen(folderName,"r"))!=NULL){
         txtName = malloc(SIZE_TXTPATH*sizeof(char));
         while(c != EOF){
           txtName[0] = '\0';
           c=fgetc(fp);
           strncat(txtName,&c,1);
-          while((c=fgetc(fp))!='\n'&&c!=EOF){
-            strncat(txtName,&c,1);
-          }
-          if(c == EOF){
-            break;
-          }
-          wordcount(txtName,alphaCount);
-          co++;
-          buffer->requestCode=UPDATE_AZLIST;
-          for(int i =0 ; i <26;i++){
-            buffer->data[i]=alphaCount[i];
-          }
-          write(sockfd, buffer, REQUEST_MSG_SIZE);
-          printf("[%d] UPDATE_AZLIST: %d\n",buffer->mapperID,co );
+        while((c=fgetc(fp))!='\n'&&c!=EOF){
+          strncat(txtName,&c,1);
+        }
+        if(c == EOF){
+          break;
+        }
+        wordcount(txtName,alphaCount);
+        co++;
+        buffer->requestCode=UPDATE_AZLIST;
+        for(int i =0 ; i <26;i++){
+          buffer->data[i]=alphaCount[i];
+        }
+        write(sockfd, buffer, REQUEST_MSG_SIZE);
+        printf("[%d] UPDATE_AZLIST: %d\n",buffer->mapperID,co );
 
-       }
-       free(txtName);
-      }else{
-        printf("fail to read file %s\n",folderName);
-      }
+   }
+   free(txtName);
+  }else{
+    printf("fail to read file %s\n",folderName);
+  }
+
 
       fclose(fp);
       free(dicName);
