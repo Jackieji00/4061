@@ -14,6 +14,7 @@
 int azList[26];
 int updateStatus[50][3];
 int currentConn = 0;
+int total=0;
 pthread_mutex_t currentConn_lock;
 
 void *socketThread(void *arg) {
@@ -30,25 +31,26 @@ void *socketThread(void *arg) {
     while(1){
         read(clientfd,buffer,28*sizeof(int));
         printf("[%d]:%d\n",buffer[RQS_MAPPER_PID],buffer[RQS_COMMAND_ID]);
-        if(updateStatus[buffer[RQS_MAPPER_PID]][US_IS_CHECKEDIN]==0||updateStatus[buffer[RQS_MAPPER_PID]][US_IS_CHECKEDIN]==-1){
+        if(updateStatus[buffer[RQS_MAPPER_PID]-1][US_IS_CHECKEDIN]==0||updateStatus[buffer[RQS_MAPPER_PID]-1][US_IS_CHECKEDIN]==-1){
             if(buffer[RQS_COMMAND_ID]==CHECKIN){
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_OK;
                 bufferResponse[RSP_DATA]=buffer[RQS_MAPPER_PID];
-                updateStatus[buffer[RQS_MAPPER_PID]][US_MAPPER_PID]=buffer[RQS_MAPPER_PID];
-                updateStatus[buffer[RQS_MAPPER_PID]][US_IS_CHECKEDIN]=buffer[RQS_COMMAND_ID];
-                //write(clientfd,bufferResponse,28*sizeof(int));
+                updateStatus[buffer[RQS_MAPPER_PID]-1][US_MAPPER_PID]=buffer[RQS_MAPPER_PID];
+                updateStatus[buffer[RQS_MAPPER_PID]-1][US_IS_CHECKEDIN]=buffer[RQS_COMMAND_ID];
+                write(clientfd,bufferResponse,28*sizeof(int));
                 printf("[%d] CHECKIN\n",buffer[RQS_MAPPER_PID]);
             }else{
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_NOK;
                 bufferResponse[RSP_DATA]=buffer[RQS_MAPPER_PID];
                 printf("Cannot process request command %d due to not checkin yet.\n", buffer[RQS_COMMAND_ID]);
+                write(clientfd,bufferResponse,28*sizeof(int));
             }
         }else{
             //printf("%d\n", buffer[RQS_COMMAND_ID]);
             if(buffer[RQS_COMMAND_ID]==GET_AZLIST){
-                printf("2:%d\n",buffer[RQS_MAPPER_PID] );
+                //printf("2:%d\n",buffer[RQS_MAPPER_PID] );
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_OK;
                 for (int i = 0; i < 26; i++) {
@@ -59,24 +61,29 @@ void *socketThread(void *arg) {
                 }
                 printf("[%d] GET_AZLIST\n",buffer[RQS_MAPPER_PID]);
                 //write(clientfd,bufferResponse,28*sizeof(int));
-                printf("%s\n","hh" );
+                //printf("%s\n","hh" );
+                write(clientfd,bufferResponse,28*sizeof(int));
             }else if(buffer[RQS_COMMAND_ID]==GET_MAPPER_UPDATES){
                 //printf("3:%d\n",buffer[RQS_MAPPER_PID] );
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_OK;
-                bufferResponse[RSP_DATA]=updateStatus[buffer[RQS_MAPPER_PID]][US_NUM_UPDATES];
+                bufferResponse[RSP_DATA]=updateStatus[buffer[RQS_MAPPER_PID-1]][US_NUM_UPDATES];
                 printf("[%d] GET_MAPPER_UPDATES\n",buffer[RQS_MAPPER_PID]);
+                write(clientfd,bufferResponse,28*sizeof(int));
             }else if(buffer[RQS_COMMAND_ID]==GET_ALL_UPDATES){
                 //printf("4:%d\n",buffer[RQS_MAPPER_PID] );
                 int sum = 0;
                 for(int i =0;i<50;i++){
-                    if(updateStatus[i][0]==0){break;}
-                    sum+=updateStatus[i][1];
+                    // if(updateStatus[i][US_MAPPER_PID]==0){break;}
+                    //printf("num:%d\n", updateStatus[i][US_NUM_UPDATES]);
+                    sum+=updateStatus[i][US_NUM_UPDATES];
                 }
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_OK;
+                //printf("sum:%d\n",sum );
                 bufferResponse[RSP_DATA]=sum;
                 printf("[%d] GET_ALL_UPDATES\n",buffer[RQS_MAPPER_PID]);
+                write(clientfd,bufferResponse,28*sizeof(int));
             }else if(buffer[RQS_COMMAND_ID]==UPDATE_AZLIST){
                 //printf("5:%d\n",buffer[RQS_MAPPER_PID] );
                 updateStatus[buffer[RQS_MAPPER_PID]][US_NUM_UPDATES]++;
@@ -89,6 +96,7 @@ void *socketThread(void *arg) {
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_OK;
                 bufferResponse[RSP_DATA]=buffer[RQS_MAPPER_PID];
+                write(clientfd,bufferResponse,28*sizeof(int));
             }else if(buffer[RQS_COMMAND_ID]==CHECKOUT){
                 //printf("6:%d\n",buffer[RQS_MAPPER_PID] );
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
@@ -96,18 +104,20 @@ void *socketThread(void *arg) {
                 bufferResponse[RSP_DATA]=buffer[RQS_MAPPER_PID];
                 updateStatus[buffer[RQS_MAPPER_PID]][US_IS_CHECKEDIN]=CHECKOUT;
                 printf("[%d] CHECKOUT\n",buffer[RQS_MAPPER_PID]);
+                write(clientfd,bufferResponse,28*sizeof(int));
                 break;
             }else{
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_NOK;
                 bufferResponse[RSP_DATA]=buffer[RQS_MAPPER_PID];
+                write(clientfd,bufferResponse,28*sizeof(int));
             }
         }
-        for (int i = 0; i < 28&&buffer[RQS_COMMAND_ID]==GET_AZLIST; i++) {
-            printf("bf %d:%d\n",i, bufferResponse[i]);
-        }
-        write(clientfd,bufferResponse,28*sizeof(int));
-        continue;
+        // for (int i = 0; i < 28&&buffer[RQS_COMMAND_ID]==GET_AZLIST; i++) {
+        //     printf("bf %d:%d\n",i, bufferResponse[i]);
+        // }
+        //write(clientfd,bufferResponse,28*sizeof(int));
+        //continue;
 
     }
     printf("close connection from %s:%d\n",clientip,clientPort);

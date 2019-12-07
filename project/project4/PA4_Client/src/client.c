@@ -176,13 +176,9 @@ int main(int argc, char *argv[]) {
                         sprintf(logUpdate, "[%d] UPDATE_AZLIST: %d\n",buffer[RQS_MAPPER_PID],messageCount);
                         fputs(logUpdate,logfp);
                         printf("[%d] UPDATE_AZLIST: %d\n",buffer[RQS_MAPPER_PID],messageCount);
-                        //printf("[%d] textname: %s\n",i+1,txtName);
-                        //printf("[%d] dicName: %s\n",i+1,dicName);
                         //reset
                         logUpdate[0]='\0';
                         txtName[0] = '\0';
-                        //memset(&buffer_response, 0, sizeof(buffer_response));
-
                     }
                     free(txtName);
                     fclose(fp);
@@ -206,39 +202,41 @@ int main(int argc, char *argv[]) {
                 char numbers[200];
                 int index =0;
                 for(int j =0;j<26;j++){
-                    printf("%d: %d\n",j,buffer_response[j]);
+                    //printf("%d: %d\n",j,buffer_response[j]);
                     index += sprintf(&numbers[index], "%d ",buffer_response[RSP_DATA+j]);
                 }
                 printf( "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);
                 char logGetList[255];
                 sprintf(logGetList, "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);
                 fputs(logGetList, logfp);
-    //       //
-    //       // buffer[RQS_COMMAND_ID]=GET_MAPPER_UPDATES;
-    //       // for(int i =0 ; i <26;i++){
-    //       //   buffer[RQS_DATA+i]=0;
-    //       // }
-    //       // write(sockfd, buffer, REQUEST_MSG_SIZE);
-    //       // read(sockfd, buffer_response, RESPONSE_MSG_SIZE);
-    //       // printf("[%d] GET_MAPPER_UPDATES: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response->responseCode,*buffer_response->data );
-    //       // char dd[255];
-    //       // sprintf(dd, "[%d] GET_MAPPER_UPDATES: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response->responseCode,*buffer_response->data );
-    //       // fputs(dd, logfp);
-    //       //
-    //       // buffer[RQS_COMMAND_ID]=GET_ALL_UPDATES ;
-    //       // write(sockfd, buffer, REQUEST_MSG_SIZE);
-    //       // read(sockfd, buffer_response, RESPONSE_MSG_SIZE );
-    //       // printf("[%d] GET_ALL_UPDATES: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response->responseCode,*buffer_response->data );
-    //       // char ee[255];
-    //       // sprintf(ee, "[%d] GET_ALL_UPDATES: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response->responseCode,*buffer_response->data );
-    //       // fputs(ee, logfp);
-    //       //
+
+                //get mapper updates
+                buffer[RQS_COMMAND_ID]=GET_MAPPER_UPDATES;
+                for(int j =0 ; j <26;j++){
+                    buffer[RQS_DATA+j]=0;
+                }
+                write(sockfd, buffer, 28*sizeof(int));
+                read(sockfd, buffer_response, 28*sizeof(int));
+                printf("[%d] GET_MAPPER_UPDATES: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA] );
+                char logUpdates[255];
+                sprintf(logUpdates, "[%d] GET_MAPPER_UPDATES: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA] );
+                fputs(logUpdates, logfp);
+
+                //get all updates
+                buffer[RQS_COMMAND_ID]=GET_ALL_UPDATES ;
+                write(sockfd, buffer, 28*sizeof(int));
+                read(sockfd, buffer_response, 28*sizeof(int));
+                printf("[%d] GET_ALL_UPDATES: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
+                char logAll[255];
+                sprintf(logAll, "[%d] GET_ALL_UPDATES: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
+                fputs(logAll, logfp);
+
                 buffer[RQS_COMMAND_ID]=CHECKOUT ;
-                write(sockfd, buffer, REQUEST_MSG_SIZE);
-                read(sockfd, buffer_response, RESPONSE_MSG_SIZE);
-                printf("[%d] CHECKOUT: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA] );
+                write(sockfd, buffer, 28*sizeof(int));
+                read(sockfd, buffer_response, 28*sizeof(int));
+                printf("[%d] CHECKOUT: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
                 char logCheckout[255];
-                sprintf(logCheckout, "[%d] CHECKOUT: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA] );
+                sprintf(logCheckout, "[%d] CHECKOUT: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
                 fputs(logCheckout, logfp);
                 //close connection
                 // wait(NULL);
