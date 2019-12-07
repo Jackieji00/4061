@@ -22,93 +22,89 @@ void *socketThread(void *arg) {
     int clientPort = buf->clientport;
     struct requestBuffer* buffer = (struct requestBuffer*) malloc(sizeof(struct requestBuffer));
     int bufferResponse[28];
-    // bufferResponse->requestCode=0;
-    // bufferResponse->responseCode=RSP_NOK;
-    // bufferResponse->bu
-
     while(1){
-        read(clientfd,buffer,1024);
-        updateStatus[buffer->mapperID][US_MAPPER_PID]=buffer->mapperID;
-        updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=buffer->requestCode;
-        pthread_mutex_lock(&currentConn_lock);
-        if(updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==0||updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==-1){
-            if(buffer->requestCode==CHECKIN){
-                printf("1:%d\n",buffer->mapperID );
-                bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
-                bufferResponse[RSP_CODE]=RSP_OK;
-                bufferResponse[RSP_DATA]=buffer->mapperID;
-                printf("data:%d\n",bufferResponse[RSP_DATA]);
-                updateStatus[buffer->mapperID][US_MAPPER_PID]=buffer->mapperID;
-                updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=buffer->requestCode;
-                write(clientfd,bufferResponse,sizeof(bufferResponse));
-                printf("[%d] CHECKIN\n",buffer->mapperID);
+        if(pthread_mutex_trylock(&currentConn_lock)==0){
+            read(clientfd,buffer,1024);
+            if(updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==0||updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==-1){
+                if(buffer->requestCode==CHECKIN){
+                    //printf("1:%d\n",buffer->mapperID );
+                    bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
+                    bufferResponse[RSP_CODE]=RSP_OK;
+                    bufferResponse[RSP_DATA]=buffer->mapperID;
+                    printf("data:%d\n",bufferResponse[RSP_DATA]);
+                    updateStatus[buffer->mapperID][US_MAPPER_PID]=buffer->mapperID;
+                    updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=buffer->requestCode;
+                    write(clientfd,bufferResponse,sizeof(bufferResponse));
+                    printf("[%d] CHECKIN\n",buffer->mapperID);
+                }else{
+                    bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
+                    bufferResponse[RSP_CODE]=RSP_NOK;
+                    bufferResponse[RSP_DATA]=buffer->mapperID;
+                    printf("Cannot process request command %d due to not checkin yet.\n", buffer->requestCode);
+                }
             }else{
-                // bufferResponse->responseCode=RSP_NOK;
-                // bufferResponse->requestCode=buffer->requestCode;
-                // bufferResponse->data = &buffer->mapperID;
-                printf("Cannot process request command %d due to not checkin yet.\n", buffer->requestCode);
+                //printf("%d\n", buffer->requestCode);
+                if(buffer->requestCode==GET_AZLIST){
+                    //printf("2:%d\n",buffer->mapperID );
+                    bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
+                    bufferResponse[RSP_CODE]=RSP_OK;
+                    for (int i = RSP_DATA; i < 28; i++) {
+                        bufferResponse[i]=azList[i-RSP_DATA];
+                    }
+                    printf("[%d] GET_AZLIST\n",buffer->mapperID);
+                }else if(buffer->requestCode==GET_MAPPER_UPDATES){
+                    //printf("3:%d\n",buffer->mapperID );
+                    bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
+                    bufferResponse[RSP_CODE]=RSP_OK;
+                    bufferResponse[RSP_DATA]=updateStatus[buffer->mapperID][US_NUM_UPDATES];
+                    printf("[%d] GET_MAPPER_UPDATES\n",buffer->mapperID);
+                }else if(buffer->requestCode==GET_ALL_UPDATES){
+                    //printf("4:%d\n",buffer->mapperID );
+                    int sum = 0;
+                    for(int i =0;i<50;i++){
+                        if(updateStatus[i][0]==0){break;}
+                        sum+=updateStatus[i][1];
+                    }
+                    bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
+                    bufferResponse[RSP_CODE]=RSP_OK;
+                    bufferResponse[RSP_DATA]=sum;
+                    printf("[%d] GET_ALL_UPDATES\n",buffer->mapperID);
+                }else if(buffer->requestCode==UPDATE_AZLIST){
+                    //printf("5:%d\n",buffer->mapperID );
+                    updateStatus[buffer->mapperID][US_NUM_UPDATES]++;
+                    int * data = malloc(26*sizeof(int));
+                    data=buffer->data;
+                    for(int i =0;i<26;i++){
+                        azList[i]+=data[i];
+                    }
+                    bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
+                    bufferResponse[RSP_CODE]=RSP_OK;
+                    bufferResponse[RSP_DATA]=buffer->mapperID;
+                }else if(buffer->requestCode==CHECKOUT){
+                    //printf("6:%d\n",buffer->mapperID );
+
+                    bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
+                    bufferResponse[RSP_CODE]=RSP_OK;
+                    bufferResponse[RSP_DATA]=buffer->mapperID;
+                    updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=CHECKOUT;
+                    printf("[%d] CHECKOUT\n",buffer->mapperID);
+                    break;
+                }else{
+                    // bufferResponse->responseCode=RSP_NOK;
+                    // bufferResponse->requestCode=buffer->requestCode;
+                    // bufferResponse->data = &buffer->mapperID;
+                }
             }
-        }else{
-            //printf("%d\n", buffer->requestCode);
-            if(buffer->requestCode==GET_AZLIST){
-                printf("2:%d\n",buffer->mapperID );
-
-                // bufferResponse->responseCode=RSP_OK;
-                // bufferResponse->requestCode=buffer->requestCode;
-                // bufferResponse->data=azList;
-                printf("[%d] GET_AZLIST\n",buffer->mapperID);
-            }else if(buffer->requestCode==GET_MAPPER_UPDATES){
-                printf("3:%d\n",buffer->mapperID );
-
-                // bufferResponse->responseCode=RSP_OK;
-                // bufferResponse->requestCode=buffer->requestCode;
-                // bufferResponse->data = &updateStatus[buffer->mapperID][US_NUM_UPDATES];
-                printf("[%d] GET_MAPPER_UPDATES\n",buffer->mapperID);
-            }else if(buffer->requestCode==GET_ALL_UPDATES){
-                printf("4:%d\n",buffer->mapperID );
-
-                // int sum = 0;
-                // for(int i =0;i<50;i++){
-                //     if(updateStatus[i][0]==0){break;}
-                //     sum+=updateStatus[i][1];
-                // }
-                // bufferResponse->responseCode=RSP_OK;
-                // bufferResponse->requestCode=buffer->requestCode;
-                // bufferResponse->data = &sum;
-                printf("[%d] GET_ALL_UPDATES\n",buffer->mapperID);
-            }else if(buffer->requestCode==UPDATE_AZLIST){
-                printf("5:%d\n",buffer->mapperID );
-                // updateStatus[buffer->mapperID][US_NUM_UPDATES]++;
-                // int * data = malloc(26*sizeof(int));
-                // data=buffer->data;
-                // for(int i =0;i<26;i++){
-                //     azList[i]+=data[i];
-                // }
-                // bufferResponse->responseCode=RSP_OK;
-                // bufferResponse->requestCode=buffer->requestCode;
-                // bufferResponse->data = &buffer->mapperID;
-            }else if(buffer->requestCode==CHECKOUT){
-                printf("6:%d\n",buffer->mapperID );
-
-                // bufferResponse->responseCode=RSP_OK;
-                // bufferResponse->requestCode=buffer->requestCode;
-                // bufferResponse->data = &buffer->mapperID;
-                // updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=CHECKOUT;
-                printf("[%d] CHECKOUT\n",buffer->mapperID);
-                break;
-            }else{
-                // bufferResponse->responseCode=RSP_NOK;
-                // bufferResponse->requestCode=buffer->requestCode;
-                // bufferResponse->data = &buffer->mapperID;
-            }
+            write(clientfd,bufferResponse,sizeof(bufferResponse));
+            printf("[%d] %s\n",buffer->mapperID, "h");
+            pthread_mutex_unlock(&currentConn_lock);
         }
-        pthread_mutex_unlock(&currentConn_lock);
-        write(clientfd,bufferResponse,sizeof(bufferResponse));
-        printf("[%d] %s\n",buffer->mapperID, "h");
+        sleep(1);
     }
-    close(clientfd);
     printf("close connection from %s:%d\n",clientip,clientPort);
+    close(clientfd);
     pthread_exit(NULL);
+    printf("%s\n", "i don't know");
 }
 
 int main(int argc, char *argv[]) {
@@ -178,6 +174,7 @@ int main(int argc, char *argv[]) {
           printf("Failed to create thread\n");
       }
       if( poolIndex >= 50){
+          printf("%s\n","iii" );
           poolIndex = 0;
           while(poolIndex < 50){
               pthread_join(condPool[poolIndex++],NULL);
