@@ -76,9 +76,11 @@ void *socketThread(void *arg) {
             }else if(buffer[RQS_COMMAND_ID]==UPDATE_AZLIST){
                 //printf("5:%d\n",buffer[RQS_MAPPER_PID] );
                 updateStatus[buffer[RQS_MAPPER_PID]][US_NUM_UPDATES]++;
+                pthread_mutex_lock(&currentConn_lock);
                 for(int i =0;i<26;i++){
                     azList[i]+=buffer[RQS_DATA+i];
                 }
+                pthread_mutex_unlock(&currentConn_lock);
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_OK;
                 bufferResponse[RSP_DATA]=buffer[RQS_MAPPER_PID];

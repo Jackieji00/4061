@@ -210,8 +210,8 @@ int main(int argc, char *argv[]) {
                 }
                 printf( "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);
                 char logGetList[255];
-                sprintf(logGetList, "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);
-                fputs(logGetList, logfp);
+                fprintf(logfp, "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);
+                //fputs(logGetList, logfp);
     //       //
     //       // buffer[RQS_COMMAND_ID]=GET_MAPPER_UPDATES;
     //       // for(int i =0 ; i <26;i++){
@@ -250,7 +250,9 @@ int main(int argc, char *argv[]) {
 
         }
     }
-    wait(NULL);
+    for (size_t i = 0; i < mappers; i++) {
+        wait(NULL);
+    }
     // Phase3 - Master Client's Dynamic Request Handling (Extra Credit)
 
 
