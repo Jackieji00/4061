@@ -47,12 +47,12 @@ void *socketThread(void *arg) {
                 printf("2:%d\n",buffer[RQS_MAPPER_PID] );
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_OK;
-                pthread_mutex_lock(&currentConn_lock);
                 for (int i = 0; i < 26; i++) {
+                    //pthread_mutex_lock(&currentConn_lock);
                     bufferResponse[i+RSP_DATA]=azList[i];
                     printf("%d\n", azList[i]);
+                    //pthread_mutex_unlock(&currentConn_lock);
                 }
-                pthread_mutex_unlock(&currentConn_lock);
                 printf("[%d] GET_AZLIST\n",buffer[RQS_MAPPER_PID]);
                 //write(clientfd,bufferResponse,28*sizeof(int));
                 printf("%s\n","hh" );
@@ -76,11 +76,12 @@ void *socketThread(void *arg) {
             }else if(buffer[RQS_COMMAND_ID]==UPDATE_AZLIST){
                 //printf("5:%d\n",buffer[RQS_MAPPER_PID] );
                 updateStatus[buffer[RQS_MAPPER_PID]][US_NUM_UPDATES]++;
-                pthread_mutex_lock(&currentConn_lock);
                 for(int i =0;i<26;i++){
+                    //pthread_mutex_lock(&currentConn_lock);
                     azList[i]+=buffer[RQS_DATA+i];
+                    //printf("%d\n",azList[i]);
+                    //pthread_mutex_unlock(&currentConn_lock);
                 }
-                pthread_mutex_unlock(&currentConn_lock);
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
                 bufferResponse[RSP_CODE]=RSP_OK;
                 bufferResponse[RSP_DATA]=buffer[RQS_MAPPER_PID];

@@ -43,6 +43,7 @@ void wordcount(char * txtName,int * alphaCount){
         return;
         printf("fail to read file %s\n",txtName);
     }
+    fclose(fpTxt);
 }
 
 void createLogFile(void) {
@@ -202,7 +203,7 @@ int main(int argc, char *argv[]) {
                     printf("%s\n", "write fail");
                 }
                 read(sockfd, buffer_response, 28*sizeof(int));
-                char numbers[100];
+                char numbers[200];
                 int index =0;
                 for(int j =0;j<26;j++){
                     printf("%d: %d\n",j,buffer_response[RSP_DATA+j]);
@@ -210,8 +211,8 @@ int main(int argc, char *argv[]) {
                 }
                 printf( "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);
                 char logGetList[255];
-                fprintf(logfp, "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);
-                //fputs(logGetList, logfp);
+                sprintf(logGetList, "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);
+                fputs(logGetList, logfp);
     //       //
     //       // buffer[RQS_COMMAND_ID]=GET_MAPPER_UPDATES;
     //       // for(int i =0 ; i <26;i++){
