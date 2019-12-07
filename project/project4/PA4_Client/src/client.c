@@ -132,58 +132,61 @@ int main(int argc, char *argv[]) {
                 read(sockfd, buffer_response, 28*sizeof(int));
                 printf( "[%d] CHECKIN: %d %d\n",buffer->mapperID,buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
                 char logCheckin[255];
-                //sprintf(logCheckin, "[%d] CHECKIN: %d %d\n",buffer->mapperID,buffer_response->responseCode,*buffer_response->data);
-                //fputs(logCheckin, logfp);
+                sprintf(logCheckin, "[%d] CHECKIN: %d %d\n",buffer->mapperID,buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
+                fputs(logCheckin, logfp);
                 //reset struct
                 memset(&buffer_response, 0, sizeof(buffer_response));
 
-    //       //       //update
-    //       //       buffer->requestCode=UPDATE_AZLIST;
-    //       //       char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));
-    //       //       sprintf(dicName,"MapperInput/Mapper_%d.txt",i+1);
-    //       //       FILE *fp;
-    //       //       char * txtName;
-    //       //       char c='\0';
-    //       //       int* alphaCount;
-    //       //       int messageCount=0;
-    //       //       alphaCount = malloc(ALPHABETSIZE*sizeof(int));
-    //       //       for (int j = 0; j < 26; j++) {
-    //       //           alphaCount[j]=0;
-    //       //       }
-    //       //       if((fp = fopen(dicName,"r"))!=NULL){
-    //       //           txtName = malloc(SIZE_TXTPATH*sizeof(char));
-    //       //           while(1){
-    //       //               c=fgetc(fp);
-    //       //               while(c!='\n'&&c!=EOF){
-    //       //                   strncat(txtName,&c,1);
-    //       //               }
-    //       //               wordcount(txtName,alphaCount);
-    //       //               if(feof(fp)){printf("%s\n","hh" );break;}
-    //       //               messageCount++;
-    //       //               for(int j=0;j<26;j++){
-    //       //                   buffer->data[j] = alphaCount[j];
-    //       //               }
-    //       //               write(sockfd, buffer, REQUEST_MSG_SIZE);
-    //       //               read(sockfd,buffer_response,sizeof(buffer_response));
-    //       //               char logUpdate[255];
-    //       //               sprintf(logUpdate, "[%d] UPDATE_AZLIST: %d\n",buffer->mapperID,messageCount);
-    //       //               fputs(logUpdate,logfp);
-    //       //               printf("[%d] UPDATE_AZLIST: %d\n",buffer->mapperID,messageCount);
-    //       //               printf("[%d] textname: %s\n",i+1,txtName);
-    //       //               printf("[%d] dicName: %s\n",i+1,dicName);
-    //       //               //reset
-    //       //               logUpdate[0]='\0';
-    //       //               txtName[0] = '\0';
-    //       //               memset(&buffer_response, 0, sizeof(buffer_response));
-    //       //
-    //       //           }
-    //       //           free(txtName);
-    //       //           fclose(fp);
-    //       //       }else{
-    //       //           printf("fail to read file %s\n",dicName);
-    //       //       }
-    //       //       free(dicName);
-    //       //
+                //update
+                buffer->requestCode=UPDATE_AZLIST;
+                char * dicName =  malloc(SIZE_TXTPATH*sizeof(char));
+                sprintf(dicName,"MapperInput/Mapper_%d.txt",i+1);
+                FILE *fp;
+                char * txtName;
+                char c='\0';
+                int* alphaCount;
+                int messageCount=0;
+                alphaCount = malloc(ALPHABETSIZE*sizeof(int));
+                for (int j = 0; j < 26; j++) {
+                    alphaCount[j]=0;
+                }
+                printf("%s\n",dicName );
+                if((fp = fopen(dicName,"r"))!=NULL){
+                    txtName = malloc(SIZE_TXTPATH*sizeof(char));
+                    while(1){
+                        c=fgetc(fp);
+                        while(c!='\n'&&c!=EOF){
+                            strncat(txtName,&c,1);
+                            c=fgetc(fp);
+                        }
+                        printf("textname: %s\n", txtName);
+                        wordcount(txtName,alphaCount);
+                        if(feof(fp)||strstr(txtName,"/")==NULL){break;}
+                        messageCount++;
+                        for(int j=0;j<26;j++){
+                            buffer->data[j] = alphaCount[j];
+                        }
+                        write(sockfd, buffer, REQUEST_MSG_SIZE);
+                        read(sockfd,buffer_response,sizeof(buffer_response));
+                        char logUpdate[255];
+                        sprintf(logUpdate, "[%d] UPDATE_AZLIST: %d\n",buffer->mapperID,messageCount);
+                        fputs(logUpdate,logfp);
+                        printf("[%d] UPDATE_AZLIST: %d\n",buffer->mapperID,messageCount);
+                        printf("[%d] textname: %s\n",i+1,txtName);
+                        printf("[%d] dicName: %s\n",i+1,dicName);
+                        //reset
+                        logUpdate[0]='\0';
+                        txtName[0] = '\0';
+                        memset(&buffer_response, 0, sizeof(buffer_response));
+
+                    }
+                    free(txtName);
+                    fclose(fp);
+                }else{
+                    printf("fail to read file %s\n",dicName);
+                }
+                free(dicName);
+
     //       //       //get azList
     //       //       buffer->requestCode=GET_AZLIST;
     //       //       for(int i =0 ; i <26;i++){
@@ -243,6 +246,7 @@ int main(int argc, char *argv[]) {
 
 
     fclose(logfp);
+    _exit(0);
     return 0;
 
 }

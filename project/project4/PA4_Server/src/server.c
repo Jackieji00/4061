@@ -71,6 +71,7 @@ void *socketThread(void *arg) {
                     printf("[%d] GET_ALL_UPDATES\n",buffer->mapperID);
                 }else if(buffer->requestCode==UPDATE_AZLIST){
                     //printf("5:%d\n",buffer->mapperID );
+                    printf("%s\n","hh");
                     updateStatus[buffer->mapperID][US_NUM_UPDATES]++;
                     int * data = malloc(26*sizeof(int));
                     data=buffer->data;
@@ -95,7 +96,6 @@ void *socketThread(void *arg) {
                 }
             }
             write(clientfd,bufferResponse,sizeof(bufferResponse));
-            printf("[%d] %s\n",buffer->mapperID, "h");
             pthread_mutex_unlock(&currentConn_lock);
         }
         sleep(1);
@@ -173,7 +173,6 @@ int main(int argc, char *argv[]) {
           printf("Failed to create thread\n");
       }
       if( poolIndex >= 50){
-          printf("%s\n","iii" );
           poolIndex = 0;
           while(poolIndex < 50){
               pthread_join(condPool[poolIndex++],NULL);
