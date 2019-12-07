@@ -25,13 +25,16 @@ void *socketThread(void *arg) {
     while(1){
         if(pthread_mutex_trylock(&currentConn_lock)==0){
             read(clientfd,buffer,1024);
+            printf("[%d]:%d\n",buffer->mapperID,buffer->requestCode);
+            // for(int i =0;i<26;i++){
+            //     printf("%d:%d\n", i,azList[i]);
+            // }
             if(updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==0||updateStatus[buffer->mapperID][US_IS_CHECKEDIN]==-1){
                 if(buffer->requestCode==CHECKIN){
                     //printf("1:%d\n",buffer->mapperID );
                     bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
                     bufferResponse[RSP_CODE]=RSP_OK;
                     bufferResponse[RSP_DATA]=buffer->mapperID;
-                    printf("data:%d\n",bufferResponse[RSP_DATA]);
                     updateStatus[buffer->mapperID][US_MAPPER_PID]=buffer->mapperID;
                     updateStatus[buffer->mapperID][US_IS_CHECKEDIN]=buffer->requestCode;
                     write(clientfd,bufferResponse,sizeof(bufferResponse));
@@ -45,13 +48,16 @@ void *socketThread(void *arg) {
             }else{
                 //printf("%d\n", buffer->requestCode);
                 if(buffer->requestCode==GET_AZLIST){
-                    //printf("2:%d\n",buffer->mapperID );
+                    printf("2:%d\n",buffer->mapperID );
                     bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
                     bufferResponse[RSP_CODE]=RSP_OK;
-                    for (int i = RSP_DATA; i < 28; i++) {
-                        bufferResponse[i]=azList[i-RSP_DATA];
+                    for (int i = 0; i < 26; i++) {
+                        bufferResponse[i+RSP_DATA]=azList[i];
+                        printf("%d\n", azList[i]);
                     }
                     printf("[%d] GET_AZLIST\n",buffer->mapperID);
+                    write(clientfd,bufferResponse,sizeof(bufferResponse));
+                    printf("%s\n","hh" );
                 }else if(buffer->requestCode==GET_MAPPER_UPDATES){
                     //printf("3:%d\n",buffer->mapperID );
                     bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
@@ -71,12 +77,9 @@ void *socketThread(void *arg) {
                     printf("[%d] GET_ALL_UPDATES\n",buffer->mapperID);
                 }else if(buffer->requestCode==UPDATE_AZLIST){
                     //printf("5:%d\n",buffer->mapperID );
-                    printf("%s\n","hh");
                     updateStatus[buffer->mapperID][US_NUM_UPDATES]++;
-                    int * data = malloc(26*sizeof(int));
-                    data=buffer->data;
                     for(int i =0;i<26;i++){
-                        azList[i]+=data[i];
+                        azList[i]+=buffer->data[i];
                     }
                     bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
                     bufferResponse[RSP_CODE]=RSP_OK;
@@ -98,7 +101,7 @@ void *socketThread(void *arg) {
             write(clientfd,bufferResponse,sizeof(bufferResponse));
             pthread_mutex_unlock(&currentConn_lock);
         }
-        sleep(1);
+        //sleep(1);
     }
     printf("close connection from %s:%d\n",clientip,clientPort);
     close(clientfd);

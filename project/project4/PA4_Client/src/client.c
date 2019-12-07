@@ -38,6 +38,7 @@ void wordcount(char * txtName,int * alphaCount){
             }
         }
     }else{
+        return;
         printf("fail to read file %s\n",txtName);
     }
 }
@@ -135,7 +136,7 @@ int main(int argc, char *argv[]) {
                 sprintf(logCheckin, "[%d] CHECKIN: %d %d\n",buffer->mapperID,buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
                 fputs(logCheckin, logfp);
                 //reset struct
-                memset(&buffer_response, 0, sizeof(buffer_response));
+                //memset(&buffer_response, 0, sizeof(buffer_response));
 
                 //update
                 buffer->requestCode=UPDATE_AZLIST;
@@ -159,7 +160,7 @@ int main(int argc, char *argv[]) {
                             strncat(txtName,&c,1);
                             c=fgetc(fp);
                         }
-                        printf("textname: %s\n", txtName);
+                        //printf("textname: %s\n", txtName);
                         wordcount(txtName,alphaCount);
                         if(feof(fp)||strstr(txtName,"/")==NULL){break;}
                         messageCount++;
@@ -172,37 +173,41 @@ int main(int argc, char *argv[]) {
                         sprintf(logUpdate, "[%d] UPDATE_AZLIST: %d\n",buffer->mapperID,messageCount);
                         fputs(logUpdate,logfp);
                         printf("[%d] UPDATE_AZLIST: %d\n",buffer->mapperID,messageCount);
-                        printf("[%d] textname: %s\n",i+1,txtName);
-                        printf("[%d] dicName: %s\n",i+1,dicName);
+                        //printf("[%d] textname: %s\n",i+1,txtName);
+                        //printf("[%d] dicName: %s\n",i+1,dicName);
                         //reset
                         logUpdate[0]='\0';
                         txtName[0] = '\0';
-                        memset(&buffer_response, 0, sizeof(buffer_response));
+                        //memset(&buffer_response, 0, sizeof(buffer_response));
 
                     }
                     free(txtName);
                     fclose(fp);
                 }else{
                     printf("fail to read file %s\n",dicName);
+                    fclose(fp);
+
                 }
                 free(dicName);
 
-    //       //       //get azList
-    //       //       buffer->requestCode=GET_AZLIST;
-    //       //       for(int i =0 ; i <26;i++){
-    //       //           buffer->data[i]=0;
-    //       //       }
-    //       //       write(sockfd, buffer, REQUEST_MSG_SIZE);
-    //       //       read(sockfd, buffer_response, sizeof(buffer_response));
-    //       //       char a[53];
-    //       //       for(int i =0;i<26;i++){
-    //       //         sprintf(a, "%d ",buffer_response->data[i]);
-    //       //
-    //       //       }
-    //       // printf( "[%d] GET_AZLIST: %d <%s>\n",buffer->mapperID,buffer_response->responseCode, a);
-    //       // char bb[255];
-    //       // sprintf(bb, "[%d] GET_AZLIST: %d <%s>\n",buffer->mapperID,buffer_response->responseCode, a);
-    //       // fputs(bb, logfp);
+                //get azList
+                buffer->requestCode=GET_AZLIST;
+                
+                for(int i =0 ; i <26;i++){
+                    buffer->data[i]=0;
+                }
+                write(sockfd, buffer, sizeof(buffer));
+                read(sockfd, buffer_response, 28*sizeof(int));
+                char numbers[100];
+                int index =0;
+                for(int i =0;i<26;i++){
+                    printf("%d: %d\n",i,buffer_response[RSP_DATA+i]);
+                    index += sprintf(&numbers[index], "%d ",buffer_response[RSP_DATA+i]);
+                }
+                printf( "[%d] GET_AZLIST: %d <%s>\n",buffer->mapperID,buffer_response[RSP_CODE], numbers);
+                char logGetList[255];
+                sprintf(logGetList, "[%d] GET_AZLIST: %d <%s>\n",buffer->mapperID,buffer_response[RSP_CODE], numbers);
+                fputs(logGetList, logfp);
     //       //
     //       // buffer->requestCode=GET_MAPPER_UPDATES;
     //       // for(int i =0 ; i <26;i++){
