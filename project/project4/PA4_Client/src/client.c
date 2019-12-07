@@ -169,6 +169,7 @@ int main(int argc, char *argv[]) {
                         messageCount++;
                         for(int j=0;j<26;j++){
                             buffer[RQS_DATA+j] = alphaCount[j];
+                            printf("%d\n",alphaCount[j]);
                         }
                         write(sockfd, buffer, 28*sizeof(int));
                         read(sockfd,buffer_response,28*sizeof(int));
@@ -179,6 +180,9 @@ int main(int argc, char *argv[]) {
                         //reset
                         logUpdate[0]='\0';
                         txtName[0] = '\0';
+                        for (int j = 0; j < 26; j++) {
+                            alphaCount[j]=0;
+                        }
                     }
                     free(txtName);
                     fclose(fp);
@@ -235,13 +239,14 @@ int main(int argc, char *argv[]) {
                 write(sockfd, buffer, 28*sizeof(int));
                 read(sockfd, buffer_response, 28*sizeof(int));
                 printf("[%d] CHECKOUT: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
-                char logCheckout[255];
-                sprintf(logCheckout, "[%d] CHECKOUT: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
-                fputs(logCheckout, logfp);
+                //char logCheckout[255];
+                fprintf(logfp, "[%d] CHECKOUT: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
+                //fputs(logCheckout, logfp);
                 //close connection
                 // wait(NULL);
                 printf("[%d] close connection\n", buffer[RQS_MAPPER_PID]);
                 close(sockfd);
+                fclose(logfp);
                 _exit(1);
             }else {
                 perror("Connection failed!");
@@ -253,9 +258,6 @@ int main(int argc, char *argv[]) {
         wait(NULL);
     }
     // Phase3 - Master Client's Dynamic Request Handling (Extra Credit)
-
-
-    fclose(logfp);
     _exit(0);
     return 0;
 
