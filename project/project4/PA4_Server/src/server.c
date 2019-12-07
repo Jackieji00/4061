@@ -82,7 +82,6 @@ void *socketThread(void *arg) {
                     bufferResponse[RSP_DATA]=buffer->mapperID;
                 }else if(buffer->requestCode==CHECKOUT){
                     //printf("6:%d\n",buffer->mapperID );
-
                     bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
                     bufferResponse[RSP_CODE]=RSP_OK;
                     bufferResponse[RSP_DATA]=buffer->mapperID;
@@ -90,9 +89,9 @@ void *socketThread(void *arg) {
                     printf("[%d] CHECKOUT\n",buffer->mapperID);
                     break;
                 }else{
-                    // bufferResponse->responseCode=RSP_NOK;
-                    // bufferResponse->requestCode=buffer->requestCode;
-                    // bufferResponse->data = &buffer->mapperID;
+                    bufferResponse[RSP_COMMAND_ID]=buffer->requestCode;
+                    bufferResponse[RSP_CODE]=RSP_NOK;
+                    bufferResponse[RSP_DATA]=buffer->mapperID;
                 }
             }
             write(clientfd,bufferResponse,sizeof(bufferResponse));
