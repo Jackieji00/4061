@@ -38,17 +38,5 @@
 #define RSP_OK                      0
 #define RSP_NOK                     1
 
-//requestStucture
-struct requestBuffer {
-    int requestCode;
-    int mapperID;
-    int data[26];
-};
-
-struct responseBuffer{
-    int requestCode;
-    int responseCode;
-    int data[26];
-};
 
 #endif //SERVER_CLIENT_PROTOCOL_H
