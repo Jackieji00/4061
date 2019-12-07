@@ -132,7 +132,7 @@ int main(int argc, char *argv[]) {
                     buffer[RQS_DATA+j]=0;
                 }
                 buffer[RQS_COMMAND_ID]=CHECKIN;
-                write(sockfd, buffer, sizeof(buffer));
+                write(sockfd, buffer, 28*sizeof(int));
                 read(sockfd, buffer_response, 28*sizeof(int));
                 printf( "[%d] CHECKIN: %d %d\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE],buffer_response[RSP_DATA]);
                 char logCheckin[255];
@@ -170,8 +170,8 @@ int main(int argc, char *argv[]) {
                         for(int j=0;j<26;j++){
                             buffer[RQS_DATA+j] = alphaCount[j];
                         }
-                        write(sockfd, buffer, REQUEST_MSG_SIZE);
-                        read(sockfd,buffer_response,sizeof(buffer_response));
+                        write(sockfd, buffer, 28*sizeof(int));
+                        read(sockfd,buffer_response,28*sizeof(int));
                         char logUpdate[255];
                         sprintf(logUpdate, "[%d] UPDATE_AZLIST: %d\n",buffer[RQS_MAPPER_PID],messageCount);
                         fputs(logUpdate,logfp);
@@ -206,7 +206,7 @@ int main(int argc, char *argv[]) {
                 char numbers[200];
                 int index =0;
                 for(int j =0;j<26;j++){
-                    printf("%d: %d\n",j,buffer_response[RSP_DATA+j]);
+                    printf("%d: %d\n",j,buffer_response[j]);
                     index += sprintf(&numbers[index], "%d ",buffer_response[RSP_DATA+j]);
                 }
                 printf( "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);

@@ -23,6 +23,10 @@ void *socketThread(void *arg) {
     int clientPort = buf->clientport;
     int buffer[28];
     int bufferResponse[28];
+    for(int i=0;i<28;i++){
+        buffer[i]=0;
+        bufferResponse[i]=0;
+    }
     while(1){
         read(clientfd,buffer,28*sizeof(int));
         printf("[%d]:%d\n",buffer[RQS_MAPPER_PID],buffer[RQS_COMMAND_ID]);
@@ -50,7 +54,7 @@ void *socketThread(void *arg) {
                 for (int i = 0; i < 26; i++) {
                     //pthread_mutex_lock(&currentConn_lock);
                     bufferResponse[i+RSP_DATA]=azList[i];
-                    printf("%d\n", azList[i]);
+                    //printf("%d\n", azList[i]);
                     //pthread_mutex_unlock(&currentConn_lock);
                 }
                 printf("[%d] GET_AZLIST\n",buffer[RQS_MAPPER_PID]);
@@ -99,7 +103,11 @@ void *socketThread(void *arg) {
                 bufferResponse[RSP_DATA]=buffer[RQS_MAPPER_PID];
             }
         }
+        for (int i = 0; i < 28&&buffer[RQS_COMMAND_ID]==GET_AZLIST; i++) {
+            printf("bf %d:%d\n",i, bufferResponse[i]);
+        }
         write(clientfd,bufferResponse,28*sizeof(int));
+        continue;
 
     }
     printf("close connection from %s:%d\n",clientip,clientPort);
