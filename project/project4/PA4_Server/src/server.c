@@ -30,7 +30,7 @@ void *socketThread(void *arg) {
     }
     while(1){
         read(clientfd,buffer,28*sizeof(int));
-        printf("[%d]:%d\n",buffer[RQS_MAPPER_PID],buffer[RQS_COMMAND_ID]);
+        //printf("[%d]:%d\n",buffer[RQS_MAPPER_PID],buffer[RQS_COMMAND_ID]);
         if(updateStatus[buffer[RQS_MAPPER_PID]-1][US_IS_CHECKEDIN]==0||updateStatus[buffer[RQS_MAPPER_PID]-1][US_IS_CHECKEDIN]==-1){
             if(buffer[RQS_COMMAND_ID]==CHECKIN){
                 bufferResponse[RSP_COMMAND_ID]=buffer[RQS_COMMAND_ID];
@@ -123,7 +123,7 @@ void *socketThread(void *arg) {
     printf("close connection from %s:%d\n",clientip,clientPort);
     close(clientfd);
     pthread_exit(NULL);
-    printf("%s\n", "i don't know");
+    //printf("%s\n", "i don't know");
 }
 
 int main(int argc, char *argv[]) {
