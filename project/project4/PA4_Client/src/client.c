@@ -153,7 +153,7 @@ int main(int argc, char *argv[]) {
                 for (int j = 0; j < 26; j++) {
                     alphaCount[j]=0;
                 }
-                printf("%s\n",dicName );
+                //printf("%s\n",dicName );
                 if((fp = fopen(dicName,"r"))!=NULL){
                     txtName = malloc(SIZE_TXTPATH*sizeof(char));
                     while(1){
@@ -198,14 +198,14 @@ int main(int argc, char *argv[]) {
                 for(int j =0 ; j <26;j++){
                     buffer[RQS_DATA+j]=0;
                 }
-                if(write(sockfd, buffer, sizeof(buffer))<0){
+                if(write(sockfd, buffer, 28*sizeof(int))<0){
                     printf("%s\n", "write fail");
                 }
                 read(sockfd, buffer_response, 28*sizeof(int));
                 char numbers[100];
                 int index =0;
                 for(int j =0;j<26;j++){
-                    //printf("%d: %d\n",j,buffer_response[RSP_DATA+j]);
+                    printf("%d: %d\n",j,buffer_response[RSP_DATA+j]);
                     index += sprintf(&numbers[index], "%d ",buffer_response[RSP_DATA+j]);
                 }
                 printf( "[%d] GET_AZLIST: %d <%s>\n",buffer[RQS_MAPPER_PID],buffer_response[RSP_CODE], numbers);
